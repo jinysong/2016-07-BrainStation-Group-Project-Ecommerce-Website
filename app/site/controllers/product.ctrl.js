@@ -6,7 +6,7 @@
 
 	function ProductCtrl($stateParams,api,productSrv){
 		var productVm = this;
-
+		console.log("hi");
 		productVm.categories = [
 			{label:'Shirts',value:'shirts'},
 			{label:'Pants',value:'pants'},
@@ -43,7 +43,14 @@
 			//TODO #2
 			//create product object, pass to product service
 			//Update text in button
-			
+
+			productVm.newProduct = [{ 
+				Name: 'Name', Image: 'Image', Description: 'Description', Category: 'Cate', Price: 'Price', Quantity: 'Quant'}
+			]
+			productVm.product.push(productVm.newProduct);
+			console.log(newProduct)
+			alert("You added" + {{productVm.newProduct.Name}} + "to the inventory");
+			// Pushing the new product into the empty productVm.product array above. 
 		}
 
 		function updateProduct(){
