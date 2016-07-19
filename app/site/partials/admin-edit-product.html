@@ -5,29 +5,29 @@
 <article class="product-frm">
 		<div>
 			<label>Name</label>
-			<input type="text" name="name" ng-model="ctrl.edit-name" required>
+			<input type="text" name="name" ng-model="ctrl.edit_name" required>{{productVm.name}}
 		</div>
 		<div>
 			<label>Image Url</label>
-			<input type="text" name="image" ng-model="ctrl.edit-image" required>
+			<input type="text" name="image" ng-model="ctrl.edit_image" required>{{productVm.image}}
 		</div>
 		<div>
 			<label>Description</label>
-			<textarea type="text" name="description" ng-model="ctrl.edit-description" required></textarea>
+			<textarea type="text" name="description" ng-model="ctrl.edit_description" required>{{productVm.description}}</textarea>
 		</div>
 		<div>
 			<label>Category</label>
 			<!-- TODO #2: Set Options -->
-			<select name="category" ng-options="category as category.label for category in ctrl.categories" ng-model="ctrl.selected">
+			<select name="category" ng-options="category as category.label for category in ctrl.categories" ng-model="ctrl.selected">{{productVm.category}}
 			</select>
 		</div>
 		<div>
 			<label>Price</label>
-			<input type="number" name="price" ng-model="ctrl.edit-price" required>
+			<input type="number" name="price" ng-model="ctrl.edit_price" required>{{productVm.price}}
 		</div>
 		<div>
 			<label>Quantity</label>
-			<input type="number" name="quantity" ng-model="ctrl.edit-quantity" required>
+			<input type="number" name="quantity" ng-model="ctrl.edit_quantity" required>{{productVm.quantity}}
 		</div>
 		<div>
 			<button type="submit" ng-click="ctrl.updateProduct()">{{ctrl.product_update_btn}}</button>

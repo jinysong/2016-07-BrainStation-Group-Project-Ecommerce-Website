@@ -86,10 +86,10 @@
 			}
 
 			productSrv.updateProduct();
-
+			productSrv.updateProductList();
 			//Update text in button
-			productVm.product_update_btn = " Your product has been updated!";
-
+			alert("You edited " + productVm.product.edit_name);
+			$state.go('admin.dash');
 		}
 
 		function deleteProduct(){
