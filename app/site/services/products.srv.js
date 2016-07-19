@@ -9,7 +9,25 @@
 		//public variables
 		self.products = [];
 
-		self.cartItems = [];
+		self.cartItems = [{
+				productId:'1',
+				name:'Surfboard',
+				description:'you use it to surf',
+				category:'Surf',
+				price:'34',
+				quantity:'2',
+				status: true,
+				image: "../assets/img/img-duffle.png"
+			},{
+				productId:'1',
+				name:'Surfboard',
+				description:'you use it to surf',
+				category:'Surf',
+				price:'12',
+				quantity:'2',
+				status: true,
+				image: "../assets/img/img-duffle.png"
+			}];
 		
 
 
