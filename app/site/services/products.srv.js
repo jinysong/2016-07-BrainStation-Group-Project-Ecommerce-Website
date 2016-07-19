@@ -9,6 +9,8 @@
 		//public variables
 		self.products = [];
 
+
+
 		self.cartItems = [{
 				productId:'1',
 				name:'Surfboard',
