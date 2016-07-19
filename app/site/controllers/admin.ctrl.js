@@ -8,7 +8,7 @@
 	function AdminCtrl($scope,$state,productSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
-		adminVm.getProducts = productSrv.getProducts;
+		adminVm.getProducts = productSrv.getProducts();
 		adminVm.products = productSrv.products;
 		console.log(adminVm.products)
 		//check if logged in
@@ -22,14 +22,14 @@
 		}
 
 		// watch for updates to products object
-		$scope.$watch(function(){
-	    	return productSrv.products;
-		}, function (newValue) {
-			if(productSrv.products.length > 0){
-			    adminVm.products = productSrv.products;
-			    adminVm.is_products = true;
-			}
-		});
+		// $scope.$watch(function(){
+	 //    	return productSrv.products;
+		// }, function (newValue) {
+		// 	if(productSrv.products.length > 0){
+		// 	    adminVm.products = productSrv.products;
+		// 	    adminVm.is_products = true;
+		// 	}
+		// });
 
 		//public functions
 		adminVm.editProduct = editProduct;
