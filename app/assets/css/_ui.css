@@ -10,6 +10,47 @@ body{
 	font-size:100%;
 }
 
+.row div {
+background-color: white;
+
+
+}
+.gear {
+	background-image:url("http://25.media.tumblr.com/tumblr_m4x0viEOao1qhvp06o1_500.jpg");
+	background-size: cover;
+}
+.lc {
+	background-image:url("http://img.surfing-waves.com/shop/media/images/ind-womens-surf-clothing.jpg");
+	background-size: cover;
+
+}
+
+.gc {
+	background-image:url("http://images.shopmadeinchina.com/C0C22F20D142C61BE040007F0100076D/786/8979786_10/2012-Australian-Men-s-surf-shorts-beach-shorts_8979786_10.bak.jpg");
+	background-size: cover;
+	
+}
+.main-image{
+	height:300px;
+	width:400px;
+	padding:10%;
+	font-size: 12px;
+	margin-top: 20px;
+	text-align: center;
+	align-items: center;
+}
+
+.ryan {
+	display:block;
+	margin:auto;
+	/*left:50px;*/
+	margin-top: 150px;
+}
+.words {
+	font-size: 32px;
+	color:lightgrey;
+	margin: auto;
+}
 /*
 Globals
 */
@@ -82,19 +123,19 @@ Top-content
 .top-content{
 	width:100%;
 	height:calc(70% - 110px);
-	background:url('../img/img-hero-1.png');
+	background:url('https://67.media.tumblr.com/5389b076930dc90b0fb46fb972a2a04d/tumblr_naxuyzqt5m1s39yzeo1_500.gif');
 	background-size:cover;
 	background-position:center center;
 	text-align: center;
 }
 
 .top-content h1{
-	color:white;
+	color:black;
 	font-size:4rem;
 }
 
 .top-content h3{
-	color:white;
+	color:black;
 	font-size:2rem;
 	margin:10px 0px;
 	letter-spacing:0.05rem;
