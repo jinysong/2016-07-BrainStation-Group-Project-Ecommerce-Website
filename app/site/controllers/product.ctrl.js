@@ -84,6 +84,9 @@
 				"price": productVm.price,
 				"quantity": productVm.quantity
 			}
+
+			productSrv.updateProduct();
+
 			//Update text in button
 			productVm.product_update_btn = " Your product has been updated!";
 
