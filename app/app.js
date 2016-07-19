@@ -22,19 +22,25 @@
 					}
 				}
 			})
+			// .state('shop.cart', {
+			// 	url: '/cart',
+			// 	templateUrl: 'site/partials/shop-cart.html',
+			// 	controller: 'CartCtrl as ctrl',
+			// 	resolve: {
+			// 		cart: function(prductSrv){
+			// 			return productSrc.getCartProducts();
+			// 		}
+			// 	}
+			// })
 
 			.state('admin',{
 				url:'/admin',
 				templateUrl:'site/partials/admin.html',
 				controller:'AdminCtrl as ctrl',
-				//Resolve Products before admin page load
+				//TODO #2 Resolve Products before admin page load
 				resolve:{
 					products:function(productSrv){
-						return productSrv.getProducts()
-							.then(function(res) {
-                				console.log(res);
-                				return res.data;
-           					});
+						return productSrv.getProducts();
 					}
 				}
 			})
