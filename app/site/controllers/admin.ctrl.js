@@ -8,13 +8,13 @@
 	function AdminCtrl($scope,$state,productSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
-
+		adminVm.products = productSrv.products
 		//check if logged in
 		if(localStorage.authToken == undefined || localStorage.authToken == null){
 			$state.go('auth');
 		}
 					
-		adminVm.products;
+		// adminVm.products;
 		if(adminVm.products.length > 0 ){
 			adminVm.is_products = true;
 		}
