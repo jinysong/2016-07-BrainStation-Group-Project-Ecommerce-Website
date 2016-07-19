@@ -9,7 +9,9 @@
 		//public variables
 		self.products = [];
 
-		// console.log(self.products);
+		self.cartItems = [];
+		
+
 
 		//public functions
 		self.getProduct = getProduct;

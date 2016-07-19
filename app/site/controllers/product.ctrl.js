@@ -59,7 +59,7 @@
 				Quantity: productVm.quantity
 			}
 				
-				productVm.products.push(productVm.newProduct);
+				productSrv.addProduct();
 				console.log(productVm.newProduct)
 				alert("You added " + productVm.newProduct.Name + " to the inventory");
 				console.log(productVm.products);
@@ -84,6 +84,9 @@
 				"price": productVm.price,
 				"quantity": productVm.quantity
 			}
+
+			productSrv.updateProduct();
+
 			//Update text in button
 			productVm.product_update_btn = " Your product has been updated!";
 
@@ -93,7 +96,10 @@
 			//TODO #2
 			//remove product, pass to product service
 			//update text in button
-		}
+
+			productSrv.deleteProduct();
+			}
+		
 	}
 
 })();
