@@ -50,18 +50,18 @@
 			//Update text in button
 
 
-			productVm.newProduct = { 
-				Name: productVm.name,
-				Image: productVm.image,
-				Description: productVm.description,
-				Category: productVm.category, 
-				Price: productVm.price, 
-				Quantity: productVm.quantity
+			var newProduct = { 
+				name: productVm.name,
+				image: productVm.image,
+				description: productVm.description,
+				category: productVm.category, 
+				price: productVm.price, 
+				quantity: productVm.quantity
 			}
 				
-				productSrv.addProduct();
-				console.log(productVm.newProduct)
-				alert("You added " + productVm.newProduct.Name + " to the inventory");
+				productSrv.addProduct(newProduct);
+				console.log(newProduct)
+				alert("You added " + newProduct.Name + " to the inventory");
 				console.log(productVm.products);
 				// Pushing the new product into the empty productVm.product array above. 
 
@@ -76,30 +76,40 @@
 			//TODO #2
 			
 			//create product object, pass to product service
-			productVm.product = {
-				"name": productVm.edit_name,
-				"image": productVm.edit_image,
-				"description": productVm.edit_description,
-				"category": productVm.selected,
-				"price": productVm.price,
-				"quantity": productVm.quantity
+			var updateProduct = {
+				name: productVm.name,
+				image: productVm.image,
+				description: productVm.description,
+				category: productVm.selected,
+				price: productVm.price,
+				quantity: productVm.quantity
 			}
 
-			productSrv.updateProduct();
+			var productIdEdit = location.hash.split('/')[3];
 
+			productSrv.updateProduct(updateProduct, productIdEdit);
+			console.log(updateProduct)
+			// productSrv.updateProductList();
 			//Update text in button
-			productVm.product_update_btn = " Your product has been updated!";
-
+			alert("You edited " + updateProduct.name);
+			productVm.product_update_btn = "You edit was successful";
+			$state.go('admin.dash');
 		}
 
 		function deleteProduct(){
 			//TODO #2
 			//remove product, pass to product service
 			//update text in button
+			var productIdEdit = location.hash.split('/')[3];
 
-			productSrv.deleteProduct();
-			}
-		
+			productSrv.deleteProduct(productIdEdit);
+			productSrv.updateProductList();
+			$state.go('admin.dash');
+			alert("Your delete was successful");
+
+
+		}
+
 	}
 
 })();

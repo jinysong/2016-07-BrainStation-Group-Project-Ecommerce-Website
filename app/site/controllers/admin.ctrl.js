@@ -8,7 +8,7 @@
 	function AdminCtrl($scope,$state,productSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
-		adminVm.getProducts = productSrv.getProducts;
+		adminVm.getProducts = productSrv.getProducts();
 		adminVm.products = productSrv.products;
 		console.log(adminVm.products)
 		//check if logged in
