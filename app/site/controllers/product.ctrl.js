@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('ProductCtrl',ProductCtrl);
 
-	function ProductCtrl($stateParams,api,productSrv){
+	function ProductCtrl($stateParams,api,productSrv, $state){
 		var productVm = this;
 		console.log("hi");
 		productVm.categories = [
@@ -54,7 +54,7 @@
 				Name: productVm.name,
 				Image: productVm.image,
 				Description: productVm.description,
-				Category: productVm.categories, 
+				Category: productVm.category, 
 				Price: productVm.price, 
 				Quantity: productVm.quantity
 			}
@@ -63,8 +63,14 @@
 				console.log(productVm.newProduct)
 				alert("You added " + productVm.newProduct.Name + " to the inventory");
 				console.log(productVm.products);
+				// Pushing the new product into the empty productVm.product array above. 
+
+		//function returnToProducts (){
+			$state.go('admin.dash');
+		//}
+
 		}
-			// Pushing the new product into the empty productVm.product array above. 
+			// Linking the newly added product to the product page 
 		
 		function updateProduct(){
 			//TODO #2
