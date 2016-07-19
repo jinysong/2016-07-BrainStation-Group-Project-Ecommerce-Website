@@ -15,7 +15,7 @@
 			<div class="table-cell">
 				<div class="content">		
 					<h1>
-						Manage Your Closet.
+						Andrew, Sue and Jiny are the Best!!
 					</h1>
 					<h3>
 						Buy and Sell used fashion items from virtually anywhere.
@@ -25,7 +25,7 @@
 						<form>
 							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
 							<div class="form-container">
-								<input type="text" class="form-control"  placeholder="Search for a brand or item" >
+								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
 								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
 							</div>
 						</form>
@@ -35,7 +35,6 @@
 		</div>
 	</div>
 </section>
-
 
 <section class="secondary-nav" role="sub-nav">
 	<div class="content-wrapper">
@@ -51,13 +50,12 @@
 	</div>
 </section>
 
-
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3">
-				<div id="product-card" class="product-card">
+			<div class="col-xs-12 col-sm-3" ng-repeat='item in ctrl.products | filter: ctrl.search'>
+				<div id="product-card" class="product-card" >
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">
@@ -66,20 +64,24 @@
 						</div>
 					</div>
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/');background-size:cover;background-position:center center">
+					<div class="product-img" style="background-size:cover;background-position:center center"
+						ng-style='{"background-image": "url({{item.image}})"}'>
+
 					</div>
 
 					<div class="product-info">
-						<div class="product-name">
+						<div class="product-name" ng-bind='item.name'>
+
 							<!-- SET PRODUCT NAME -->
+						
 							
 							
 						</div>
-						<div class="product-brand">
+						<div class="product-brand"  ng-bind='item.description'>
 							<!-- SET PRODUCT Description -->
 							<em></em>
 						</div>
-						<div class="product-cost">
+						<div class="product-cost"  ng-bind='item.price | currency'>
 							<!-- SET PRODUCT PRICE WITH FILTER -->
 							
 						</div>
