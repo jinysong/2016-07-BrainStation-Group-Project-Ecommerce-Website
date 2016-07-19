@@ -1,1 +1,73 @@
-<h1>Your Shopping Cart</h1>
+
+
+<div class="container">
+
+	<div id='basket'>
+		<h1>Your Shopping Cart</h1>
+		<ul>
+			<li ng-repeat='a in ctrl.cartItems track by $index'>{{a.name}} - {{a.price}}</li>
+		</ul>
+		<button ng-click='ctrl.showInfo=true' ng-hide='ctrl.showInfo'>Ready to Check-Out</button>
+	</div>
+
+	<div id="info" ng-show='ctrl.showInfo'>
+		<h1>Your Personal Information</h1>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label">First Name: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Last Name: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Email Address: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Telephone: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Address: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label"></label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">City/Town: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">State/Territory: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Country: </label>
+				<input type="text" ng-model="">
+			</div>
+			<div class="form-group">
+				<label class="control-label">Postal Address: </label>
+				<input type="text" ng-model="">
+			</div>
+			<button ng-click='ctrl.showShipping=true' ng-hide='ctrl.showShipping'>Ready to Check-Out</button>
+		</form>
+
+	</div>
+
+	<div id='shipping' ng-show='ctrl.showShipping'>
+		<h1>Shipping Options</h1>
+
+		<div ng-repeat='x in ctrl.shippingMethod'>
+			<input type="" name="">
+		</div>
+
+		
+	</div>
+</div>
+
+
+
