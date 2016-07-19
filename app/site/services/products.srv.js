@@ -8,6 +8,9 @@
 		var self = this;
 		//public variables
 		self.products = [];
+		
+
+
 
 		//public functions
 		self.getProduct = getProduct;
@@ -24,7 +27,7 @@
 				//success callback
 				console.log(res);
 				self.products = res.data.products;
-				return res.data.products;
+				return self.products;
 			},function(res){
 				//error callback
 				console.log(res);
