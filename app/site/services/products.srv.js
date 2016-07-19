@@ -45,8 +45,9 @@
 				console.log(res);
 				if(res.status === 200){
 					//product was added successfully
-					console.log(res.data.product);
+					console.log(res);
 					self.products.push(res.data.product);
+					console.log(self.products)
 					// state.go('admin.dash');
 				}
 			})
