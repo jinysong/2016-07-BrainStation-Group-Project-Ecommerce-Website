@@ -8,7 +8,7 @@
 	function AdminCtrl($scope,$state,productSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
-		adminVm.products = productSrv.products
+		adminVm.products = productSrv.products;
 		//check if logged in
 		if(localStorage.authToken == undefined || localStorage.authToken == null){
 			$state.go('auth');
