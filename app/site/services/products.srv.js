@@ -8,13 +8,13 @@
 		var self = this;
 		//public variables
 		self.products = [];
-<<<<<<< HEAD
+// <<<<<<< HEAD
 		
 
 
-=======
-		// console.log(self.products);
->>>>>>> JinySong/master
+// =======
+// 		// console.log(self.products);
+// >>>>>>> JinySong/master
 
 		//public functions
 		self.getProduct = getProduct;
