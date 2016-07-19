@@ -8,6 +8,13 @@
 		var self = this;
 		//public variables
 		self.products = [];
+<<<<<<< HEAD
+		
+
+
+=======
+		// console.log(self.products);
+>>>>>>> JinySong/master
 
 		//public functions
 		self.getProduct = getProduct;
@@ -24,7 +31,7 @@
 				//success callback
 				console.log(res);
 				self.products = res.data.products;
-				return res.data.products;
+				return self.products;
 			},function(res){
 				//error callback
 				console.log(res);
@@ -38,8 +45,9 @@
 				console.log(res);
 				if(res.status === 200){
 					//product was added successfully
+					console.log(res.data.product);
 					self.products.push(res.data.product);
-					state.go('admin.dash');
+					// state.go('admin.dash');
 				}
 			})
 		}
@@ -93,5 +101,39 @@
 				}
 			}
 		}
+
+		removeProduct(2)
+
+		// addFakeProducts()
+
+		// function addFakeProducts() {
+		// 	var pdt1 = {
+		// 		productId:'1',
+		// 		name:'Surfboard',
+		// 		description:'you use it to surf',
+		// 		category:'surf',
+		// 		price:'34',
+		// 		quantity:'2',
+		// 		status: true,
+		// 		image: "../assets/img/img-duffle.png"
+		// 	}
+		// 	var pdt2 = {
+		// 		productId:'2',
+		// 		name:'Boardshorts',
+		// 		description: "don't go nakeed!!",
+		// 		category:'surf',
+		// 		price:'12',
+		// 		quantity:'4',
+		// 		status:true,
+		// 		image: "../assets/img/img-duffle.png"
+		// 	}
+
+		// 	addProduct(pdt1);
+		// 	addProduct(pdt2);
+			
+		// }
+
+
+
 	}
 })();

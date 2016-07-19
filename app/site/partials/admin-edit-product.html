@@ -5,32 +5,32 @@
 <article class="product-frm">
 		<div>
 			<label>Name</label>
-			<input type="text" name="name"  required>
+			<input type="text" name="name" ng-model="ctrl.edit-name" required>
 		</div>
 		<div>
 			<label>Image Url</label>
-			<input type="text" name="image" required>
+			<input type="text" name="image" ng-model="ctrl.edit-image" required>
 		</div>
 		<div>
 			<label>Description</label>
-			<textarea type="text" name="description" required></textarea>
+			<textarea type="text" name="description" ng-model="ctrl.edit-description" required></textarea>
 		</div>
 		<div>
 			<label>Category</label>
 			<!-- TODO #2: Set Options -->
-			<select name="category">
+			<select name="category" ng-options="category as category.label for category in ctrl.categories" ng-model="ctrl.selected">
 			</select>
 		</div>
 		<div>
 			<label>Price</label>
-			<input type="number" name="price"  required>
+			<input type="number" name="price" ng-model="ctrl.edit-price" required>
 		</div>
 		<div>
 			<label>Quantity</label>
-			<input type="number" name="quantity"  required>
+			<input type="number" name="quantity" ng-model="ctrl.edit-quantity" required>
 		</div>
 		<div>
-			<button type="submit" >{{ctrl.product_update_btn}}</button>
-			<button type="submit" >{{ctrl.product_delete_btn}}</button>
+			<button type="submit" ng-click="ctrl.updateProduct()">{{ctrl.product_update_btn}}</button>
+			<button type="submit" ng-click="ctrl.deleteProduct()">{{ctrl.product_delete_btn}}</button>
 		</div>
 </article>
