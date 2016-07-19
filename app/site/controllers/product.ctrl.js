@@ -93,7 +93,10 @@
 			//TODO #2
 			//remove product, pass to product service
 			//update text in button
-		}
+
+			productSrv.deleteProduct();
+			}
+		
 	}
 
 })();
