@@ -17,8 +17,12 @@
 		//     shopVm.products = productSrv.products;
 		// });
 
-		shopVm.login = function login () {
-			$state.go('admin');
+		shopVm.login = function () {
+			$state.go('auth');
+		}
+
+		shopVm.cart = function () {
+			$state.go('cart');
 		}
 	}
 
