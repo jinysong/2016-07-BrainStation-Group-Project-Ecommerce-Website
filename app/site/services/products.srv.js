@@ -40,7 +40,7 @@
 		}
 
 		function addProduct(product){
-			api.request('/products',product,'POST')
+			return api.request('/products',product,'POST')
 			.then(function(res){
 				console.log(res);
 				if(res.status === 200){
@@ -54,6 +54,8 @@
 		}
 
 		function updateProduct(product,productId){
+			console.log(product)
+			console.log(productId)
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
 				console.log(res);
@@ -66,14 +68,12 @@
 		}
 
 		function deleteProduct(productId){
-			api.request('/products/'+productId,{},'DEL')
+			return api.request('/products/'+productId,{},'DEL')
 			.then(function(res){
 				console.log(res);
 				if(res.status === 200){
 					//product was deleted successfully
 					self.removeProduct(productId);
-					state.go('admin.dash');
-					
 				}
 			})
 		}
@@ -93,6 +93,7 @@
 					self.products[i].quantity = product.quantity;
 				}
 			}
+			console.log(self.products)
 		}
 
 		function removeProduct(productId){

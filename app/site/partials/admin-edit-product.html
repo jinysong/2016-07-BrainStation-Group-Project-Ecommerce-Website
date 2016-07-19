@@ -13,12 +13,12 @@
 		</div>
 		<div>
 			<label>Description</label>
-			<textarea type="text" name="description" ng-model="ctrl.description" placeholder="{{ctrl.description}}" required></textarea>
+			<textarea type="text" name="description" ng-model="ctrl.description" required></textarea>
 		</div>
 		<div>
 			<label>Category</label>
 			<!-- TODO #2: Set Options -->
-			<select name="category" ng-options="category as category.label for category in ctrl.categories" ng-model="ctrl.selected">{{ctrl.category}}
+			<select name="category" ng-options="category.value as category.label for category in ctrl.categories" ng-model="ctrl.category">{{ctrl.category}}
 			</select>
 		</div>
 		<div>

@@ -22,14 +22,14 @@
 		}
 
 		// watch for updates to products object
-		$scope.$watch(function(){
-	    	return productSrv.products;
-		}, function (newValue) {
-			if(productSrv.products.length > 0){
-			    adminVm.products = productSrv.products;
-			    adminVm.is_products = true;
-			}
-		});
+		// $scope.$watch(function(){
+	 //    	return productSrv.products;
+		// }, function (newValue) {
+		// 	if(productSrv.products.length > 0){
+		// 	    adminVm.products = productSrv.products;
+		// 	    adminVm.is_products = true;
+		// 	}
+		// });
 
 		//public functions
 		adminVm.editProduct = editProduct;
