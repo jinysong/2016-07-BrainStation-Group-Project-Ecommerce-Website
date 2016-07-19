@@ -52,11 +52,11 @@
 			alert("You added" + {{productVm.newProduct.Name}} + "to the inventory");
 			// Pushing the new product into the empty productVm.product array above. 
 		}
-
 		function updateProduct(){
 			//TODO #2
 			//create product object, pass to product service
 			//Update text in button
+			
 		}
 
 		function deleteProduct(){
