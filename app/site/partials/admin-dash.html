@@ -18,7 +18,7 @@
 		<tr ng-repeat="product in ctrl.products">
 			<td>{{product.category}}</td>
 			<td>{{product.name}}</td>
-			<td>{{product.price}}</td>
+			<td>{{product.price | currency}}</td>
 			<td>{{product.quantity}}</td>
 			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
