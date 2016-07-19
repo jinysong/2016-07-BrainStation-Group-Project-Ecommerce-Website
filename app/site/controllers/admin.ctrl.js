@@ -8,7 +8,8 @@
 	function AdminCtrl($scope,$state,productSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
-		adminVm.products = [];
+		adminVm.getProducts = productSrv.getProducts();
+		adminVm.products = productSrv.products;
 		console.log(adminVm.products)
 		//check if logged in
 		if(localStorage.authToken == undefined || localStorage.authToken == null){
@@ -33,6 +34,7 @@
 		//public functions
 		adminVm.editProduct = editProduct;
 		adminVm.logout = logout;
+		adminVm.landingPage = landingPage;
 
 		function editProduct(product){
 			$state.go('admin.edit_product',{productId:product.id});
@@ -41,6 +43,10 @@
 		function logout(){
 			localStorage.removeItem('authToken');
 			$state.go('auth');
+		}
+
+		function landingPage(){
+			$state.go('shop');
 		}
 
 	}

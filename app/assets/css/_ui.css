@@ -63,17 +63,27 @@ nav .left-nav{
 }
 
 nav .right-nav{
-	float:right;
+	float: right;
 	margin:0px 70px 0px 0px;
 	vertical-align: top;
 }
 
-nav .fa-shopping-cart{
+nav .fa-shopping-cart {
 	margin-right:10px;
+	font-size:2rem;
+}
+
+nav .fa-user {
+	margin-right:10px;
+	margin-left:20px;
 	font-size:2rem;
 }
 nav .cart{
 	font-size:1.6rem;
+}
+
+nav .fa {
+	display: inline;
 }
 
 /*
