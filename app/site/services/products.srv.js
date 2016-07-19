@@ -8,13 +8,8 @@
 		var self = this;
 		//public variables
 		self.products = [];
-<<<<<<< HEAD
-		
 
-
-=======
 		// console.log(self.products);
->>>>>>> JinySong/master
 
 		//public functions
 		self.getProduct = getProduct;
@@ -111,7 +106,7 @@
 		// 		productId:'1',
 		// 		name:'Surfboard',
 		// 		description:'you use it to surf',
-		// 		category:'surf',
+		// 		category:'Surf',
 		// 		price:'34',
 		// 		quantity:'2',
 		// 		status: true,
@@ -121,7 +116,7 @@
 		// 		productId:'2',
 		// 		name:'Boardshorts',
 		// 		description: "don't go nakeed!!",
-		// 		category:'surf',
+		// 		category:'Boardshorts',
 		// 		price:'12',
 		// 		quantity:'4',
 		// 		status:true,
