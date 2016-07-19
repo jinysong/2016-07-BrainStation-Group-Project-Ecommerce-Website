@@ -8,6 +8,10 @@
 		var self = this;
 		//public variables
 		self.products = [];
+		self.cartItems = [];
+		
+
+
 // <<<<<<< HEAD
 		
 
