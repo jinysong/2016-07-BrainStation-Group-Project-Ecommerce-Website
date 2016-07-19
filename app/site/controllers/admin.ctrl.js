@@ -34,6 +34,7 @@
 		//public functions
 		adminVm.editProduct = editProduct;
 		adminVm.logout = logout;
+		adminVm.landingPage = landingPage;
 
 		function editProduct(product){
 			$state.go('admin.edit_product',{productId:product.id});
@@ -42,6 +43,10 @@
 		function logout(){
 			localStorage.removeItem('authToken');
 			$state.go('auth');
+		}
+
+		function landingPage(){
+			$state.go('shop');
 		}
 
 	}
