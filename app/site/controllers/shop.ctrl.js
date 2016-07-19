@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.controller('ShopCtrl',ShopCtrl)
 
-	function ShopCtrl($scope,productSrv){
+	function ShopCtrl($scope,productSrv, $state){
 		var shopVm = this;
 
 		//TODO #3 Capture resolved products for view
@@ -17,7 +17,9 @@
 		//     shopVm.products = productSrv.products;
 		// });
 
-
+		shopVm.login = function login () {
+			$state.go('admin');
+		}
 	}
 
 })();
