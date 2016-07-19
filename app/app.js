@@ -27,10 +27,14 @@
 				url:'/admin',
 				templateUrl:'site/partials/admin.html',
 				controller:'AdminCtrl as ctrl',
-				//TODO #2 Resolve Products before admin page load
+				//Resolve Products before admin page load
 				resolve:{
 					products:function(productSrv){
-						return productSrv.getProducts();
+						return productSrv.getProducts()
+							.then(function(res) {
+                				console.log(res);
+                				return res.data;
+           					});
 					}
 				}
 			})
