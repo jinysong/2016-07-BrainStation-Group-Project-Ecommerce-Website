@@ -45,11 +45,11 @@
 			//Update text in button
 			
 		}
-
 		function updateProduct(){
 			//TODO #2
 			//create product object, pass to product service
 			//Update text in button
+			
 		}
 
 		function deleteProduct(){
