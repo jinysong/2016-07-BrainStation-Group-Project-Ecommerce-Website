@@ -1,5 +1,5 @@
 #admin {
-	background:white !important;
+	background: gray !important;
 	height:100%;
 	width:100%;
 	font-size:0;
@@ -15,6 +15,7 @@
 	height:100%;
 	float:left;
 	font-size:1rem;
+	font-family: Verdana;
 }
 
 #admin .nav-panel ul{

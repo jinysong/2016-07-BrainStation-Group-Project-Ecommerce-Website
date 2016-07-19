@@ -48,7 +48,6 @@
 					console.log(res);
 					self.products.push(res.data.product);
 					console.log(self.products)
-					// state.go('admin.dash');
 				}
 			})
 		}
