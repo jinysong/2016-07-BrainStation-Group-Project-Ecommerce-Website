@@ -19,6 +19,12 @@
 		productVm.products = productSrv.products;
 		productVm.product_update_btn = 'Update Product';
 		productVm.product_delete_btn = 'Remove Product';
+		productVm.showTextEdit = "You have successfully edited your product!";
+		productVm.showTextDelete = "You have successfully deleted your product!";
+		productVm.showTextAdd = "You have successfully added your product!";
+		productVm.showEdit = false;
+		productVm.showAdd = false;
+		productVm.showDelete = false;
 		var productIdEdit = location.hash.split('/')[3]
 		
 		if($stateParams.productId != undefined){
@@ -64,14 +70,17 @@
 				quantity: productVm.quantity
 			}
 				productSrv.addProduct(newProduct)
-				.then(function(){
+				productVm.showAdd = true;
+				setTimeout(function() {
+					productVm.showAdd = false
 					console.log(newProduct)
 					console.log(productVm.products);
 					$state.go('admin.dash')
 					.then(function() {
 						$state.reload();
 					})
-				})
+				}, 2000)
+				
 				
 				// Pushing the new product into the empty productVm.product array above. 
 
@@ -104,12 +113,18 @@
 			console.log(updateProduct)
 			// productSrv.updateProductList();
 			//Update text in button
-			alert("You edited " + updateProduct.name);
-			productVm.product_update_btn = "You edit was successful";
-			$state.go('admin.dash')
-			.then(function() {
+			productVm.showEdit = true;
+			console.log(productVm.showEdit)
+			setTimeout(function() {
+				productVm.showEdit = false;
+				console.log(productVm.showEdit);
+				productVm.product_update_btn = "You edit was successful";
+				$state.go('admin.dash')
+				.then(function() {
 					$state.reload();
-			})
+				})
+			}, 2000)
+			
 
 		}
 
@@ -120,13 +135,15 @@
 			var productIdEdit = location.hash.split('/')[3];
 
 			productSrv.deleteProduct(productIdEdit)
-			.then(function(){
-				alert("Your delete was successful");
+			productVm.showDelete = true;
+			setTimeout(function() {
+				productVm.showDelete = false;
 				$state.go('admin.dash')
 				.then(function() {
 					$state.reload();
-				})
-			})			
+				})			
+			}, 2000)
+			
 			productSrv.updateProductList();
 		}
 
