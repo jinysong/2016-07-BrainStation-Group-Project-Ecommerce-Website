@@ -16,13 +16,6 @@
 				console.log(productdetailsVm.product)
 			}
 		});
-
-		gearVm.cart = function () {
-			$state.go('cart');
-		}
-		gearVm.shop = function () {
-			$state.go('shop');
-		}	
 	
 		productdetailsVm.changePage = changePage;
 
@@ -35,6 +28,13 @@
 					$state.go('girls-clothing')
 			}
 		}
+
+		productdetailsVm.cart = function () {
+			$state.go('cart');
+		}
+		productdetailsVm.shop = function () {
+			$state.go('shop');
+		}	
 	}
 
 })();
