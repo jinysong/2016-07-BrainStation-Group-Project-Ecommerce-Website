@@ -1,0 +1,23 @@
+<h3>Orders</h3>
+
+<div ng-hide="ctrl.is_products">
+	<p>
+		You have no products
+	</p>
+</div>
+<div ng-show="ctrl.is_products">
+	<table class="products-list table">
+		<tr>
+			<th>Name</th>
+			<th>Category</th>
+			<th>Price</th>
+			<th>Quantity</th>
+		</tr>
+		<tr ng-repeat="product in ctrl.products">
+			<td>{{product.name}}</td>
+			<td>{{product.category}}</td>
+			<td>{{product.price | currency}}</td>
+			<td>{{product.quantity}}</td>
+		</tr>
+	</table>
+</div>
