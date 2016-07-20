@@ -14,7 +14,6 @@
 			{label:'Outerwear',value:'outerwear'},
 			{label:'Accessories',value:'accessories'},
 		];
-		// productVm.onLoad();
 		
 		// productVm.product = {};
 		productVm.products = productSrv.products;
@@ -50,7 +49,6 @@
 		productVm.updateProduct = updateProduct;
 		productVm.deleteProduct = deleteProduct;
 
-
 		function addProduct(){
 			//TODO #2
 			//create product object, pass to product service
@@ -68,9 +66,11 @@
 				productSrv.addProduct(newProduct)
 				.then(function(){
 					console.log(newProduct)
-					alert("You added " + newProduct.Name + " to the inventory");
 					console.log(productVm.products);
-					$state.go('admin.dash');
+					$state.go('admin.dash')
+					.then(function() {
+						$state.reload();
+					})
 				})
 				
 				// Pushing the new product into the empty productVm.product array above. 
@@ -106,7 +106,11 @@
 			//Update text in button
 			alert("You edited " + updateProduct.name);
 			productVm.product_update_btn = "You edit was successful";
-			$state.go('admin.dash');
+			$state.go('admin.dash')
+			.then(function() {
+					$state.reload();
+			})
+
 		}
 
 		function deleteProduct(){
@@ -118,7 +122,10 @@
 			productSrv.deleteProduct(productIdEdit)
 			.then(function(){
 				alert("Your delete was successful");
-				$state.go('admin.dash');
+				$state.go('admin.dash')
+				.then(function() {
+					$state.reload();
+				})
 			})			
 			productSrv.updateProductList();
 		}

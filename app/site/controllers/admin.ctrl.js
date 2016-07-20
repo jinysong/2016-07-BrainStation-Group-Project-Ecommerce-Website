@@ -46,6 +46,7 @@
 		}
 
 		function landingPage(){
+			localStorage.removeItem('authToken');
 			$state.go('shop');
 		}
 
