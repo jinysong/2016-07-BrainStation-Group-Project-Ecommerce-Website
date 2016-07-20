@@ -10,6 +10,7 @@
 		adminVm.productSrv = productSrv;
 		adminVm.getProducts = productSrv.getProducts();
 		adminVm.products = productSrv.products;
+
 		console.log(adminVm.products)
 		//check if logged in
 		if(localStorage.authToken == undefined || localStorage.authToken == null){
