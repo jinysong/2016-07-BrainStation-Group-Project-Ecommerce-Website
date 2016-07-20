@@ -55,6 +55,17 @@
 				}
 			})
 
+			.state('productdetails',{
+				url: '/productdetails',
+				templateUrl: 'site/partials/productdetails.html',
+				controller: 'ProductdetailsCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
 			.state('gear',{
 				url: '/gear',
 				templateUrl: 'site/partials/shop-gear.html',
