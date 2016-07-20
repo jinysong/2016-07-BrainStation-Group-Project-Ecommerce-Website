@@ -1,12 +1,21 @@
 #admin {
-	background: gray !important;
+	background: lightgray !important;
 	height:100%;
 	width:100%;
 	font-size:0;
 }
+#admin h2 {
+	text-align: center;
+	text-decoration: underline;
+	background:#ff6d37;
+	margin: 0 auto;
+	padding: 20px;
+	color: #555;
+	border-bottom: 3px solid #555;
+}
 #admin h3{
 	font-size:2.5rem;
-	color:white;
+	color:#555;
 }
 #admin .nav-panel{
 	background:#ff6d37;
@@ -16,6 +25,9 @@
 	float:left;
 	font-size:1rem;
 	font-family: Verdana;
+	color:#555;
+	border-right: 3px solid #555;
+
 }
 
 #admin .nav-panel ul{
@@ -26,24 +38,25 @@
 
 #admin .nav-panel ul li{
 	margin:10px 0px;
-	color:white;
+	color:#555;
 	font-size:2rem;
 	font-weight:200;
 }
 #admin .nav-panel ul li > a{
-	color:white;
+	color:#555;
 }
 #admin .nav-panel ul li:hover{
 	color:#2b96ff;
 }
 
 #admin .main-content{
-	background: white;
+	background: lightgray;
 	float:left;
 	padding:40px;
 	width:75%;
 	font-size:1rem;
 	color:#555;
+	height: 100%;
 
 }
 
