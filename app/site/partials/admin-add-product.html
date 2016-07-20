@@ -31,8 +31,11 @@
 			<input type="number" name="quantity" ng-model="ctrl.quantity" required>
 		</div>
 		<div>
-			<button ng-class="{ active: showAdd }" ng-click="showAdd = !showAdd" type="submit">Add Product</button>
+			<button ng-class="{ active: showAdd }" type="submit">Add Product</button>
 
 		</div>
 	</form>
+	<div class="admin-messages">
+		<p ng-show="ctrl.showAdd">{{ctrl.showTextAdd}}</p>
+	</div>
 </article>
