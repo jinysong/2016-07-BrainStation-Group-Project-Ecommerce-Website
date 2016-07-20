@@ -8,11 +8,9 @@
 		var productVm = this;
 		console.log("hi");
 		productVm.categories = [
-			{label:'Shirts',value:'shirts'},
-			{label:'Pants',value:'pants'},
-			{label:'Shoes',value:'shoes'},
-			{label:'Outerwear',value:'outerwear'},
-			{label:'Accessories',value:'accessories'},
+			{label:'Gear',value:'gear'},
+			{label:'Girls Clothing',value:'girls_clothing'},
+			{label:'Guys Clothing',value:'guys_clothing'}
 		];
 		
 		// productVm.product = {};
