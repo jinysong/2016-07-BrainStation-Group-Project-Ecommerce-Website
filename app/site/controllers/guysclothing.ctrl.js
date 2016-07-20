@@ -7,6 +7,8 @@
 		var guysclothingVm = this;
 
 		guysclothingVm.products = productSrv.products;
+
+		console.log(guysclothingVm.products)
 	
 		guysclothingVm.cart = function () {
 			$state.go('cart');
