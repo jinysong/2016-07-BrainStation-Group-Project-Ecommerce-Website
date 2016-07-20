@@ -321,8 +321,8 @@ Product view
 #product-card .product-info{
 	padding:10px 0px;
 	letter-spacing: 0.05rem;
-	text-align: center;
 }
+
 #product-card .product-name{
 	font-weight:600;
 }
@@ -346,6 +346,10 @@ Product view
 	border-color: lightgrey;
 	margin-left: 10px;
 	height: 30px;
+}
+
+.button {
+	text-align: center;
 }
 
 
