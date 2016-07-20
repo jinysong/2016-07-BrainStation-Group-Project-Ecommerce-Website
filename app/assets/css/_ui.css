@@ -273,10 +273,14 @@ Sub Nav
 /*
 Product view
 */
+.product-display {
+	margin: 0px 15px;
+}
 
 .product-view{
 	background: whitesmoke;
 	padding:20px 0px;
+	margin: 0px 15px;
 }
 
 .bannerheader {
@@ -319,6 +323,7 @@ Product view
 	padding:10px 0px;
 	letter-spacing: 0.05rem;
 }
+
 #product-card .product-name{
 	font-weight:600;
 }
@@ -342,6 +347,10 @@ Product view
 	border-color: lightgrey;
 	margin-left: 10px;
 	height: 30px;
+}
+
+.button {
+	text-align: center;
 }
 
 

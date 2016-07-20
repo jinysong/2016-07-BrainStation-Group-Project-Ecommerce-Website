@@ -1,0 +1,44 @@
+<div class="container" id='basket'>
+		<h1>Your Shopping Cart</h1>
+		<table class="table">
+			<tr>
+				<th></th>
+				<th>Product Name</th>
+				<th class="text-center">Unit Price</th>
+				<th class="text-center">Quantity</th>
+				<th class="text-center">Total Price</th>
+			</tr>
+		  <tr ng-repeat='a in ctrl.cartItems track by $index'>
+		    <td><img src=""></td>
+		    <td ng-bind='a.name'></td> 
+		    <td  align='center' class="col-md-2" ng-bind='a.price |currency'></td>
+		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs" ng-click='ctrl.removeItem($index)'>-</button>  {{a.quantity}}<button class="btn btn-default btn-xs" ng-click='ctrl.addItem($index)'>+</button></td>
+		    <td  align='center' class="col-md-2" ng-bind='a.price*a.quantity |currency'></td>
+		  </tr>
+		  {{ctrl.total}}
+		  <tr>
+		  	<td> </td>
+		  	<td> </td>
+		  	<td></td>
+		  	<td align='right'> Total before Tax: </td>
+		  	<td align='center' ng-bind='ctrl.totalNoTax() | currency'></td>
+		  </tr>
+		  <tr>
+		  	<td> </td>
+		  	<td> </td>
+		  	<td></td>
+		  	<td align='right'> Tax Rate: </td>
+		  	<td align='center'>13 %</td>
+		  </tr>
+		  <tr>
+		  	<td> </td>
+		  	<td> </td>
+		  	<td></td>
+		  	<td align='right'> Total with Tax: </td>
+		  	<td align='center' ng-bind='ctrl.totalWithTax() | currency'>/td>
+		  </tr>
+		</table>
+		<div class="animated flash" ng-show="ctrl.err">You can't check-out without items in your basket.</div>
+		<button class="btn btn-default btn-lg"  ng-click='ctrl.clicked()'>Ready to Check-Out</button>
+
+	</div>
