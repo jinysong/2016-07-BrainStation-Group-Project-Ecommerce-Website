@@ -60,9 +60,9 @@
 				templateUrl: 'site/partials/productdetails.html',
 				controller: 'ProductdetailsCtrl as ctrl',
 				resolve:{
-					productdetails:function(productSrv,$stateParams){
-						return productSrv.getProduct($stateParams.productId);
-					}
+					// productdetails:function(productSrv,$stateParams){
+					// 	return productSrv.getProduct($stateParams.productId);
+					// }
 				}
 			})
 

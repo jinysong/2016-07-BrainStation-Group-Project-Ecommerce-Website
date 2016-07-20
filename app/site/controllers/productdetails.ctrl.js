@@ -3,9 +3,9 @@
 		.module('shopApp')
 		.controller('ProductdetailsCtrl', ProductdetailsCtrl)
 
-	function ProductdetailsCtrl($stateParams,productSrv,productdetails){
+	function ProductdetailsCtrl($stateParams,productSrv){
 		var productdetailsVm = this;
-		productdetailsVm.product= productdetails;
+		// productdetailsVm.product= productdetails;
 		
 		// productSrv.getProduct($stateParams.productId)
 		// .then(function(res){

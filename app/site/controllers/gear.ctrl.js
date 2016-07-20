@@ -16,8 +16,8 @@
 		gearVm.shop = function () {
 			$state.go('shop');
 		}		
-		gearVm.goToDetails = function () {
-			$state.go('productdetails'+id);
+		gearVm.goToDetails = function (id) {
+			$state.go('productdetails',{productId: id});
 		}	
 	}
 
