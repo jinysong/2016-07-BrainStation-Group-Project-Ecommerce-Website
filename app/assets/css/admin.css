@@ -83,3 +83,9 @@
 #admin .product-frm select{
 	font-size:1rem;
 }
+.admin-messages .ng-hide-add {
+	animation: 2.0s slideInRight ease; 
+}
+.admin-messages .ng-hide-remove {
+	animation: 2.0s slideOutRight ease;
+}

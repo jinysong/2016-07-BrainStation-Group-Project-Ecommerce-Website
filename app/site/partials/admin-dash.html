@@ -25,4 +25,9 @@
 			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
 	</table>
+	<div class="admin-messages">
+		<span ng-show="showEdit">{{ctrl.showTextEdit}}</span>
+		<span ng-show="showAdd">{{ctrl.showTextAdd}}</span>
+		<span ng-show="showDelete">{{ctrl.showTextDelete}}</span>
+	</div>
 </div>
