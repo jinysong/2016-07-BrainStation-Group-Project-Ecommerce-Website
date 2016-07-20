@@ -1,28 +1,27 @@
-<h3>Products</h3>
+<h3>Orders</h3>
 
 <div ng-hide="ctrl.is_products">
 	<p>
-		You have no products
+		You have no orders
 	</p>
 </div>
-
 <div ng-show="ctrl.is_products">
 	<table class="products-list table">
 		<tr>
-			<th>Product ID</th>
-			<th>Category</th>
+			<th>OrderID</th>
+			<th>ProductID</th>
 			<th>Name</th>
+			<th>Category</th>
 			<th>Price</th>
 			<th>Quantity</th>
-			<th>&nbsp;</th>
 		</tr>
 		<tr ng-repeat="product in ctrl.products">
 			<td>{{product.id}}</td>
-			<td>{{product.category}}</td>
+			<td>{{product.productId}}</td>
 			<td>{{product.name}}</td>
+			<td>{{product.category}}</td>
 			<td>{{product.price | currency}}</td>
 			<td>{{product.quantity}}</td>
-			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
 	</table>
 </div>

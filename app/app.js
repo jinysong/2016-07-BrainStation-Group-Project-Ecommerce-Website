@@ -25,7 +25,7 @@
 			.state('cart', {
 				url: '/cart',
 				templateUrl: 'site/partials/shop-cart.html',
-				controller: 'CartCtrl as ctrl',
+				controller: 'cartCtrl as ctrl',
 				// resolve: {
 				// 	cart: function(prductSrv){
 				// 		return productSrc.getCartProducts();

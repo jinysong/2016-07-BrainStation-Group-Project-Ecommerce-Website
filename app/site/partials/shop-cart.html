@@ -1,1 +1,158 @@
-<h1>Your Shopping Cart</h1>
+
+
+<div class="container">
+<div ng-show='ctrl.show.all'>
+	<div id='basket' ng-show='ctrl.show.cart'>
+		<h1>Your Shopping Cart</h1>
+		<table class="table">
+			<tr>
+				<th></th>
+				<th>Product Name</th>
+				<th class="text-center">Unit Price</th>
+				<th class="text-center">Quantity</th>
+				<th class="text-center">Total Price</th>
+			</tr>
+		  <tr ng-repeat='a in ctrl.cartItems track by $index'>
+		    <td><img src=""></td>
+		    <td ng-bind='a.name'></td> 
+		    <td  align='center' class="col-md-2" ng-bind='a.price |currency'></td>
+		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs">-</button>  {{a.quantity}}<button class="btn btn-default btn-xs">+</button></td>
+		    <td  align='center' class="col-md-2" ng-bind='a.price*a.quantity |currency'></td>
+		  </tr>
+		</table>
+
+		<button class="btn btn-default btn-lg" ng-show='popDown; ctrl.show.cartB' ng-click='popDown; ctrl.show.personal=true; ctrl.show.cartB=false; ctrl.show.personalB=true; ctrl.show.cart=false'>Ready to Check-Out</button>
+	</div>
+
+	<div class='animated fadeInUp' id="info" ng-show='ctrl.show.personal' ng-hide='!ctrl.show.personal'>
+		<h1>Your Personal Information</h1>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2">First Name: </label>
+				<input class="col-sm-8" type="text" ng-model="ctrl.personalInfo.firstN">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Last Name: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.lastN">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Email Address: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.email">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Telephone: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.phone">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Address: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.address">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2"></label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.address2">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">City/Town: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.city">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">State/Territory: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.state">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Country: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.country">
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Postal Address: </label>
+				<input  class="col-sm-8" type="text" ng-model="ctrl.personalInfo.postal">
+			</div>
+			<button class="btn btn-default btn-lg" ng-click='ctrl.show.shipping=true; ctrl.show.personalB=false; ctrl.show.shippingB=true'>Go to Shipping</button>
+		</form>
+
+		<!-- <div ng-show=''>
+			{{ctrl.personalInfo}}
+		</div> -->
+
+	</div>
+
+	<div class='animated fadeInUp' id='shipping' ng-show='ctrl.show.shipping'>
+		<h1>Shipping Options</h1>
+
+		<div ng-repeat='x in ctrl.shippingMethod'>
+			<label >
+				<input class='radioInput' type="radio" ng-model="ctrl.shippingSelect" value='{{x.type}}'> {{x.type}}
+				<span class='description' ng-show='x.type === ctrl.shippingSelect'> - {{x.price | currency}} - {{x.description}}</span>
+			</label>
+		</div>
+		<button class="btn btn-default btn-lg" ng-show='ctrl.show.shippingB' ng-click='ctrl.show.invoice=true; ctrl.show.all=false' ng-disabled='!ctrl.shippingSelect'>Complete Order</button>
+	</div>
+</div>
+</div>
+	<div class="animated zoomIn" id='invoice' ng-show='ctrl.show.invoice'>
+		<div class="container">
+			<div class="col-md-9">
+				<h3>MyAwesomeCompany</h3>
+				<h5>460 King Street West <br>
+					Toronto, ON M5V 1K7 <br>
+					(416) 123-4567 <br>
+					JinySong@awesomeco.ca
+				</h5>
+				<br>
+				<br>
+				<br>
+				<h4>Bill To:</h4>
+				<h6>{{ctrl.personalInfo.lastN}}, {{ctrl.personalInfo.firstN}}<br>
+				{{ctrl.personalInfo.address}}<br>
+				{{ctrl.personalInfo.email}}<br>
+				{{ctrl.personalInfo.phone}}<br>
+				{{ctrl.personalInfo.city}}, {{ctrl.personalInfo.state}}<br>
+				{{ctrl.personalInfo.country}}, 
+				{{ctrl.personalInfo.postal}}<br>
+
+
+			</div>
+			<div class="col-md-3">
+				<h1>Invoice</h5>
+				<h5>Date: 2016/07/21</h5>
+				<h5>Invoice: g902347123443</h5>
+				<h5>Client id: 237072</h5>
+			</div>
+
+			<table class="table table-bordered">
+				<tr>
+					<th class="col-md-8 active">Product</th>
+					<th class="col-md-2 active">Unit Price</th>
+					<th class="col-md-2 active">Price</th>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+
+				</tr>
+				<tr>
+					<td>Shipping</td>
+					<td></td>
+					<td></td>
+					
+				</tr>
+				<tr>
+					<td>Instructions:<br>
+					<td align='right'><b>Total: <br>
+						Tax: <br>
+						Finial Total: </b></td>
+					<td></td>		
+				</tr>
+			</table>
+
+			<h3 align='center'><i>Thank you for shopping with us! Hope to see you again soon!</i></h3>
+			
+		</div>
+
+	</div>
+
+
+
+

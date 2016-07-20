@@ -26,6 +26,11 @@
 		shopVm.cart = function () {
 			$state.go('cart');
 		}
+
+		shopVm.addToCart = function (item) {
+			productSrv.cartItems.push(item)
+			console.log(productSrv.cartItems)
+		}
 	}
 
 })();

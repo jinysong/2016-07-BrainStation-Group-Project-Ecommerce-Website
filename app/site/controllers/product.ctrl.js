@@ -14,20 +14,27 @@
 			{label:'Outerwear',value:'outerwear'},
 			{label:'Accessories',value:'accessories'},
 		];
+		
 		// productVm.product = {};
 		productVm.products = productSrv.products;
 		productVm.product_update_btn = 'Update Product';
 		productVm.product_delete_btn = 'Remove Product';
-		productVm.selected = productVm.categories[0];
+		var productIdEdit = location.hash.split('/')[3]
 		
 		if($stateParams.productId != undefined){
 			productSrv.getProduct($stateParams.productId)
 			.then(function(res){
 				console.log(res);
+				// Enters the data into the inputfields
 				productVm.product = res.data.product;
+				console.log(productVm.product)
+				productVm.name = productVm.product.name
+				productVm.image = productVm.product.image
+				productVm.description = productVm.product.description
+				productVm.category = productVm.product.category
+				productVm.price = productVm.product.price
+				productVm.quantity = productVm.product.quantity
 
-				// TODO #2 set category based on edit form based on 
-				// product category
 				for(var index in productVm.categories){
 					if(productVm.product.category == productVm.categories[index].value){
 						productVm.set_category = productVm.categories[index].value;
@@ -42,8 +49,6 @@
 		productVm.updateProduct = updateProduct;
 		productVm.deleteProduct = deleteProduct;
 
-
-
 		function addProduct(){
 			//TODO #2
 			//create product object, pass to product service
@@ -54,19 +59,24 @@
 				name: productVm.name,
 				image: productVm.image,
 				description: productVm.description,
-				category: productVm.category, 
-				price: productVm.price, 
+				category: productVm.category,
+				price: productVm.price,
 				quantity: productVm.quantity
 			}
+				productSrv.addProduct(newProduct)
+				.then(function(){
+					console.log(newProduct)
+					console.log(productVm.products);
+					$state.go('admin.dash')
+					.then(function() {
+						$state.reload();
+					})
+				})
 				
-				productSrv.addProduct(newProduct);
-				console.log(newProduct)
-				alert("You added " + newProduct.Name + " to the inventory");
-				console.log(productVm.products);
 				// Pushing the new product into the empty productVm.product array above. 
 
 		//function returnToProducts (){
-			$state.go('admin.dash');
+
 		//}
 
 		}
@@ -80,20 +90,27 @@
 				name: productVm.name,
 				image: productVm.image,
 				description: productVm.description,
-				category: productVm.selected,
-				price: productVm.price,
+				category: productVm.category, 
+				price: productVm.price, 
 				quantity: productVm.quantity
 			}
+			
 
+			console.log(productVm.name)
+			console.log(productVm.image)
 			var productIdEdit = location.hash.split('/')[3];
-
+			console.log(productIdEdit)
 			productSrv.updateProduct(updateProduct, productIdEdit);
 			console.log(updateProduct)
 			// productSrv.updateProductList();
 			//Update text in button
 			alert("You edited " + updateProduct.name);
 			productVm.product_update_btn = "You edit was successful";
-			$state.go('admin.dash');
+			$state.go('admin.dash')
+			.then(function() {
+					$state.reload();
+			})
+
 		}
 
 		function deleteProduct(){
@@ -102,12 +119,15 @@
 			//update text in button
 			var productIdEdit = location.hash.split('/')[3];
 
-			productSrv.deleteProduct(productIdEdit);
+			productSrv.deleteProduct(productIdEdit)
+			.then(function(){
+				alert("Your delete was successful");
+				$state.go('admin.dash')
+				.then(function() {
+					$state.reload();
+				})
+			})			
 			productSrv.updateProductList();
-			$state.go('admin.dash');
-			alert("Your delete was successful");
-
-
 		}
 
 	}
