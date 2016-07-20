@@ -8,6 +8,8 @@
 
 		gearVm.products = productSrv.products;
 
+		
+
 		gearVm.cart = function () {
 			$state.go('cart');
 		}
