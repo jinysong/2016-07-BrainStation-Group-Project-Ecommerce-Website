@@ -44,7 +44,7 @@
 			ng-repeat='item in ctrl.products
 			| filter: ctrl.search
 			| filter: {category: "gear"}'>
-				<div id="product-card" class="product-card" >
+				<div ng-click="ctrl.goToDetails()" id="product-card" class="product-card" >
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">

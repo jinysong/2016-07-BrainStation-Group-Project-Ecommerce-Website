@@ -17,7 +17,9 @@
 		girlsclothingVm.shop = function () {
 			$state.go('shop');
 		}
-
+		girlsclothingVm.goToDetails = function () {
+			$state.go('productdetails'+id);
+		}		
 	}
 
 	
