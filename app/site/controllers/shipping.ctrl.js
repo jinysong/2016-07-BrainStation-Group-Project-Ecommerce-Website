@@ -15,9 +15,12 @@
 			]
 
 			ctrl.shippingSelect;
+			console.log(ctrl.shippingSelect)
 
 			ctrl.clicked = function () {
+				// for 
 				// animated fadeInUp
+				console.log(ctrl.shippingSelect)
 				$state.go("cart.cart-invoice");
 			}
 
