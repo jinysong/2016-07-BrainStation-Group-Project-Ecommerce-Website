@@ -120,6 +120,7 @@ nav .right-nav{
 nav .fa-shopping-cart {
 	margin-right:10px;
 	font-size:2rem;
+	z-index: 99999;
 }
 
 nav .fa-user {
@@ -295,7 +296,7 @@ Product view
 
 #product-card .product-buy{
 	position: absolute;
-	background: #ff6d37;
+	background-color: #000000;
 	border-radius:100%;
 	color:white;
 	height:30px;
