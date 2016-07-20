@@ -3,6 +3,7 @@
 		.module('shopApp')
 		.controller('GirlsClothingCtrl', GirlsClothingCtrl)
 
+
 	function GirlsClothingCtrl($scope,productSrv,$state){
 		var girlsclothingVm = this;
 
@@ -13,6 +14,10 @@
 		girlsclothingVm.shop = function () {
 			$state.go('shop');
 		}
+
 	}
+
+	
+
 
 })();
