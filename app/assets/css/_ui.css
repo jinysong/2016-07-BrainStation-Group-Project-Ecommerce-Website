@@ -258,7 +258,13 @@ Product view
 
 .product-view{
 	background: whitesmoke;
-	padding:40px 0px;
+	padding:20px 0px;
+}
+
+.bannerheader {
+	font-family: 'Avant Garde', sans-serif;
+	color: black;
+	text-align: center;
 }
 
 .product-view .product-card{
@@ -310,4 +316,9 @@ Product view
 	font-weight:500;
 	margin:10px 0px;
 }
+
+
+
+
+
 

@@ -4,7 +4,7 @@
 			<li><a ui-sref="shop"><img src="assets/img/logo.png"></a></li>
 		</ul>
 		<ul class="right-nav">
-			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+			<li ng-click="ctrl.cart()"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
 		</ul>
 	</div>
 </nav>
@@ -20,7 +20,7 @@
 					<h3>
 						Buy and Sell used fashion items from virtually anywhere.
 					</h3> -->
-
+ 
 					<div class="">
 						<form>
 							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
@@ -38,7 +38,8 @@
 
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
-		<div class="row">
+		<div class="row"> 
+			<h2 class="bannerheader"> WOMEN'S LINE </h2>
 			<!-- TODO #3: SHOW PRODUCTS -->
 			<div class="col-xs-12 col-sm-3" ng-repeat='item in ctrl.products | filter: ctrl.search'>
 				<div id="product-card" class="product-card" >
