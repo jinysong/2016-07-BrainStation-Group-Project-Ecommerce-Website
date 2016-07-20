@@ -7,6 +7,7 @@
 		var gearVm = this;
 
 		gearVm.products = productSrv.products;
+		gearVm.addToCart = productSrv.addToCart;
 
 		console.log(gearVm.products)
 

@@ -37,6 +37,7 @@
 		self.updateProductList = updateProductList;
 		self.removeProduct = removeProduct;
 		self.deleteProduct = deleteProduct;
+		self.addToCart = addToCart;
 
 		function getProducts(){
 			return api.request('/products',{},'GET')
@@ -117,6 +118,25 @@
 		}
 
 		removeProduct(2)
+
+		function addToCart(item) {
+			// check if item is already in cart
+			console.log(self.cartItems.length)
+			for (i = 0; i < self.cartItems.length; i++) {
+				console.log(item.id)
+				if (self.cartItems[i] === item.id) {
+					quantity++;
+					console.log(self.cartItems.length)
+				}
+				else {
+					var newCart = {
+						product: item,
+						quantity:  1
+					}
+				self.cartItems.push(newCart)
+				}
+			}
+		}
 
 		// addFakeProducts()
 
