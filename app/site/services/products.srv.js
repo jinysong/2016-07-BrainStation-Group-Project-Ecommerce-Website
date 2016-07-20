@@ -8,9 +8,6 @@
 		var self = this;
 		//public variables
 		self.products = [];
-
-
-
 		self.cartItems = [{
 				productId:'1',
 				name:'Surfboard',
@@ -30,9 +27,7 @@
 				status: true,
 				image: "../assets/img/img-duffle.png"
 			}];
-		
-
-
+			
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;

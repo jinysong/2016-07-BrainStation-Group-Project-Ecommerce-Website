@@ -1,0 +1,22 @@
+.btn.btn-default.btn-xs{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.table, .form-horizontal, label{
+	font-size: 17px;
+}
+
+h1 {
+	margin-top: 100px;
+	margin-bottom: 75px;
+}
+
+.btn-lg {
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+.description {
+	font: 15px arial, sans-serif; 
+}
