@@ -3,13 +3,18 @@
 		.module('shopApp')
 		.controller('GirlsClothingCtrl', GirlsClothingCtrl)
 
-	function GirlsClothingCtrl($scope,productSrv, $state){
+
+	function GirlsClothingCtrl($scope,productSrv,$state){
 		var girlsclothingVm = this;
 
 		girlsclothingVm.products = productSrv.products;
+		girlsclothingVm.cart = function () {
+			$state.go('cart');
+		}
+		girlsclothingVm.shop = function () {
+			$state.go('shop');
+		}
 
-		girlsclothingVm.cart = function(){
-		$state.go('cart');
 	}
 }
 	
