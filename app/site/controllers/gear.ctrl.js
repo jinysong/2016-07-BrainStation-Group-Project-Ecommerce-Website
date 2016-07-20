@@ -16,6 +16,9 @@
 		gearVm.shop = function () {
 			$state.go('shop');
 		}		
+		gearVm.goToDetails = function () {
+			$state.go('productdetails'+id);
+		}	
 	}
 
 })();
