@@ -1,11 +1,14 @@
 <nav>
 	<div class="content-wrapper">
 		<ul class="left-nav">
-			<li><img src="assets/img/logo.png"></li>
+			<li><img src="../../assets/img/new-logo.png" class="img-responsive logo-image"></li>
 		</ul>
 		<ul class="right-nav list-inline">
 			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
 			<li ng-click="ctrl.login()"><i class="fa fa-user"></i><span class="cart">Log-In</span></li>
+			<li>
+				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'><span><img src="assets/img/icon-search@2x.png"></span>
+			</li>
 		</ul>
 	</div>
 </nav>
@@ -15,54 +18,51 @@
 		<div class="table-view">
 			<div class="table-cell">
 				<div class="content">		
-					<h1>
-						Kona Wind
-						  
+					<h1 id="title-main-page">
+						Kona Wind 
 					</h1>
 					<h3>
-						Clothing & Gear For Surfing Kahuna's  
+						Clothing & Gear For Surfing Kahunas!  
 					</h3>
 
-					<div class="">
-						<form>
+					<!-- <div class="">
+						<form> -->
 							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
-							<div class="form-container">
+							<!-- <div class="form-container">
 								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
 								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
 							</div>
 						</form>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<<<<<<< HEAD
-
 <section class="container">
 
 	<div class="row">
-	<div class="col-md-4 col-sm-6">
+	<div class="col-md-4 col-sm-4">
 		<div class="gear main-image">
 
-			<button type="button" class="btn btn-info ryan">Shop Now</button>
+			<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Now</button>
 			<p class="words">Gear</p>
 		</div>
 	</div> 
 	
-		<div class="col-md-4 col-sm-6">
+		<div class="col-md-4 col-sm-4">
 		<div class="lc main-image">
 			
-			<button type="button" class="btn btn-info ryan">Shop Now</button>
+			<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Now</button>
 			<p class="words">Ladies Clothing</p>
 		</div>
 	</div>
 	
-	<div class="col-md-4 col-sm-6">
+	<div class="col-md-4 col-sm-4">
 		<div class="gc main-image">
 			
-			<button type="button" class="btn btn-info ryan">Shop Now</button>
+			<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Now</button>
 			<p class="words">Guys Clothing</p>
 		</div>
 	</div>
@@ -77,6 +77,8 @@
 	
 
 </section>
+
+
 <!-- <section class="secondary-nav" role="sub-nav">
 	<div class="content-wrapper"> -->
 		<!-- TO DO #3: SET CATEGORY SEARCH AND SET FOCUS CLASS-->

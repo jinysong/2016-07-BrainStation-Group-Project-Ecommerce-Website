@@ -12,15 +12,15 @@ body{
 
 .row div {
 background-color: white;
-
-
 }
+
 .gear {
 	background-image:url("http://25.media.tumblr.com/tumblr_m4x0viEOao1qhvp06o1_500.jpg");
 	background-size: cover;
 }
+
 .lc {
-	background-image:url("http://img.surfing-waves.com/shop/media/images/ind-womens-surf-clothing.jpg");
+	background-image:url("http://i.huffpost.com/gen/1647273/images/o-WOMAN-SURFING-facebook.jpg");
 	background-size: cover;
 
 }
@@ -30,6 +30,7 @@ background-color: white;
 	background-size: cover;
 	
 }
+
 .main-image{
 	height:300px;
 	width:400px;
@@ -51,6 +52,8 @@ background-color: white;
 	color:lightgrey;
 	margin: auto;
 }
+
+
 /*
 Globals
 */
@@ -85,27 +88,32 @@ a{
 	text-decoration: none;
 	color:#333;
 }
+
 /*
 Nav
 */
 
 nav{
+	width: 100%;
 	height:55px;
 	line-height:55px;
-	color:#ff6d37;
+	background-color: rgba(255,255,255,0.5);
+	color: black;
 	border-bottom:1px solid #d8d8d8;
+	z-index: 10000;	
 	/*box-shadow: 0 4px 2px -2px #d8d8d8;*/
 }
 
 nav .left-nav{
 	float:left;
-	margin:0px 0px 0px 70px;
+	margin: 0;
 	vertical-align: top;
+
 }
 
 nav .right-nav{
 	float: right;
-	margin:0px 70px 0px 0px;
+	margin:0px
 	vertical-align: top;
 }
 
@@ -124,22 +132,27 @@ nav .cart{
 }
 
 nav .fa {
+	width: 100%;
 	display: inline;
+	color: black;
 }
 
+nav .logo-image {
+	height: 50px;
+}
 /*
 Top-content
 */
 .top-content{
 	width:100%;
-	height:calc(70% - 110px);
-	/*background:url('../img/img-hero-1.png');
+	height:calc(70%);
+	background:url('../img/main_page_banner.jpg');
 	background-size:cover;
-	background-position:center center;*/
+	background-position:center center;
 	text-align: center;
 }
 
-.gear {
+.gear2 {
 	width: 75%;
 	background:url('../img/bkg_surf.jpg');
 	background-size:cover;
@@ -148,34 +161,45 @@ Top-content
 }
 
 .girls {
-	width: 75%;
+	width: 100%;
 	height:calc(80% - 100px);
-	background:url('../img/womens-surf-clothing.jpg');
+	background:url("https://i.ytimg.com/vi/IleF72M8wQQ/maxresdefault.jpg");
 	background-size:cover;
 	background-position:center center;
 	margin: 0 auto;
+
 }
 
 .guys {
-	width: 75%;
-	height:calc(80% - 100px);
-	background:url('../img/surf-clothing-mens.jpg');
+	width: 100%;
+	height:400px;
+	background:url('http://www.singlesurfers.net/content/wp-content/uploads/2015/06/20-reasons-to-date-a-surfer.jpg');
 	background-size:cover;
 	background-position:center center;
 	margin: 0 auto;
 }
 
+/*Jumbotron text colors */
+
 .top-content h1{
-	color:black;
-	font-size:4rem;
+	font-size: 8rem;
+	margin-bottom: 320px;
+	margin-top: -50px;
+	color: rgb(255,85,33);
+	text-decoration: underline;
+	font-weight:200 !important;
 }
 
 .top-content h3{
-	color:black;
-	font-size:2rem;
 	margin:10px 0px;
 	letter-spacing:0.05rem;
-	font-weight:100 !important;
+	font-weight:200 !important;
+	font-size: 4rem;
+	color: rgb(255,85,33);
+}
+
+.Womenbanner {
+	text-align: center;
 }
 
 .top-content .content{
@@ -208,6 +232,7 @@ Top-content
 	width:18px;
 	margin-top:11px;
 }
+
 
 
 /*
@@ -247,10 +272,20 @@ Sub Nav
 /*
 Product view
 */
+.product-display {
+	margin: 0px 15px;
+}
 
 .product-view{
 	background: whitesmoke;
-	padding:40px 0px;
+	padding:20px 0px;
+	margin: 0px 15px;
+}
+
+.bannerheader {
+	font-family: 'Avant Garde', sans-serif;
+	color: black;
+	text-align: center;
 }
 
 .product-view .product-card{
@@ -286,6 +321,7 @@ Product view
 #product-card .product-info{
 	padding:10px 0px;
 	letter-spacing: 0.05rem;
+	text-align: center;
 }
 #product-card .product-name{
 	font-weight:600;
@@ -302,4 +338,15 @@ Product view
 	font-weight:500;
 	margin:10px 0px;
 }
+
+
+.searchbutton {
+	border-radius: 12%;
+	border: solid 1px lightgrey;
+	border-color: lightgrey;
+	margin-left: 10px;
+	height: 30px;
+}
+
+
 

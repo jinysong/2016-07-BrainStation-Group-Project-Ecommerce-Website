@@ -74,6 +74,25 @@
 				}
 			})
 
+			.state('productdetails',{
+				url: '/productdetails/:productId',
+				templateUrl: 'site/partials/productdetails.html',
+				controller: 'ProductdetailsCtrl as ctrl',
+				resolve:{
+					// productdetails:function(productSrv,$stateParams){
+					// 	return productSrv.getProduct($stateParams.productId);
+					// }
+				}
+			})
+
+			// .state('ProductID', {
+			// 	url: '/productdetails?productId',
+			// 	templateUrl: 'productdetails.html',
+			// 	controller: function($scope, $stateParams) {
+			// 		$scope.productId = $stateParams.productId;
+			// 	}
+			// });
+
 			.state('gear',{
 				url: '/gear',
 				templateUrl: 'site/partials/shop-gear.html',
