@@ -323,7 +323,13 @@ Product view
 }
 
 
-
+.searchbutton {
+	border-radius: 12%;
+	border: solid 1px lightgrey;
+	border-color: lightgrey;
+	margin-left: 10px;
+	height: 30px;
+}
 
 
 
