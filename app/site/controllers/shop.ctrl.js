@@ -31,6 +31,18 @@
 			productSrv.cartItems.push(item)
 			console.log(productSrv.cartItems)
 		}
+
+		shopVm.gearpage = function (){
+			$state.go('gear');
+		}
+
+		shopVm.menpage = function (){
+			$state.go('guys-clothing');
+		}
+
+		shopVm.womenpage = function (){
+			$state.go('girls-clothing');
+		}
 	}
 
 })();
