@@ -20,3 +20,13 @@ h1 {
 .description {
 	font: 15px arial, sans-serif; 
 }
+
+form>hr {
+	width: 50%;
+}
+
+#cc, #dd{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 15px;
+}
