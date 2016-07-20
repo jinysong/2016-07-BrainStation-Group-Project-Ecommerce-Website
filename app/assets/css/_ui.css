@@ -94,7 +94,7 @@ nav{
 	line-height:55px;
 	color:#ff6d37;
 	border-bottom:1px solid #d8d8d8;
-	box-shadow: 0 4px 2px -2px #d8d8d8;
+	/*box-shadow: 0 4px 2px -2px #d8d8d8;*/
 }
 
 nav .left-nav{
@@ -133,10 +133,36 @@ Top-content
 .top-content{
 	width:100%;
 	height:calc(70% - 110px);
-	background:url('https://67.media.tumblr.com/5389b076930dc90b0fb46fb972a2a04d/tumblr_naxuyzqt5m1s39yzeo1_500.gif');
+	/*background:url('../img/img-hero-1.png');
+	background-size:cover;
+	background-position:center center;*/
+	text-align: center;
+}
+
+.gear {
+	width: 75%;
+	background:url('../img/bkg_surf.jpg');
 	background-size:cover;
 	background-position:center center;
-	text-align: center;
+	margin: 0 auto;
+}
+
+.girls {
+	width: 75%;
+	height:calc(80% - 100px);
+	background:url('../img/womens-surf-clothing.jpg');
+	background-size:cover;
+	background-position:center center;
+	margin: 0 auto;
+}
+
+.guys {
+	width: 75%;
+	height:calc(80% - 100px);
+	background:url('../img/surf-clothing-mens.jpg');
+	background-size:cover;
+	background-position:center center;
+	margin: 0 auto;
 }
 
 .top-content h1{
