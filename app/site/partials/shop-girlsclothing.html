@@ -47,8 +47,12 @@
 		<div class="row"> 
 			<h2 class="bannerheader"> WOMEN'S LINE </h2>
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-sm-3" ng-repeat='item in ctrl.products | filter: ctrl.search'>
-				<div id="product-card" class="product-card" >
+			<div
+			class="col-xs-12 col-sm-3"
+			ng-repeat='item in ctrl.products
+			| filter: ctrl.search
+			| filter: {category: "girls_clothing"}'>
+				<div ng-click="ctrl.goToDetails()"  id="product-card" class="product-card" >
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">

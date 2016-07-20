@@ -8,12 +8,17 @@
 
 		gearVm.products = productSrv.products;
 
+		console.log(gearVm.products)
+
 		gearVm.cart = function () {
 			$state.go('cart');
 		}
 		gearVm.shop = function () {
 			$state.go('shop');
 		}		
+		gearVm.goToDetails = function (id) {
+			$state.go('productdetails',{productId: id});
+		}	
 	}
 
 })();
