@@ -49,7 +49,6 @@
 		productVm.updateProduct = updateProduct;
 		productVm.deleteProduct = deleteProduct;
 
-
 		function addProduct(){
 			//TODO #2
 			//create product object, pass to product service

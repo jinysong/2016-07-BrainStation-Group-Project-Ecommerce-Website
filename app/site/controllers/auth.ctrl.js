@@ -9,6 +9,7 @@
 		authVm.password;
 		authVm.email;
 		authVm.auth_btn = 'Continue';
+		authVm.auth_btn2 = 'Back To Shop';
 
 		if(localStorage.authToken){
 			$state.go('admin');
@@ -16,6 +17,7 @@
 
 		//public functions
 		authVm.login = login;
+		authVm.backToShop = backToShop;
 
 		function login(){
 
@@ -46,6 +48,9 @@
 				console.log(res);
 				authVm.auth_btn = "Error";
 			})
+		}
+		function backToShop(){
+			$state.go('shop');
 		}
 	}
 
