@@ -44,11 +44,11 @@
 			ng-repeat='item in ctrl.products
 			| filter: ctrl.search
 			| filter: {category: "gear"}'>
-				<div ng-click="ctrl.goToDetails(item.id)" id="product-card" class="product-card" >
+				<div id="product-card" class="product-card" >
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">
-								<i class="fa fa-shopping-cart"></i>
+								<i ng-click="ctrl.addToCart(item)" class="fa fa-shopping-cart"></i>
 							</div>
 						</div>
 					</div>
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="product-info">
-						<div class="product-name" ng-bind='item.name'>
+						<div ng-click="ctrl.goToDetails(item.id)" class="product-name" ng-bind='item.name'>
 
 							<!-- SET PRODUCT NAME -->
 						
