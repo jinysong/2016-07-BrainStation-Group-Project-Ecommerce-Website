@@ -1,0 +1,16 @@
+
+<div class="container">
+<div class='animated fadeInUp' id='shipping'>
+		<h1>Shipping Options</h1>
+
+		<div ng-repeat='x in ctrl.shippingMethod'>
+			<label >
+				<input class='radioInput' type="radio" ng-model="ctrl.shippingSelect" value='{{x.type}}'> {{x.type}}
+				<span class='description' ng-show='x.type === ctrl.shippingSelect'> - {{x.price | currency}} - {{x.description}}</span>
+			</label>
+		</div>
+		<button class="btn btn-default btn-lg"  ng-click='ctrl.clicked()' >Complete Order</button>
+</div>
+</div>
+
+<!-- ng-disabled='!ctrl.shippingSelect' -->
