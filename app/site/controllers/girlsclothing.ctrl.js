@@ -19,6 +19,7 @@
 		}
 		girlsclothingVm.goToDetails = function () {
 			$state.go('productdetails'+id);
+			$state.go('shop');
 		}		
 	}
 
