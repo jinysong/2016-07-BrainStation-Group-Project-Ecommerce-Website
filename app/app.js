@@ -56,15 +56,23 @@
 			})
 
 			.state('productdetails',{
-				url: '/productdetails',
+				url: '/productdetails/:productId',
 				templateUrl: 'site/partials/productdetails.html',
 				controller: 'ProductdetailsCtrl as ctrl',
 				resolve:{
-					clothing:function(productSrv){
-						return productSrv.getProducts();
+					productdetails:function(productSrv,$stateParams){
+						return productSrv.getProduct($stateParams.productId);
 					}
 				}
 			})
+
+			// .state('ProductID', {
+			// 	url: '/productdetails?productId',
+			// 	templateUrl: 'productdetails.html',
+			// 	controller: function($scope, $stateParams) {
+			// 		$scope.productId = $stateParams.productId;
+			// 	}
+			// });
 
 			.state('gear',{
 				url: '/gear',
