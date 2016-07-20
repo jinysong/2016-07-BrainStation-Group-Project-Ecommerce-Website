@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router']);
+		.module('shopApp',['ui.router','ngAnimate']);
 
 	angular
 		.module('shopApp')
@@ -94,6 +94,11 @@
 				url:'/edit_product/:productId',
 				controller:'ProductCtrl as ctrl',
 				templateUrl:'site/partials/admin-edit-product.html',
+			})
+			.state('admin.orders',{
+				url:'/orders',
+				controller:'AdminCtrl as ctrl',
+				templateUrl:'site/partials/admin-orders.html',
 			})
 
 			.state('auth',{

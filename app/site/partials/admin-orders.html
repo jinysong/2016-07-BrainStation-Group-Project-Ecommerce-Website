@@ -16,8 +16,8 @@
 			<th>Quantity</th>
 		</tr>
 		<tr ng-repeat="product in ctrl.products">
+			<td>{{product.orderId}}</td>
 			<td>{{product.id}}</td>
-			<td>{{product.productId}}</td>
 			<td>{{product.name}}</td>
 			<td>{{product.category}}</td>
 			<td>{{product.price | currency}}</td>

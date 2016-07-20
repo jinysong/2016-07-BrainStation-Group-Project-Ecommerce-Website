@@ -31,7 +31,7 @@
 			<input type="number" name="quantity" ng-model="ctrl.quantity" required>
 		</div>
 		<div>
-			<button type="submit">Add Product</button>
+			<button ng-class="{ active: showAdd }" ng-click="showAdd = !showAdd" type="submit">Add Product</button>
 
 		</div>
 	</form>
