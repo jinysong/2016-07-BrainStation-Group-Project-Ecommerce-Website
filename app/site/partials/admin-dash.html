@@ -9,6 +9,7 @@
 <div ng-show="ctrl.is_products">
 	<table class="products-list table">
 		<tr>
+			<th>Product ID</th>
 			<th>Category</th>
 			<th>Name</th>
 			<th>Price</th>
@@ -16,6 +17,7 @@
 			<th>&nbsp;</th>
 		</tr>
 		<tr ng-repeat="product in ctrl.products">
+			<td>{{product.id}}</td>
 			<td>{{product.category}}</td>
 			<td>{{product.name}}</td>
 			<td>{{product.price | currency}}</td>
