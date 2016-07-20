@@ -16,6 +16,9 @@
 		guysclothingVm.shop = function () {
 			$state.go('shop');
 		}
+		guysclothingVm.goToDetails = function () {
+			$state.go('productdetails'+id);
+		}
 	}
 
 
