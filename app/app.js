@@ -22,16 +22,16 @@
 					}
 				}
 			})
-			// .state('shop.cart', {
-			// 	url: '/cart',
-			// 	templateUrl: 'site/partials/shop-cart.html',
-			// 	controller: 'CartCtrl as ctrl',
-			// 	resolve: {
-			// 		cart: function(prductSrv){
-			// 			return productSrc.getCartProducts();
-			// 		}
-			// 	}
-			// })
+			.state('cart', {
+				url: '/cart',
+				templateUrl: 'site/partials/shop-cart.html',
+				controller: 'CartCtrl as ctrl',
+				// resolve: {
+				// 	cart: function(prductSrv){
+				// 		return productSrc.getCartProducts();
+				// 	}
+				// }
+			})
 
 			.state('admin',{
 				url:'/admin',
