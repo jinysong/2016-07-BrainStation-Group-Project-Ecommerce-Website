@@ -9,6 +9,26 @@
 		//public variables
 		self.products = [];
 
+		self.cartItems = [{
+				productId:'1',
+				name:'Surfboard',
+				description:'you use it to surf',
+				category:'Surf',
+				price:'34',
+				quantity:'2',
+				status: true,
+				image: "../assets/img/img-duffle.png"
+			},{
+				productId:'1',
+				name:'Surfboard',
+				description:'you use it to surf',
+				category:'Surf',
+				price:'12',
+				quantity:'2',
+				status: true,
+				image: "../assets/img/img-duffle.png"
+			}];
+			
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
@@ -33,7 +53,7 @@
 		}
 
 		function addProduct(product){
-			api.request('/products',product,'POST')
+			return api.request('/products',product,'POST')
 			.then(function(res){
 				console.log(res);
 				if(res.status === 200){
@@ -41,12 +61,13 @@
 					console.log(res);
 					self.products.push(res.data.product);
 					console.log(self.products)
-					// state.go('admin.dash');
 				}
 			})
 		}
 
 		function updateProduct(product,productId){
+			console.log(product)
+			console.log(productId)
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
 				console.log(res);
@@ -59,14 +80,12 @@
 		}
 
 		function deleteProduct(productId){
-			api.request('/products/'+productId,{},'DEL')
+			return api.request('/products/'+productId,{},'DEL')
 			.then(function(res){
 				console.log(res);
 				if(res.status === 200){
 					//product was deleted successfully
 					self.removeProduct(productId);
-					state.go('admin.dash');
-					
 				}
 			})
 		}
@@ -86,6 +105,7 @@
 					self.products[i].quantity = product.quantity;
 				}
 			}
+			console.log(self.products)
 		}
 
 		function removeProduct(productId){
@@ -105,7 +125,7 @@
 		// 		productId:'1',
 		// 		name:'Surfboard',
 		// 		description:'you use it to surf',
-		// 		category:'surf',
+		// 		category:'Surf',
 		// 		price:'34',
 		// 		quantity:'2',
 		// 		status: true,
@@ -115,7 +135,7 @@
 		// 		productId:'2',
 		// 		name:'Boardshorts',
 		// 		description: "don't go nakeed!!",
-		// 		category:'surf',
+		// 		category:'Boardshorts',
 		// 		price:'12',
 		// 		quantity:'4',
 		// 		status:true,

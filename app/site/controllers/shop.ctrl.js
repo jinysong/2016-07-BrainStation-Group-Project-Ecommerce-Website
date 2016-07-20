@@ -10,6 +10,8 @@
 		shopVm.products = productSrv.products;
 		console.log(shopVm.products)
 
+
+
 		// watch for any changes to model data
 		// $scope.$watch(function(){
 	 //    	return productSrv.products;
@@ -23,6 +25,11 @@
 
 		shopVm.cart = function () {
 			$state.go('cart');
+		}
+
+		shopVm.addToCart = function (item) {
+			productSrv.cartItems.push(item)
+			console.log(productSrv.cartItems)
 		}
 	}
 

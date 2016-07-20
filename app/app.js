@@ -25,12 +25,45 @@
 			.state('cart', {
 				url: '/cart',
 				templateUrl: 'site/partials/shop-cart.html',
-				controller: 'CartCtrl as ctrl',
+				controller: 'cartCtrl as ctrl',
 				// resolve: {
 				// 	cart: function(prductSrv){
 				// 		return productSrc.getCartProducts();
 				// 	}
 				// }
+			})
+
+			.state('guys-clothing',{
+				url: '/guys-clothing',
+				templateUrl: 'site/partials/shop-guysclothing.html',
+				controller: 'GuysClothingCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			.state('girls-clothing',{
+				url: '/girls-clothing',
+				templateUrl: 'site/partials/shop-girlsclothing.html',
+				controller: 'GirlsClothingCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			.state('gear',{
+				url: '/gear',
+				templateUrl: 'site/partials/shop-gear.html',
+				controller: 'GearCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
 			})
 
 			.state('admin',{
