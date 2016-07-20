@@ -94,10 +94,7 @@
 .admin-messages p {
 	padding: 20px;
 }
-.admin-messages .ng-show-add {
-	animation-name: slideInRight;
-/*	animation: 2.0s slideInRight ease; */
-}
-.admin-messages .ng-show-remove {
-	animation: 2.0s slideOutRight ease;
+
+.admin-messages.ng-hide-add, .admin-messages.ng-hide-remove {
+  transition: all linear 0.5s;
 }

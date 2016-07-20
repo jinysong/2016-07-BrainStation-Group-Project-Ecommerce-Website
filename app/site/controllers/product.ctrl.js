@@ -79,7 +79,7 @@
 					.then(function() {
 						$state.reload();
 					})
-				}, 2000)
+				}, 500)
 				
 				
 				// Pushing the new product into the empty productVm.product array above. 
@@ -123,7 +123,7 @@
 				.then(function() {
 					$state.reload();
 				})
-			}, 2000)
+			}, 500)
 			
 
 		}
@@ -142,7 +142,7 @@
 				.then(function() {
 					$state.reload();
 				})			
-			}, 2000)
+			}, 500)
 			
 			productSrv.updateProductList();
 		}
