@@ -14,6 +14,8 @@
 		self.shippingType;
 		self.shippingPrice;
 		self.personalInfo;
+		self.totalNoTax;
+		self.totalWithTax;
 
 		//public functions
 		self.getProduct = getProduct;

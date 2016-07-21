@@ -19,9 +19,11 @@
 				for (var i=0; i<ctrl.cartItems.length; i++) {
 					result += (parseInt(ctrl.cartItems[i].quantity) * parseInt(ctrl.cartItems[i].product.price));
 				}
+				productSrv.totalNoTax = result;
 				return result;
 			}
 			ctrl.totalWithTax = function () {
+				productSrv.totalWithTax = (ctrl.totalNoTax() * 1.13);
 				return (ctrl.totalNoTax() * 1.13);
 			}
 
