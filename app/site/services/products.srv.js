@@ -114,6 +114,8 @@
 			}
 
 			self.cartItems.push(newCart)
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
 		}
 
 		function addToCartDetail(item) {
@@ -129,7 +131,8 @@
 				quantity:  1
 			}			
 			self.cartItems.push(newCart)
-
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
 		}
 	}
 })();
