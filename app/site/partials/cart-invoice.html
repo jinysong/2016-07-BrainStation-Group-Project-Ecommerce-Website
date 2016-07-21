@@ -24,9 +24,8 @@
 			<button class="btn btn-default btn-lg"  ng-click='ctrl.returnHome()'>Continue shopping</button>
 			<div class="col-md-3">
 				<h2>Invoice</h2>
-				<h5>Date: 2016/07/21</h5>
-				<h5>Invoice: g902347123443</h5>
-				<h5>Client id: 237072</h5>
+				<h5>Date: {{ctrl.dateNow()}}</h5>
+				<h5>Order Id: {{ctrl.orderId}}</h5>
 			</div>
 
 			<table class="table table-bordered">
