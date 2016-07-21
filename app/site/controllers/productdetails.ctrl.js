@@ -5,8 +5,9 @@
 
 	function ProductdetailsCtrl($stateParams,productSrv,$state){
 		var productdetailsVm = this;
+		productdetailsVm.selected = 1;
 		productdetailsVm.product = productSrv.getProduct($stateParams.productId)
-		
+
 		.then(function(res){
 			// console.log(res);
 			if(res.status === 200){
@@ -21,8 +22,6 @@
 				
 			}
 		});
-	
-		productdetailsVm.selected = 1;
 		productdetailsVm.Quantity = [];
 		productdetailsVm.changePage = changePage;
 		productdetailsVm.addToCartDetail = productSrv.addToCartDetail;
@@ -50,3 +49,5 @@
 	}
 
 })();
+
+

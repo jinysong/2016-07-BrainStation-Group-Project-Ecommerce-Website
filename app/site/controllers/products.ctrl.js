@@ -9,9 +9,13 @@
 
 			ctrl.addItem = function ($index) {
 				ctrl.cartItems[$index].quantity++;
+				var saveCart = JSON.stringify(ctrl.cartItems)
+				localStorage.setItem('savedCart',saveCart);
 			};
 			ctrl.removeItem = function ($index) {
 				if (ctrl.cartItems[$index].quantity !==0) ctrl.cartItems[$index].quantity--;
+				var saveCart = JSON.stringify(ctrl.cartItems)
+				localStorage.setItem('savedCart',saveCart);
 			}
 
 			ctrl.totalNoTax = function () {
@@ -26,9 +30,12 @@
 				productSrv.totalWithTax = (ctrl.totalNoTax() * 1.13);
 				return (ctrl.totalNoTax() * 1.13);
 			}
-
+			var orderId = 0;
 			ctrl.clicked = function () {
 				if (ctrl.totalNoTax()) {
+					// orderId ++;
+					// var saveOrderId = JSON.stringify(orderId)
+					// localStorage.setItem('savedOrderId',saveOrderId);
 					var a = document.getElementById('basket');
 					a.className +=' animated fadeOutUp';
 
