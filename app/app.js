@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router','ngAnimate']);
+		.module('shopApp',['ui.router']);
 
 	angular
 		.module('shopApp')
@@ -97,6 +97,27 @@
 				url: '/gear',
 				templateUrl: 'site/partials/shop-gear.html',
 				controller: 'GearCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+			.state('search',{
+				url: '/search',
+				templateUrl: 'site/partials/shop-searchresults.html',
+				controller: 'searchCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			.state('allproducts',{
+				url: '/all',
+				templateUrl: 'site/partials/shop-all.html',
+				controller: 'AllCtrl as ctrl',
 				resolve:{
 					clothing:function(productSrv){
 						return productSrv.getProducts();
