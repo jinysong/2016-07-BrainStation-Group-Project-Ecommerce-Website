@@ -33,13 +33,13 @@
 				<tr>
 					<th class="col-md-8 active">Product</th>
 					<th class="col-md-2 active">Unit Price</th>
-					<th class="col-md-2 active">Price</th>
+					<th class="col-md-2 active">Total Price</th>
 
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
+				<tr ng-repeat='x in productSrv.cartItems.product'>
+					<td>{{x.name}} x {{x.quantity}}</td>
+					<td>{{x.price}}</td>
+					<td>{{x.quantity * x.price}}</td>
 
 				</tr>
 				<tr>
