@@ -8,16 +8,17 @@
 		productdetailsVm.product = productSrv.getProduct($stateParams.productId)
 		
 		.then(function(res){
-			console.log(res);
+			// console.log(res);
 			if(res.status === 200){
 				//product was added successfully
-				console.log(res);
+				// console.log(res);
 				productdetailsVm.product = res.data.product;
-				console.log(productdetailsVm.product)
+				// console.log(productdetailsVm.product)
 			}
 		});
 	
 		productdetailsVm.changePage = changePage;
+		productdetailsVm.addToCartDetail = productSrv.addToCartDetail;
 
 		function changePage() {
 			if(productdetailsVm.product.category == 'gear'){
@@ -28,6 +29,8 @@
 					$state.go('girls-clothing')
 			}
 		}
+
+
 
 		productdetailsVm.cart = function () {
 			$state.go('cart');
