@@ -155,10 +155,10 @@
 				client: JSON.parse(localStorage.getItem('savedPersonalInfo')),
 				shipping: self.shippingType
 			}
-			for (var i = 0,i<ctrl.cartItems.length; i++) {
+			// for (var i = 0,i<ctrl.cartItems.length; i++) {
 				
-					updateProduct()
-			}
+			// 		updateProduct()
+			// }
 		}			
 
 			// if ( !(localStorage.getItem('savedOrders'))) {
