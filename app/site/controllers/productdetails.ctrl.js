@@ -13,10 +13,17 @@
 				//product was added successfully
 				// console.log(res);
 				productdetailsVm.product = res.data.product;
-				// console.log(productdetailsVm.product)
+
+			for(var i=1; i <= res.data.product.quantity; i++){
+				productdetailsVm.Quantity.push(i);
+				
+				}
+				
 			}
 		});
 	
+		productdetailsVm.selected = 1;
+		productdetailsVm.Quantity = [];
 		productdetailsVm.changePage = changePage;
 		productdetailsVm.addToCartDetail = productSrv.addToCartDetail;
 
@@ -30,6 +37,8 @@
 			}
 		}
 
+		
+			
 
 
 		productdetailsVm.cart = function () {

@@ -61,6 +61,7 @@
 
 	<div class="row">
 			<div class="button">
+				<select ng-model="ctrl.selected" ng-options="quantity as quantity for quantity in ctrl.Quantity"></select>
 				<button type="button" ng-click="ctrl.addToCartDetail(ctrl.product)" class="btn btn-warning">Add to Cart</button>
 				<button type="button" ng-click="ctrl.changePage()" class="btn btn-warning">Back</button>
 			</div>
