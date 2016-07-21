@@ -13,10 +13,10 @@
 		    <td ng-bind='product.product.name'></td> 
 		    <td  align='center' class="col-md-2" ng-bind='product.product.price |currency'></td>
 		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs" ng-click='ctrl.removeItem($index)'>-</button>  {{product.quantity}}<button class="btn btn-default btn-xs" ng-click='ctrl.addItem($index)'>+</button></td>
-		    <td  align='center' class="col-md-2" ng-bind='product.product.price*product.quantity |currency'></td>
-		  </tr>
-		  {{ctrl.total}}
-		  <tr>
+		    <td  align='center' class="col-md-2">{{product.product.price*product.quantity |currency}}<button ng-click="ctrl.delete_from_cart($index)" class="btn btn-default">Delete</button></td>
+		 </tr>
+		 <tr>
+		  
 		  	<td> </td>
 		  	<td> </td>
 		  	<td></td>
@@ -35,7 +35,7 @@
 		  	<td> </td>
 		  	<td></td>
 		  	<td align='right'> Total with Tax: </td>
-		  	<td align='center' ng-bind='ctrl.totalWithTax() | currency'>/td>
+		  	<td align='center' ng-bind='ctrl.totalWithTax() | currency'></td>
 		  </tr>
 		</table>
 		<div class="animated flash" ng-show="ctrl.err">You can't check-out without items in your basket.</div>

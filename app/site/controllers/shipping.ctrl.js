@@ -21,7 +21,9 @@
 				// for 
 				// animated fadeInUp
 				console.log(ctrl.shippingSelect)
+				productSrv.shippingSelect = ctrl.shippingSelect;
 				$state.go("cart.cart-invoice");
+
 			}
 			
 			ctrl.returnHome = function (){
