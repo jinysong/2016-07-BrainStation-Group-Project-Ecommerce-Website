@@ -25,6 +25,7 @@
 		productVm.showDelete = false;
 		var productIdEdit = location.hash.split('/')[3]
 		
+		
 		if($stateParams.productId != undefined){
 			productSrv.getProduct($stateParams.productId)
 			.then(function(res){

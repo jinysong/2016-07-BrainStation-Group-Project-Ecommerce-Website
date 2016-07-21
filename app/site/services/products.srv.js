@@ -118,7 +118,8 @@
 			}
 
 			self.cartItems.push(newCart)
-			console.log(self.cartItems)
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
 		}
 
 		function addToCartDetail(item) {
@@ -134,8 +135,13 @@
 				quantity:  1
 			}			
 			self.cartItems.push(newCart)
+<<<<<<< HEAD
 			console.log(productSrv.cartItems)
 
+=======
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
+>>>>>>> master
 		}
 	}
 })();
