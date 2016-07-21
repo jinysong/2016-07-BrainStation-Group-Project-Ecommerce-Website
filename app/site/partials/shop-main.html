@@ -7,7 +7,9 @@
 			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
 			<li ng-click="ctrl.login()"><i class="fa fa-user"></i><span class="cart">Log-In</span></li>
 			<li>
+				<form ng-submit="ctrl.allpage()">
 				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'><span><img src="assets/img/icon-search@2x.png"></span>
+				</form>
 			</li>
 		</ul>
 	</div>
@@ -43,29 +45,37 @@
 <section class="container">
 
 	<div class="row">
-	<div class="col-md-4 col-sm-4">
-		<div class="gear main-image">
+		<div class="col-md-3 col-sm-3 col-sm-offset-1">
+			<div class="gear main-image">
 
-			<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Now</button>
-			<p class="words">Gear</p>
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Now</button>
+				<p class="words">Gear</p>
+			</div>
+		</div> 
+		
+		<div class="col-md-3 col-sm-3">
+			<div class="lc main-image">
+				
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Now</button>
+				<p class="words">Ladies Clothing</p>
+			</div>
 		</div>
-	</div> 
-	
-		<div class="col-md-4 col-sm-4">
-		<div class="lc main-image">
-			
-			<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Now</button>
-			<p class="words">Ladies Clothing</p>
+		
+		<div class="col-md-3 col-sm-3">
+			<div class="gc main-image">
+				
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Now</button>
+				<p class="words">Guys Clothing</p>
+			</div>
+		</div>	
+
+		<div class="col-md-3 col-sm-3">
+			<div class="all main-image">
+				
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.allpage()">Shop Now</button>
+				<p class="words">ALL products </p>
+			</div>
 		</div>
-	</div>
-	
-	<div class="col-md-4 col-sm-4">
-		<div class="gc main-image">
-			
-			<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Now</button>
-			<p class="words">Guys Clothing</p>
-		</div>
-	</div>
 	</div>
 <!-- <div class="row2">
 <div class="col-md-3 col-sm-6">

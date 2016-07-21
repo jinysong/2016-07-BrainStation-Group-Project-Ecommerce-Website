@@ -31,6 +31,12 @@ background-color: white;
 	
 }
 
+.all {
+	background-image:url("https://pixabay.com/static/uploads/photo/2015/11/07/11/01/surf-board-1030739_960_720.jpg");
+	background-size: cover;
+	
+}
+
 .main-image{
 	height:300px;
 	width:400px;
@@ -180,6 +186,8 @@ Top-content
 	background-position:center center;
 	margin: 0 auto;
 }
+
+
 
 /*Jumbotron text colors */
 
@@ -361,7 +369,9 @@ Product view
   	margin: 0px 100px;
   }
 
-
+.searchresult {
+	padding-left: 100px;
+}
 
 /*RESPONSIVE VIDEO */
 
