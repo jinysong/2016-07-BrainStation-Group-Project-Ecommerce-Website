@@ -125,17 +125,23 @@
 			console.log(self.cartItems.length)
 			for (i = 0; i < self.cartItems.length; i++) {
 				console.log(item.id)
+
 				if (self.cartItems[i] === item.id) {
 					quantity++;
 					// console.log(self.cartItems.length)
 				}
 				else {
+
 					var newCart = {
 						product: item,
 						quantity:  1
 					}
 				}
 			}
+
+			console.log(self.cartItems.length)
+			console.log(self.cartItems)
+
 			self.cartItems.push(newCart)
 		}
 
@@ -156,6 +162,7 @@
 				}
 			}
 			self.cartItems.push(newCart)
+
 		}
 
 		// addFakeProducts()
