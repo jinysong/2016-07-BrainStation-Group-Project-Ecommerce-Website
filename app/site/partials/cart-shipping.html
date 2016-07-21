@@ -5,11 +5,11 @@
 
 		<div ng-repeat='x in ctrl.shippingMethod'>
 			<label >
-				<input name='fun' class='radioInput' type="radio" value='{{x.type}}' ng-model="ctrl.shippingSelect"> {{x.type}}
+				<input name='fun' class='radioInput' type="radio" value='{{x}}' ng-model="ctrl.shippingSelect"> {{x.type}}
 				<span class='animated zoomInLeft description' ng-show='x.type === ctrl.shippingSelect'> - {{x.price | currency}} - {{x.description}}</span>
 			</label>
 		</div>
-		<button class="btn btn-default btn-lg"  ng-click='ctrl.clicked()' >Complete Order</button>
+		<button class="btn btn-default btn-lg"  ng-click='ctrl.clicked(); ctrl.orderToAdmin()' >Complete Order</button>
 		<button class="btn btn-default btn-lg"  ng-click='ctrl.returnHome()'>Continue shopping</button>
 </div>
 </div>

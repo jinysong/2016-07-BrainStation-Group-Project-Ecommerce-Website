@@ -5,18 +5,24 @@
 
 	function ProductdetailsCtrl($stateParams,productSrv,$state){
 		var productdetailsVm = this;
+		productdetailsVm.selected = 1;
 		productdetailsVm.product = productSrv.getProduct($stateParams.productId)
-		
+
 		.then(function(res){
 			// console.log(res);
 			if(res.status === 200){
 				//product was added successfully
 				// console.log(res);
 				productdetailsVm.product = res.data.product;
-				// console.log(productdetailsVm.product)
+
+			for(var i=1; i <= res.data.product.quantity; i++){
+				productdetailsVm.Quantity.push(i);
+				
+				}
+				
 			}
 		});
-	
+		productdetailsVm.Quantity = [];
 		productdetailsVm.changePage = changePage;
 		productdetailsVm.addToCartDetail = productSrv.addToCartDetail;
 
@@ -30,6 +36,8 @@
 			}
 		}
 
+		
+			
 
 
 		productdetailsVm.cart = function () {

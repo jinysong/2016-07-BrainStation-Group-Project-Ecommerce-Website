@@ -28,6 +28,8 @@
 			}
 
 			ctrl.clicked = function () {
+				productSrv.personalInfo = ctrl.personalInfo;
+				console.log(ctrl.personalInfo.firstN)
 				var a = document.getElementById('info');
 				a.className +=' animated fadeOutUp';
 
