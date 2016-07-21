@@ -7,6 +7,7 @@
 		var gearVm = this;
 
 		gearVm.products = productSrv.products;
+		gearVm.addToCart = productSrv.addToCart;
 
 		console.log(gearVm.products)
 
@@ -16,8 +17,8 @@
 		gearVm.shop = function () {
 			$state.go('shop');
 		}		
-		gearVm.goToDetails = function () {
-			$state.go('productdetails'+id);
+		gearVm.goToDetails = function (id) {
+			$state.go('productdetails',{productId: id});
 		}	
 	}
 

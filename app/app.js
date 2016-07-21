@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router','ngAnimate']);
+		.module('shopApp',['ui.router']);
 
 	angular
 		.module('shopApp')
@@ -26,11 +26,30 @@
 				url: '/cart',
 				templateUrl: 'site/partials/shop-cart.html',
 				controller: 'cartCtrl as ctrl',
-				// resolve: {
-				// 	cart: function(prductSrv){
-				// 		return productSrc.getCartProducts();
-				// 	}
-				// }
+			})
+
+			.state('cart.cart-products', {
+				url: '/products',
+				templateUrl: 'site/partials/cart-products.html',
+				controller: 'productsCtrl as ctrl',
+			})
+
+			.state('cart.cart-personal', {
+				url: '/personal',
+				templateUrl: 'site/partials/cart-personal.html',
+				controller: 'personalCtrl as ctrl',
+			})
+
+			.state('cart.cart-shipping', {
+				url: '/shipping',
+				templateUrl: 'site/partials/cart-shipping.html',
+				controller: 'shipCtrl as ctrl',
+			})
+
+			.state('cart.cart-invoice', {
+				url: '/invoice',
+				templateUrl: 'site/partials/cart-invoice.html',
+				controller: 'invoiceCtrl as ctrl',
 			})
 
 			.state('guys-clothing',{
@@ -60,9 +79,9 @@
 				templateUrl: 'site/partials/productdetails.html',
 				controller: 'ProductdetailsCtrl as ctrl',
 				resolve:{
-					productdetails:function(productSrv,$stateParams){
-						return productSrv.getProduct($stateParams.productId);
-					}
+					// productdetails:function(productSrv,$stateParams){
+					// 	return productSrv.getProduct($stateParams.productId);
+					// }
 				}
 			})
 
