@@ -17,6 +17,8 @@
 		self.totalNoTax;
 		self.totalWithTax;
 
+		self.searchTerm = '';
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
