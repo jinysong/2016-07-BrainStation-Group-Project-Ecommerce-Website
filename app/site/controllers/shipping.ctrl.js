@@ -21,6 +21,9 @@
 				productSrv.shippingType = ctrl.shippingSelect.type;
 				productSrv.shippingPrice = ctrl.shippingSelect.price;
 
+				console.log(productSrv.cartItems)
+
+
 				$state.go("cart.cart-invoice");
 
 			}
