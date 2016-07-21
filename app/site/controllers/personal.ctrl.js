@@ -7,20 +7,20 @@
 			ctrl.cartItems = productSrv.cartItems;
 
 			ctrl.personalInfo = {
-				firstN : 'Jiny',
-				lastN : 'Soong',
-				email : 'asdfasdf@lakfd.com',
-				phone : '324-234-1235',
-				address : 'fasdfasdfa as',
-				address2 : 'asdf',
-				city : 'tronto',
-				state : 'on',
-				country : 'canada',
-				postal : 'M1t 3p5',
+				firstN : '',
+				lastN : '',
+				email : '',
+				phone : '',
+				address : '',
+				address2 : '',
+				city : '',
+				state : '',
+				country : '',
+				postal : '',
 				ctype: '',
-				card: '1234-1234-1234-1234-1234',
-				expiry: '03/02',
-				security: '123'
+				card: '',
+				expiry: '',
+				security: ''
 			}
 
 			ctrl.creditCardType = function (x) {
@@ -30,6 +30,8 @@
 			ctrl.clicked = function () {
 				productSrv.personalInfo = ctrl.personalInfo;
 				console.log(ctrl.personalInfo.firstN)
+				var savePersonalInfo = JSON.stringify(ctrl.personalInfo)
+				localStorage.setItem('savedPersonalInfo',savePersonalInfo);
 				var a = document.getElementById('info');
 				a.className +=' animated fadeOutUp';
 
@@ -41,6 +43,5 @@
 			ctrl.returnHome = function (){
 				$state.go('shop');
 			}
-
 		})
 })();
