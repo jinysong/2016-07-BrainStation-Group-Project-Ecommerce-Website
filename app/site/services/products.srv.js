@@ -141,5 +141,13 @@
 
 
 		}
+		// function orderToAdmin() {
+		// 	var newOrder = {
+		// 		cart: ,
+		// 		address: ,
+		// 		card: ,
+		// 		shipping:
+		// 	}
+		// }
 	}
 })();

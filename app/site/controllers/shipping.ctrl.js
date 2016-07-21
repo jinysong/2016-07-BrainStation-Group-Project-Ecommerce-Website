@@ -25,9 +25,8 @@
 
 			}
 			
-			ctrl.returnHome = function (){
+			ctrl.returnHome = function() {
 				$state.go('shop');
 			}
-
 		})
 })();
