@@ -39,6 +39,7 @@ background-color: white;
 	margin-top: 20px;
 	text-align: center;
 	align-items: center;
+
 }
 
 .ryan {
@@ -46,11 +47,17 @@ background-color: white;
 	margin:auto;
 	/*left:50px;*/
 	margin-top: 150px;
+	color: white;
+	background-color: black;
+	border:none;
+
 }
 .words {
 	font-size: 32px;
-	color:lightgrey;
+	color:black;
 	margin: auto;
+	font-style: utopia;
+
 }
 
 
@@ -182,20 +189,25 @@ Top-content
 /*Jumbotron text colors */
 
 .top-content h1{
-	font-size: 8rem;
-	margin-bottom: 320px;
-	margin-top: -50px;
+	font-size: 50rem;
+	/*margin-bottom: 320px;*/
+	margin-top: 20px;
 	color: rgb(255,85,33);
-	text-decoration: underline;
 	font-weight:200 !important;
+	font-family: Papyrus, fantasy;
+	font-size: 170px;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 26.4px;
 }
 
-.top-content h3{
-	margin:10px 0px;
+h3{
+	margin-top:180px;
 	letter-spacing:0.05rem;
-	font-weight:200 !important;
-	font-size: 4rem;
-	color: rgb(255,85,33);
+	font-weight:150;
+	font-size: 40px;
+	color: #FF5521 !important;
+	font-family: Papyrus, fantasy;
 }
 
 .Womenbanner {
@@ -218,7 +230,7 @@ Top-content
 
 .top-content .search-btn{
 	position: absolute;
-	background:#ff6d37;
+	background:black;
 	height:40px;
 	width:40px;
 	border-top-right-radius:5px;
@@ -253,7 +265,7 @@ Sub Nav
 	font-weight:200;
 }
 .product-nav li a:hover{
-	color:#ff6d37;
+	color:black;
 	border:none;
 	font-weight:400;
 	cursor:pointer;
@@ -262,9 +274,9 @@ Sub Nav
 }
 .product-nav li.focus > a{
 	
-	color:#ff6d37;
+	color:#ff5521;
 	font-weight:400;
-	border-bottom:2px solid #ff6d37;
+	border-bottom:2px solid black;
 	padding:4px 6px;
 }
 
@@ -299,7 +311,7 @@ Product view
 
 #product-card .product-buy{
 	position: absolute;
-	background: #ff6d37;
+	background: black;
 	border-radius:100%;
 	color:white;
 	height:30px;
@@ -309,7 +321,7 @@ Product view
 }
 
 #product-card .product-buy:hover .fa{
-	color:whitesmoke;
+	color:black;
 	cursor: pointer;
 	cursor:hand;
 }
@@ -342,8 +354,8 @@ Product view
 
 .searchbutton {
 	border-radius: 12%;
-	border: solid 1px lightgrey;
-	border-color: lightgrey;
+	border: solid 1px #ff5521;
+	border-color: #ff5521;
 	margin-left: 10px;
 	height: 30px;
 }
