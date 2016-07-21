@@ -11,7 +11,9 @@
 
 		self.cartItems = [];
 			
-		self.shippingSelect;
+		self.shippingType;
+		self.shippingPrice;
+		self.personalInfo;
 
 		//public functions
 		self.getProduct = getProduct;
@@ -133,8 +135,13 @@
 				quantity:  1
 			}			
 			self.cartItems.push(newCart)
+<<<<<<< HEAD
 			var saveCart = JSON.stringify(self.cartItems)
 			localStorage.setItem('savedCart',saveCart)
+=======
+			console.log(productSrv.cartItems)
+
+>>>>>>> JinyBranch
 		}
 	}
 })();
