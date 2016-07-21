@@ -82,6 +82,7 @@ ul{
 	height:100%;
 	vertical-align: middle;
 	width:100%;
+
 }
 
 a{
@@ -302,7 +303,7 @@ Product view
 	position: absolute;
 	background-color: #000000;
 	border-radius:100%;
-	color:white;
+	color: #ff6d37;
 	height:30px;
 	width:30px;
 	top:10px;
