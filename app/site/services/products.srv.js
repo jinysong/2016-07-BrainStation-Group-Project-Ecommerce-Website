@@ -9,25 +9,7 @@
 		//public variables
 		self.products = [];
 
-		self.cartItems = [{
-				productId:'1',
-				name:'Surfboard',
-				description:'you use it to surf',
-				category:'Surf',
-				price:'34',
-				quantity:'2',
-				status: true,
-				image: "../assets/img/img-duffle.png"
-			},{
-				productId:'1',
-				name:'Surfboard',
-				description:'you use it to surf',
-				category:'Surf',
-				price:'12',
-				quantity:'2',
-				status: true,
-				image: "../assets/img/img-duffle.png"
-			}];
+		self.cartItems = [];
 			
 		//public functions
 		self.getProduct = getProduct;
@@ -37,6 +19,8 @@
 		self.updateProductList = updateProductList;
 		self.removeProduct = removeProduct;
 		self.deleteProduct = deleteProduct;
+		self.addToCart = addToCart;
+		self.addToCartDetail = addToCartDetail;
 
 		function getProducts(){
 			return api.request('/products',{},'GET')
@@ -117,6 +101,50 @@
 		}
 
 		removeProduct(2)
+
+		function addToCart(item) {
+			// check if item is already in cart
+			console.log(item);
+			console.log(self.cartItems.length)
+			for (i = 0; i < self.cartItems.length; i++) {
+				console.log(item.id)
+				console.log(self.cartItems[i]);
+				if (self.cartItems[i].product.id === item.id) {
+					self.cartItems[i].quantity++;
+					// console.log(self.cartItems.length)
+					return;
+				}
+			}
+
+			var newCart = {
+				product: item,
+				quantity:  1
+			}
+
+			console.log(self.cartItems.length)
+			console.log(self.cartItems)
+
+			self.cartItems.push(newCart)
+		}
+
+		function addToCartDetail(item) {
+			// check if item is already in cart
+			console.log(self.cartItems.length)
+			for (i = 0; i < self.cartItems.length; i++) {
+				console.log(item.id)
+				if (self.cartItems[i].product.id === item.id) {
+					self.cartItems[i].quantity++;
+					return;
+					// console.log(self.cartItems.length)
+				}
+			}
+			var newCart = {
+				product: item,
+				quantity:  1
+			}			
+			self.cartItems.push(newCart)
+
+		}
 
 		// addFakeProducts()
 

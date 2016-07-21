@@ -7,6 +7,7 @@
 		var guysclothingVm = this;
 
 		guysclothingVm.products = productSrv.products;
+		guysclothingVm.addToCart = productSrv.addToCart;
 
 		console.log(guysclothingVm.products)
 	

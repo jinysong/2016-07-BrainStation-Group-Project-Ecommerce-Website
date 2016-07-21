@@ -8,6 +8,7 @@
 		var girlsclothingVm = this;
 
 		girlsclothingVm.products = productSrv.products;
+		girlsclothingVm.addToCart = productSrv.addToCart;
 
 		console.log(girlsclothingVm.products)
 
@@ -20,7 +21,7 @@
 		girlsclothingVm.goToDetails = function () {
 			$state.go('productdetails'+id);
 			$state.go('shop');
-		}		
+		}
 	}
 
 	

@@ -36,6 +36,9 @@
 				},300)
 				
 			}
+			ctrl.returnHome = function (){
+				$state.go('shop');
+			}
 
 		})
 })();

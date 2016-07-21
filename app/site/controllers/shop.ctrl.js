@@ -24,7 +24,7 @@
 		}
 
 		shopVm.cart = function () {
-			$state.go('cart');
+			$state.go('cart.cart-products');
 		}
 
 		shopVm.addToCart = function (item) {

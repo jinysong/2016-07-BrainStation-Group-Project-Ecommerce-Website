@@ -23,6 +23,10 @@
 				console.log(ctrl.shippingSelect)
 				$state.go("cart.cart-invoice");
 			}
+			
+			ctrl.returnHome = function (){
+				$state.go('shop');
+			}
 
 		})
 })();
