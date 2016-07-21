@@ -10,12 +10,16 @@
 		self.products = [];
 
 		self.cartItems = [];
-			
+		
 		self.shippingType;
 		self.shippingPrice;
 		self.personalInfo;
 		self.totalNoTax;
 		self.totalWithTax;
+
+		self.searchTerm = '';
+
+		self.searchTerm = '';
 
 		//public functions
 		self.getProduct = getProduct;
@@ -124,7 +128,7 @@
 			localStorage.setItem('savedCart',saveCart)
 		}
 
-		function addToCartDetail(item) {
+		function addToCartDetail(item,quantity) {
 			// check if item is already in cart
 			for (i = 0; i < self.cartItems.length; i++) {
 				if (self.cartItems[i].product.id === item.id) {
@@ -134,7 +138,7 @@
 			}
 			var newCart = {
 				product: item,
-				quantity:  1
+				quantity:  quantity
 			}			
 			self.cartItems.push(newCart)
 
@@ -143,13 +147,33 @@
 
 
 		}
-		// function orderToAdmin() {
-		// 	var newOrder = {
-		// 		cart: ,
-		// 		address: ,
-		// 		card: ,
-		// 		shipping:
-		// 	}
-		// }
+		self.toAdmin = orderToAdmin();
+		function orderToAdmin() {
+			// creating A client Order
+			var newOrder = {
+				cart: JSON.parse(localStorage.getItem('savedCart')),
+				client: JSON.parse(localStorage.getItem('savedPersonalInfo')),
+				shipping: self.shippingType
+			}
+			for (var i = 0,i<ctrl.cartItems.length; i++) {
+				
+					updateProduct()
+			}
+		}			
+
+			// if ( !(localStorage.getItem('savedOrders'))) {
+			// 	newOrder = JSON.stringify(newOrder)
+			// 	localStorage.setItem('savedOrders', [newOrder])
+			// } else {
+			// 	var tempOrders = JSON.parse(localStorage.getItem('savedOrders'))
+			// 	tempOrders.push(newOrder)
+			// 	JSON.stringify(tempOrders)
+			// 	localStorage.setItem('savedOrders', tempOrders)
+			// }
+		// check localStorage for previous saved orders 
+		// if none, make new array in local storage 
+		// 	if exists, just push new order into existing array
+		//
+		
 	}
 })();
