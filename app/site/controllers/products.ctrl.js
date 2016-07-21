@@ -39,5 +39,8 @@
 
 			ctrl.error = false;
 
+			ctrl.returnHome = function (){
+				$state.go('shop');
+			}
 		})	
 })();
