@@ -26,6 +26,11 @@
 		productSrv.searchTerm = guysclothingVm.search; // save shopVm.search to a service
 		$state.go('allproducts');
 		}
+		guysclothingVm.allpage = function (){
+		console.log('i did a thing');
+		productSrv.searchTerm = guysclothingVm.search; // save shopVm.search to a service
+		$state.go('allproducts');
+		}
 	}
 
 

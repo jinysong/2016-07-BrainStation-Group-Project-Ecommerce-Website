@@ -27,6 +27,11 @@
 			productSrv.searchTerm = girlsclothingVm.search; // save shopVm.search to a service
 			$state.go('allproducts');
 		}
+		girlsclothingVm.allpage = function (){
+			console.log('i did a thing');
+			productSrv.searchTerm = girlsclothingVm.search; // save shopVm.search to a service
+			$state.go('allproducts');
+		}
 	}
 
 	

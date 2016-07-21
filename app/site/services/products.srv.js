@@ -19,6 +19,8 @@
 
 		self.searchTerm = '';
 
+		self.searchTerm = '';
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
