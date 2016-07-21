@@ -43,6 +43,11 @@
 		shopVm.womenpage = function (){
 			$state.go('girls-clothing');
 		}
+
+		shopVm.allpage = function (){
+			console.log('i did a thing');
+			$state.go('allproducts');
+		}
 	}
 
 })();

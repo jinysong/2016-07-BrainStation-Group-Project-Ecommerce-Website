@@ -103,6 +103,27 @@
 					}
 				}
 			})
+			.state('search',{
+				url: '/search',
+				templateUrl: 'site/partials/shop-searchresults.html',
+				controller: 'searchCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			.state('allproducts',{
+				url: '/all',
+				templateUrl: 'site/partials/shop-all.html',
+				controller: 'AllCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
 
 			.state('admin',{
 				url:'/admin',
