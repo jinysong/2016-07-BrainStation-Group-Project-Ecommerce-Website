@@ -136,5 +136,13 @@
 			var saveCart = JSON.stringify(self.cartItems)
 			localStorage.setItem('savedCart',saveCart)
 		}
+		// function orderToAdmin() {
+		// 	var newOrder = {
+		// 		cart: ,
+		// 		address: ,
+		// 		card: ,
+		// 		shipping:
+		// 	}
+		// }
 	}
 })();
