@@ -16,7 +16,7 @@
 #login-page {
   background-image: url('http://wallpapercave.com/wp/RiolOOB.jpg');
   background-size: cover;
-  height: 100%;
+  height: 100vh;
 }
 /* BrainStation logo */
 .logo {
@@ -78,7 +78,7 @@
 
   /* Button */
 
-  .bs-form__button.stacked-input-box {
+.bs-form__button.stacked-input-box {
     margin-bottom: 20px;
 }
 
@@ -128,6 +128,11 @@ a.sign-in-link {
     color: #3397FA;
 }
 
+.admin-login-title {
+  font-size: 35px !important; 
+  font-weight: bold;
+  margin: 0px;
+}
 
 /* Unnecessary style rules below */
 
