@@ -16,7 +16,7 @@
 			ctrl.totalNoTax = function () {
 				var result = 0;
 				for (var i=0; i<ctrl.cartItems.length; i++) {
-					result += (parseInt(ctrl.cartItems[i].quantity) * parseInt(ctrl.cartItems[i].price));
+					result += (parseInt(ctrl.cartItems[i].quantity) * parseInt(ctrl.cartItems[i].product.price));
 				}
 				return result;
 			}

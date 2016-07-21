@@ -44,14 +44,11 @@
 					//product was added successfully
 					console.log(res);
 					self.products.push(res.data.product);
-					console.log(self.products)
 				}
 			})
 		}
 
 		function updateProduct(product,productId){
-			console.log(product)
-			console.log(productId)
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
 				console.log(res);
@@ -104,14 +101,9 @@
 
 		function addToCart(item) {
 			// check if item is already in cart
-			console.log(item);
-			console.log(self.cartItems.length)
 			for (i = 0; i < self.cartItems.length; i++) {
-				console.log(item.id)
-				console.log(self.cartItems[i]);
 				if (self.cartItems[i].product.id === item.id) {
 					self.cartItems[i].quantity++;
-					// console.log(self.cartItems.length)
 					return;
 				}
 			}
@@ -121,21 +113,15 @@
 				quantity:  1
 			}
 
-			console.log(self.cartItems.length)
-			console.log(self.cartItems)
-
 			self.cartItems.push(newCart)
 		}
 
 		function addToCartDetail(item) {
 			// check if item is already in cart
-			console.log(self.cartItems.length)
 			for (i = 0; i < self.cartItems.length; i++) {
-				console.log(item.id)
 				if (self.cartItems[i].product.id === item.id) {
 					self.cartItems[i].quantity++;
 					return;
-					// console.log(self.cartItems.length)
 				}
 			}
 			var newCart = {
@@ -145,37 +131,5 @@
 			self.cartItems.push(newCart)
 
 		}
-
-		// addFakeProducts()
-
-		// function addFakeProducts() {
-		// 	var pdt1 = {
-		// 		productId:'1',
-		// 		name:'Surfboard',
-		// 		description:'you use it to surf',
-		// 		category:'Surf',
-		// 		price:'34',
-		// 		quantity:'2',
-		// 		status: true,
-		// 		image: "../assets/img/img-duffle.png"
-		// 	}
-		// 	var pdt2 = {
-		// 		productId:'2',
-		// 		name:'Boardshorts',
-		// 		description: "don't go nakeed!!",
-		// 		category:'Boardshorts',
-		// 		price:'12',
-		// 		quantity:'4',
-		// 		status:true,
-		// 		image: "../assets/img/img-duffle.png"
-		// 	}
-
-		// 	addProduct(pdt1);
-		// 	addProduct(pdt2);
-			
-		// }
-
-
-
 	}
 })();

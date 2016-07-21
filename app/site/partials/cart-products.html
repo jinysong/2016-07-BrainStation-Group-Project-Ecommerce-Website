@@ -13,10 +13,10 @@
 		    <td ng-bind='product.product.name'></td> 
 		    <td  align='center' class="col-md-2" ng-bind='product.product.price |currency'></td>
 		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs" ng-click='ctrl.removeItem($index)'>-</button>  {{product.quantity}}<button class="btn btn-default btn-xs" ng-click='ctrl.addItem($index)'>+</button></td>
-		    <td  align='center' class="col-md-2" ng-bind='product.product.price*product.quantity |currency'></td>
-		  </tr>
-		  {{ctrl.total}}
-		  <tr>
+		    <td  align='center' class="col-md-2">{{product.product.price*product.quantity |currency}}<button class="btn btn-default">Delete</button></td>
+		 </tr>
+		 <tr>
+		  
 		  	<td> </td>
 		  	<td> </td>
 		  	<td></td>
