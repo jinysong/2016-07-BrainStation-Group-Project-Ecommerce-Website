@@ -136,8 +136,6 @@
 			}			
 			self.cartItems.push(newCart)
 
-
-
 			var saveCart = JSON.stringify(self.cartItems)
 			localStorage.setItem('savedCart',saveCart)
 
