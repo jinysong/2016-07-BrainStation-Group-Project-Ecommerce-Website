@@ -15,7 +15,7 @@ background-color: white;
 }
 
 .gear {
-	background-image:url("http://25.media.tumblr.com/tumblr_m4x0viEOao1qhvp06o1_500.jpg");
+	background-image:url("http://picalls.com/wp-content/uploads/2015/02/Surfboard-on-the-beach.jpg");
 	background-size: cover;
 }
 
@@ -161,8 +161,9 @@ Top-content
 }
 
 .gear2 {
-	width: 75%;
-	background:url('../img/bkg_surf.jpg');
+	width: 100%;
+	height: 350px;
+	background:url('https://img.grouponcdn.com/deal/c9fDzn6bb6eeddECU9eG/WQ-2048x1229/v1/c700x420.jpg');
 	background-size:cover;
 	background-position:center center;
 	margin: 0 auto;
@@ -191,13 +192,15 @@ Top-content
 
 /*Jumbotron text colors */
 
-.top-content h1{
-	font-size: 8rem;
+.top-content p{
+	font-size: 2em;
 	margin-bottom: 320px;
-	margin-top: -50px;
-	color: rgb(255,85,33);
-	text-decoration: underline;
-	font-weight:200 !important;
+	margin-top: 150px;
+	color: #686B65;
+	text-align: right;
+	padding-right: 80px;
+	font-family: 'Tahoma', 'Avant Garde', sans-serif;
+
 }
 
 .top-content h3{
@@ -241,6 +244,13 @@ Top-content
 .top-content .search-btn img{
 	width:18px;
 	margin-top:11px;
+}
+
+.words {
+	text-align: right;
+	padding-right: 300px;
+	color: lightgrey;
+	font-size: 0.
 }
 
 

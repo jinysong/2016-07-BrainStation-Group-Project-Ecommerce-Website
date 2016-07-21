@@ -8,6 +8,7 @@
 
 		gearVm.products = productSrv.products;
 		gearVm.addToCart = productSrv.addToCart;
+		gearVm.search = productSrv.SearchTerm;
 
 		console.log(gearVm.products)
 
@@ -20,6 +21,11 @@
 		gearVm.goToDetails = function (id) {
 			$state.go('productdetails',{productId: id});
 		}	
+
+		gearVm.allpage = function (){
+			productSrv.searchTerm = gearVm.search;
+			$state.go('allproducts');
+		}
 	}
 
 })();

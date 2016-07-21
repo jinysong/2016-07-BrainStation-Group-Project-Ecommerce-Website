@@ -13,6 +13,8 @@
 			
 		self.shippingSelect;
 
+		self.searchTerm = '';
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
