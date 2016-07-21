@@ -8,12 +8,12 @@
 				<th class="text-center">Quantity</th>
 				<th class="text-center">Total Price</th>
 			</tr>
-		  <tr ng-repeat='a in ctrl.cartItems track by $index'>
+		  <tr ng-repeat='product in ctrl.cartItems track by $index'>
 		    <td><img src=""></td>
-		    <td ng-bind='a.name'></td> 
-		    <td  align='center' class="col-md-2" ng-bind='a.price |currency'></td>
-		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs" ng-click='ctrl.removeItem($index)'>-</button>  {{a.quantity}}<button class="btn btn-default btn-xs" ng-click='ctrl.addItem($index)'>+</button></td>
-		    <td  align='center' class="col-md-2" ng-bind='a.price*a.quantity |currency'></td>
+		    <td ng-bind='product.product.name'></td> 
+		    <td  align='center' class="col-md-2" ng-bind='product.product.price |currency'></td>
+		    <td  align='center' class="col-md-2"><button class="btn btn-default btn-xs" ng-click='ctrl.removeItem($index)'>-</button>  {{product.quantity}}<button class="btn btn-default btn-xs" ng-click='ctrl.addItem($index)'>+</button></td>
+		    <td  align='center' class="col-md-2" ng-bind='product.product.price*product.quantity |currency'></td>
 		  </tr>
 		  {{ctrl.total}}
 		  <tr>
