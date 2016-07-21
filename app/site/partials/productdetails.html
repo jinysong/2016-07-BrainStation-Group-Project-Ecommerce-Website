@@ -13,10 +13,10 @@
 	<div class="content-wrapper">
 		<div class="table-view">
 			<div class="table-cell">
-				<div class="content">		
+				<!-- <div class="content">		
 					<h1>
 						Girls Clothing Page!!
-					</h1>
+					</h1> -->
 					<!-- <h3>
 						Buy and Sell used fashion items from virtually anywhere.
 					</h3> -->
@@ -30,7 +30,7 @@
 							</div>
 						</form>
 					</div> -->
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 
 	<div class="row">
 			<div class="button">
-				<select ng-model="ctrl.selected" ng-options="quantity as quantity for quantity in ctrl.Quantity"></select>
+				<select class="select" ng-model="ctrl.selected" ng-options="quantity as quantity for quantity in ctrl.Quantity"></select>
 				<button type="button" ng-click="ctrl.addToCartDetail(ctrl.product)" class="btn btn-warning">Add to Cart</button>
 				<button type="button" ng-click="ctrl.changePage()" class="btn btn-warning">Back</button>
 			</div>
