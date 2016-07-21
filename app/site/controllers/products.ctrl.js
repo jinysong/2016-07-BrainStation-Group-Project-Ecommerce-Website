@@ -3,14 +3,15 @@
 		.module('shopApp')
 		.controller('productsCtrl', function ($state,productSrv, $timeout) {
 			var ctrl = this;
+			ctrl.cartItems = JSON.parse(localStorage.getItem('savedCart'));
 
-			ctrl.cartItems = productSrv.cartItems;
+			console.log(ctrl.cartItems)
 
 			ctrl.addItem = function ($index) {
-				productSrv.cartItems[$index].quantity++;
+				ctrl.cartItems[$index].quantity++;
 			};
 			ctrl.removeItem = function ($index) {
-				if (productSrv.cartItems[$index].quantity !==0) productSrv.cartItems[$index].quantity--;
+				if (ctrl.cartItems[$index].quantity !==0) ctrl.cartItems[$index].quantity--;
 			}
 
 			ctrl.totalNoTax = function () {
@@ -45,7 +46,9 @@
 			ctrl.delete_from_cart = function(index) {
 				console.log(index)
 				console.log(productSrv.cartItems[index])
-				productSrv.cartItems.splice(index,1);
+				ctrl.cartItems.splice(index,1);
+				var saveCart = JSON.stringify(ctrl.cartItems)
+				localStorage.setItem('savedCart',saveCart);
 			}
 		})	
 })();
