@@ -15,20 +15,21 @@
 			]
 
 			ctrl.shippingSelect;
-			console.log(ctrl.shippingSelect)
 
 			ctrl.clicked = function () {
-				// for 
-				// animated fadeInUp
-				console.log(ctrl.shippingSelect)
-				productSrv.shippingSelect = ctrl.shippingSelect;
+				ctrl.shippingSelect = JSON.parse(ctrl.shippingSelect);
+				productSrv.shippingType = ctrl.shippingSelect.type;
+				productSrv.shippingPrice = ctrl.shippingSelect.price;
+
+				console.log(productSrv.cartItems)
+
+
 				$state.go("cart.cart-invoice");
 
 			}
 			
-			ctrl.returnHome = function (){
+			ctrl.returnHome = function() {
 				$state.go('shop');
 			}
-
 		})
 })();

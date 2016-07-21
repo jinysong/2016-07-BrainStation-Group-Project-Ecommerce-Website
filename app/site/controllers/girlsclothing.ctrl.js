@@ -18,9 +18,8 @@
 		girlsclothingVm.shop = function () {
 			$state.go('shop');
 		}
-		girlsclothingVm.goToDetails = function () {
-			$state.go('productdetails'+id);
-			$state.go('shop');
+		girlsclothingVm.goToDetails = function (id) {
+			$state.go('productdetails',{productId: id});
 		}
 	}
 

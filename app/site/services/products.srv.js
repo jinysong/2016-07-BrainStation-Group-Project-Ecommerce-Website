@@ -11,7 +11,11 @@
 
 		self.cartItems = [];
 			
-		self.shippingSelect;
+		self.shippingType;
+		self.shippingPrice;
+		self.personalInfo;
+		self.totalNoTax;
+		self.totalWithTax;
 
 		//public functions
 		self.getProduct = getProduct;
@@ -133,8 +137,19 @@
 				quantity:  1
 			}			
 			self.cartItems.push(newCart)
+
 			var saveCart = JSON.stringify(self.cartItems)
 			localStorage.setItem('savedCart',saveCart)
+
+
 		}
+		// function orderToAdmin() {
+		// 	var newOrder = {
+		// 		cart: ,
+		// 		address: ,
+		// 		card: ,
+		// 		shipping:
+		// 	}
+		// }
 	}
 })();

@@ -4,7 +4,7 @@
 		.controller('productsCtrl', function ($state,productSrv, $timeout) {
 			var ctrl = this;
 			ctrl.cartItems = JSON.parse(localStorage.getItem('savedCart'));
-
+			 
 			console.log(ctrl.cartItems)
 
 			ctrl.addItem = function ($index) {
@@ -19,9 +19,11 @@
 				for (var i=0; i<ctrl.cartItems.length; i++) {
 					result += (parseInt(ctrl.cartItems[i].quantity) * parseInt(ctrl.cartItems[i].product.price));
 				}
+				productSrv.totalNoTax = result;
 				return result;
 			}
 			ctrl.totalWithTax = function () {
+				productSrv.totalWithTax = (ctrl.totalNoTax() * 1.13);
 				return (ctrl.totalNoTax() * 1.13);
 			}
 
