@@ -36,16 +36,16 @@
 					<th class="col-md-2 active">Total Price</th>
 
 				</tr>
-				<tr ng-repeat='x in productSrv.cartItems.product'>
-					<td>{{x.name}} x {{x.quantity}}</td>
-					<td>{{x.price}}</td>
-					<td>{{x.quantity * x.price}}</td>
+				<tr ng-repeat='x in ctrl.cartItems'>
+					<td>{{x.product.name}} x {{x.quantity}}</td>
+					<td>{{x.product.price | currency}}</td>
+					<td>{{x.quantity * x.product.price | currency}}</td>
 
 				</tr>
 				<tr>
 					<td>Shipping: {{ctrl.shippingType}}</td>
 					<td></td>
-					<td>{{ctrl.shippingPrice | currency}}</td>
+					<td>{{+ctrl.shippingPrice | currency}}</td>
 					
 				</tr>
 				<tr>
@@ -53,7 +53,10 @@
 					<td align='right'><b>Total: <br>
 						Tax: <br>
 						Finial Total: </b></td>
-					<td></td>		
+					<td>{{(+ctrl.totalNoTax + +ctrl.shippingPrice) | currency}}<br>{{((+ctrl.totalNoTax + +ctrl.shippingPrice)* 0.13) | currency}}
+						<br>
+						{{(+ctrl.totalNoTax + +ctrl.shippingPrice) * 1.13| currency}}<br>
+					</td>		
 				</tr>
 			</table>
 
