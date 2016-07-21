@@ -4,7 +4,7 @@
 		.controller('productsCtrl', function ($state,productSrv, $timeout) {
 			var ctrl = this;
 			ctrl.cartItems = JSON.parse(localStorage.getItem('savedCart'));
-
+			 
 			console.log(ctrl.cartItems)
 
 			ctrl.addItem = function ($index) {
