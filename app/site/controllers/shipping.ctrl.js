@@ -25,7 +25,8 @@
 
 
 				$state.go("cart.cart-invoice");
-
+				// var saveShippingType = JSON.stringify(ctrl.shippingSelect.type)
+				localStorage.setItem('savedShippingType',ctrl.shippingSelect.type);
 			}
 			
 			ctrl.returnHome = function() {

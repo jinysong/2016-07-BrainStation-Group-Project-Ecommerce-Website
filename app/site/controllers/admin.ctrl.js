@@ -5,11 +5,13 @@
 		.module('shopApp')
 		.controller('AdminCtrl',AdminCtrl);
 
-	function AdminCtrl($scope,$state,productSrv){
+	function AdminCtrl($scope,$state,productSrv,adminSrv){
 		var adminVm = this;
 		adminVm.productSrv = productSrv;
 		adminVm.getProducts = productSrv.getProducts();
 		adminVm.products = productSrv.products;
+		adminVm.orders = adminSrv.orders;
+		console.log(adminVm.orders.order)
 
 		console.log(adminVm.products)
 		//check if logged in
