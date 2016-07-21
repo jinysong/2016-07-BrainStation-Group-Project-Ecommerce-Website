@@ -10,6 +10,7 @@ body{
 	font-size:100%;
 }
 
+
 .row div {
 background-color: #7cace3;
 margin-bottom: 25px;
@@ -35,6 +36,9 @@ margin-bottom: 25px;
 .all {
 	background-image:url("https://pixabay.com/static/uploads/photo/2015/11/07/11/01/surf-board-1030739_960_720.jpg");
 	background-size: cover;
+
+
+
 	
 }
 
@@ -377,8 +381,8 @@ Product view
 
 .searchbutton {
 	border-radius: 12%;
-	border: solid 1px #ff5521;
-	border-color: #ff5521;
+	border: solid 1px white;
+	border-color: white;
 	margin-left: 10px;
 	height: 30px;
 }
@@ -396,6 +400,10 @@ Product view
 
 .searchresult {
 	padding-left: 100px;
+	padding-bottom: 50px;
+	font-family: 'Tahoma', 'sans-serif'!important;
+	color: #3F3C3A !important;
+
 }
 
 /*RESPONSIVE VIDEO */
@@ -457,4 +465,27 @@ Product view
 
 .button {
 	margin-top: 250px;
+}
+
+/*Bottom content*/
+
+.bott-content{
+	margin-top: 150px;
+	width:100%;
+	height:400px;
+	margin-bottom: 500px;
+	background:url('http://img.huffingtonpost.com/asset/2000_1000/575211dd1200002e008955e7.jpeg?cache=evn1jfapnz');
+	background-position:center center;
+	text-align: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	z-index: 9999;
+}
+
+.black {
+	background-color: transparent;
+	border-color: transparent;
+	color: #655D52;
+	margin-bottom: 85px;
+	border: 1px;
 }
