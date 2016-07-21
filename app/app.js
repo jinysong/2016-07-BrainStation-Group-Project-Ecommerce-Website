@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router','ngAnimate']);
+		.module('shopApp',['ui.router']);
 
 	angular
 		.module('shopApp')
