@@ -11,6 +11,8 @@
 
 		self.cartItems = [];
 			
+		self.shippingSelect;
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
