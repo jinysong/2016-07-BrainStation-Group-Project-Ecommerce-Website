@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router','ngAnimate']);
+		.module('shopApp',['ui.router']);
 
 	angular
 		.module('shopApp')
@@ -26,11 +26,30 @@
 				url: '/cart',
 				templateUrl: 'site/partials/shop-cart.html',
 				controller: 'cartCtrl as ctrl',
-				// resolve: {
-				// 	cart: function(prductSrv){
-				// 		return productSrc.getCartProducts();
-				// 	}
-				// }
+			})
+
+			.state('cart.cart-products', {
+				url: '/products',
+				templateUrl: 'site/partials/cart-products.html',
+				controller: 'productsCtrl as ctrl',
+			})
+
+			.state('cart.cart-personal', {
+				url: '/personal',
+				templateUrl: 'site/partials/cart-personal.html',
+				controller: 'personalCtrl as ctrl',
+			})
+
+			.state('cart.cart-shipping', {
+				url: '/shipping',
+				templateUrl: 'site/partials/cart-shipping.html',
+				controller: 'shipCtrl as ctrl',
+			})
+
+			.state('cart.cart-invoice', {
+				url: '/invoice',
+				templateUrl: 'site/partials/cart-invoice.html',
+				controller: 'invoiceCtrl as ctrl',
 			})
 
 			.state('guys-clothing',{
@@ -78,6 +97,27 @@
 				url: '/gear',
 				templateUrl: 'site/partials/shop-gear.html',
 				controller: 'GearCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+			.state('search',{
+				url: '/search',
+				templateUrl: 'site/partials/shop-searchresults.html',
+				controller: 'searchCtrl as ctrl',
+				resolve:{
+					clothing:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
+			})
+
+			.state('allproducts',{
+				url: '/all',
+				templateUrl: 'site/partials/shop-all.html',
+				controller: 'AllCtrl as ctrl',
 				resolve:{
 					clothing:function(productSrv){
 						return productSrv.getProducts();

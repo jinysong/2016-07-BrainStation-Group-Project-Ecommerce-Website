@@ -1,0 +1,67 @@
+<div class="animated zoomIn" id='invoice'>
+		<div class="container">
+			<div class="col-md-9">
+				<h3>MyAwesomeCompany</h3>
+				<h5>460 King Street West <br>
+					Toronto, ON M5V 1K7 <br>
+					(416) 123-4567 <br>
+					JinySong@awesomeco.ca
+				</h5>
+				<br>
+				<br>
+				<br>
+				<h4>Bill To:</h4>
+				<h6>{{ctrl.personalInfo.lastN}}, {{ctrl.personalInfo.firstN}}<br>
+				{{ctrl.personalInfo.address}}<br>
+				{{ctrl.personalInfo.email}}<br>
+				{{ctrl.personalInfo.phone}}<br>
+				{{ctrl.personalInfo.city}}, {{ctrl.personalInfo.state}}<br>
+				{{ctrl.personalInfo.country}}, 
+				{{ctrl.personalInfo.postal}}<br>
+
+
+			</div>
+			<button class="btn btn-default btn-lg"  ng-click='ctrl.returnHome()'>Continue shopping</button>
+			<div class="col-md-3">
+				<h2>Invoice</h2>
+				<h5>Date: 2016/07/21</h5>
+				<h5>Invoice: g902347123443</h5>
+				<h5>Client id: 237072</h5>
+			</div>
+
+			<table class="table table-bordered">
+				<tr>
+					<th class="col-md-8 active">Product</th>
+					<th class="col-md-2 active">Unit Price</th>
+					<th class="col-md-2 active">Total Price</th>
+
+				</tr>
+				<tr ng-repeat='x in ctrl.cartItems'>
+					<td>{{x.product.name}} x {{x.quantity}}</td>
+					<td>{{x.product.price | currency}}</td>
+					<td>{{x.quantity * x.product.price | currency}}</td>
+
+				</tr>
+				<tr>
+					<td>Shipping: {{ctrl.shippingType}}</td>
+					<td></td>
+					<td>{{+ctrl.shippingPrice | currency}}</td>
+					
+				</tr>
+				<tr>
+					<td>Instructions:<br>
+					<td align='right'><b>Total: <br>
+						Tax: <br>
+						Finial Total: </b></td>
+					<td>{{(+ctrl.totalNoTax + +ctrl.shippingPrice) | currency}}<br>{{((+ctrl.totalNoTax + +ctrl.shippingPrice)* 0.13) | currency}}
+						<br>
+						{{(+ctrl.totalNoTax + +ctrl.shippingPrice) * 1.13| currency}}<br>
+					</td>		
+				</tr>
+			</table>
+
+			<h3 align='center'><i>Thank you for shopping with us! Hope to see you again soon!</i></h3>
+			
+		</div>
+
+	</div>

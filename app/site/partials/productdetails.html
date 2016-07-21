@@ -1,10 +1,10 @@
 <nav>
 	<div class="content-wrapper">
 		<ul class="left-nav">
-			<li><a ui-sref="shop"><img src="assets/img/logo.png"></a></li>
+			<li ng-click="ctrl.shop()"><img src="../../assets/img/new-logo.png" class="img-responsive logo-image"></li>
 		</ul>
 		<ul class="right-nav">
-			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart" ng-click='ctrl.cart()'>Cart</span></li>
 		</ul>
 	</div>
 </nav>
@@ -13,13 +13,13 @@
 	<div class="content-wrapper">
 		<div class="table-view">
 			<div class="table-cell">
-				<div class="content">		
+				<!-- <div class="content">		
 					<h1>
 						Girls Clothing Page!!
-					</h1>
-					<h3>
+					</h1> -->
+					<!-- <h3>
 						Buy and Sell used fashion items from virtually anywhere.
-					</h3>
+					</h3> -->
 
 					<!-- <div class="">
 						<form> -->
@@ -30,7 +30,7 @@
 							</div>
 						</form>
 					</div> -->
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
@@ -44,15 +44,26 @@
 			</div>
 		<div class="col-xs-7">
 			<table class="table">
-				<tr ng-repeat="(key, value) in ctrl.product">
-					<td>{{key}}</td>
-					<td>{{value}}</td>
+				<tr>
+					<td>Description:</td>
+					<td>{{ctrl.product.description}}</td>
+				</tr>
+				<tr>
+					<td>Price:</td>
+					<td>{{ctrl.product.price | currency}}</td>
+				</tr>
+				<tr>
+					<td>Quantity:</td>
+					<td>{{ctrl.product.quantity}}</td>
 				</tr>
 			</table>
 		</div>
+
 	<div class="row">
-			<div class=buttons>
-				<a href="#/home" class="btn btn primary">Back</a>
+			<div class="button">
+				<select class="select" ng-model="ctrl.selected" ng-options="quantity as quantity for quantity in ctrl.Quantity"></select>
+				<button type="button" ng-click="ctrl.addToCartDetail(ctrl.product)" class="btn btn-warning">Add to Cart</button>
+				<button type="button" ng-click="ctrl.changePage()" class="btn btn-warning">Back</button>
 			</div>
 	</div>
 </div>

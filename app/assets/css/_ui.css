@@ -11,7 +11,8 @@ body{
 }
 
 .row div {
-background-color: white;
+background-color: #7cace3;
+margin-bottom: 25px;
 }
 
 .gear {
@@ -27,6 +28,12 @@ background-color: white;
 
 .gc {
 	background-image:url("http://images.shopmadeinchina.com/C0C22F20D142C61BE040007F0100076D/786/8979786_10/2012-Australian-Men-s-surf-shorts-beach-shorts_8979786_10.bak.jpg");
+	background-size: cover;
+	
+}
+
+.all {
+	background-image:url("https://pixabay.com/static/uploads/photo/2015/11/07/11/01/surf-board-1030739_960_720.jpg");
 	background-size: cover;
 	
 }
@@ -65,7 +72,8 @@ background-color: white;
 Globals
 */
 .wrapper{
-	height:100%;
+	height:80%;
+	background-color: #7cace3;
 }
 .content-wrapper{
 	max-width:82.5em;
@@ -89,6 +97,7 @@ ul{
 	height:100%;
 	vertical-align: middle;
 	width:100%;
+
 }
 
 a{
@@ -127,6 +136,7 @@ nav .right-nav{
 nav .fa-shopping-cart {
 	margin-right:10px;
 	font-size:2rem;
+	z-index: 99999;
 }
 
 nav .fa-user {
@@ -185,6 +195,8 @@ Top-content
 	background-position:center center;
 	margin: 0 auto;
 }
+
+
 
 /*Jumbotron text colors */
 
@@ -311,9 +323,9 @@ Product view
 
 #product-card .product-buy{
 	position: absolute;
-	background: black;
+	background-color: #000000;
 	border-radius:100%;
-	color:white;
+	color: #ff6d37;
 	height:30px;
 	width:30px;
 	top:10px;
@@ -333,8 +345,8 @@ Product view
 #product-card .product-info{
 	padding:10px 0px;
 	letter-spacing: 0.05rem;
-	text-align: center;
 }
+
 #product-card .product-name{
 	font-weight:600;
 }
@@ -361,4 +373,77 @@ Product view
 }
 
 
+.button {
+	text-align: center;
+}
 
+.product-image {
+	max-height: 400px;
+  	max-width: 350px;
+  	margin: 0px 100px;
+  }
+
+.searchresult {
+	padding-left: 100px;
+}
+
+/*RESPONSIVE VIDEO */
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 50px;
+
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+
+.select{
+   background: #f0ad4e;
+   border-color: #eea236;
+   color: white;
+   width: 100px;
+   padding: 6px 12px;
+   font-size: 14px;
+   line-height: 1.42857143;
+   text-align: center;
+   white-space: nowrap;
+   border: 2px;
+   border-radius: 10px;
+   height: 34px;
+   display: inline-block;
+   vertical-align: middle;
+   }
+
+.text-center {
+	padding: 0px;
+	margin: 30px 0px 50px 0px;
+}
+
+#product-details {
+	background-color: #7cace3;
+}
+
+.button {
+	margin-top: 250px;
+}

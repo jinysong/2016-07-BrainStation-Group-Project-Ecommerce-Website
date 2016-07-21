@@ -9,26 +9,14 @@
 		//public variables
 		self.products = [];
 
-		self.cartItems = [{
-				productId:'1',
-				name:'Surfboard',
-				description:'you use it to surf',
-				category:'Surf',
-				price:'34',
-				quantity:'2',
-				status: true,
-				image: "../assets/img/img-duffle.png"
-			},{
-				productId:'1',
-				name:'Surfboard',
-				description:'you use it to surf',
-				category:'Surf',
-				price:'12',
-				quantity:'2',
-				status: true,
-				image: "../assets/img/img-duffle.png"
-			}];
+		self.cartItems = [];
 			
+		self.shippingType;
+		self.shippingPrice;
+		self.personalInfo;
+		self.totalNoTax;
+		self.totalWithTax;
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
@@ -37,6 +25,8 @@
 		self.updateProductList = updateProductList;
 		self.removeProduct = removeProduct;
 		self.deleteProduct = deleteProduct;
+		self.addToCart = addToCart;
+		self.addToCartDetail = addToCartDetail;
 
 		function getProducts(){
 			return api.request('/products',{},'GET')
@@ -60,14 +50,11 @@
 					//product was added successfully
 					console.log(res);
 					self.products.push(res.data.product);
-					console.log(self.products)
 				}
 			})
 		}
 
 		function updateProduct(product,productId){
-			console.log(product)
-			console.log(productId)
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
 				console.log(res);
@@ -118,36 +105,51 @@
 
 		removeProduct(2)
 
-		// addFakeProducts()
+		function addToCart(item) {
+			// check if item is already in cart
+			for (i = 0; i < self.cartItems.length; i++) {
+				if (self.cartItems[i].product.id === item.id) {
+					self.cartItems[i].quantity++;
+					return;
+				}
+			}
 
-		// function addFakeProducts() {
-		// 	var pdt1 = {
-		// 		productId:'1',
-		// 		name:'Surfboard',
-		// 		description:'you use it to surf',
-		// 		category:'Surf',
-		// 		price:'34',
-		// 		quantity:'2',
-		// 		status: true,
-		// 		image: "../assets/img/img-duffle.png"
-		// 	}
-		// 	var pdt2 = {
-		// 		productId:'2',
-		// 		name:'Boardshorts',
-		// 		description: "don't go nakeed!!",
-		// 		category:'Boardshorts',
-		// 		price:'12',
-		// 		quantity:'4',
-		// 		status:true,
-		// 		image: "../assets/img/img-duffle.png"
-		// 	}
+			var newCart = {
+				product: item,
+				quantity:  1
+			}
 
-		// 	addProduct(pdt1);
-		// 	addProduct(pdt2);
-			
+			self.cartItems.push(newCart)
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
+		}
+
+		function addToCartDetail(item) {
+			// check if item is already in cart
+			for (i = 0; i < self.cartItems.length; i++) {
+				if (self.cartItems[i].product.id === item.id) {
+					self.cartItems[i].quantity++;
+					return;
+				}
+			}
+			var newCart = {
+				product: item,
+				quantity:  1
+			}			
+			self.cartItems.push(newCart)
+
+			var saveCart = JSON.stringify(self.cartItems)
+			localStorage.setItem('savedCart',saveCart)
+
+
+		}
+		// function orderToAdmin() {
+		// 	var newOrder = {
+		// 		cart: ,
+		// 		address: ,
+		// 		card: ,
+		// 		shipping:
+		// 	}
 		// }
-
-
-
 	}
 })();

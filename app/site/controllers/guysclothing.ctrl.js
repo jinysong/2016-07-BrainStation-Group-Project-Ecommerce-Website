@@ -7,6 +7,7 @@
 		var guysclothingVm = this;
 
 		guysclothingVm.products = productSrv.products;
+		guysclothingVm.addToCart = productSrv.addToCart;
 
 		console.log(guysclothingVm.products)
 	
@@ -16,8 +17,8 @@
 		guysclothingVm.shop = function () {
 			$state.go('shop');
 		}
-		guysclothingVm.goToDetails = function () {
-			$state.go('productdetails'+id);
+		guysclothingVm.goToDetails = function (id) {
+			$state.go('productdetails',{productId: id});
 		}
 	}
 
