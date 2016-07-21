@@ -36,7 +36,7 @@
   color: white;
   font-size: 34px;
   width: 100%;
-  margin: 80px auto 0 auto;
+  margin: 0px auto 35px auto;
   text-align: center;
 }
 
@@ -63,7 +63,7 @@
 @media only screen and (min-width:  768px ) {
   .banner-wrapper.registration-header {
     padding: 40px 0 10px;
-    width: 53%;
+    width: 100%;
   }
 }
 
@@ -133,6 +133,22 @@ a.sign-in-link {
   font-weight: bold;
   margin: 0px;
 }
+
+.back-to-shop {
+  margin: 5px 0px !important;
+}
+
+.login-button {
+  margin: 50px 0px 10px 0px !important;
+}
+
+/*.email-address {
+  margin: 50px 0px 10px 0px !important;
+}
+
+.blue-box {
+  padding: 0px !important;
+}*/
 
 /* Unnecessary style rules below */
 
