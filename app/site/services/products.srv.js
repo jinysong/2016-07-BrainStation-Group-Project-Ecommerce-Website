@@ -10,7 +10,7 @@
 		self.products = [];
 
 		self.cartItems = [];
-			
+		
 		self.shippingType;
 		self.shippingPrice;
 		self.personalInfo;
@@ -147,13 +147,33 @@
 
 
 		}
-		// function orderToAdmin() {
-		// 	var newOrder = {
-		// 		cart: ,
-		// 		address: ,
-		// 		card: ,
-		// 		shipping:
-		// 	}
-		// }
+		self.toAdmin = orderToAdmin();
+		function orderToAdmin() {
+			// creating A client Order
+			var newOrder = {
+				cart: JSON.parse(localStorage.getItem('savedCart')),
+				client: JSON.parse(localStorage.getItem('savedPersonalInfo')),
+				shipping: self.shippingType
+			}
+			for (var i = 0,i<ctrl.cartItems.length; i++) {
+				
+					updateProduct()
+			}
+		}			
+
+			// if ( !(localStorage.getItem('savedOrders'))) {
+			// 	newOrder = JSON.stringify(newOrder)
+			// 	localStorage.setItem('savedOrders', [newOrder])
+			// } else {
+			// 	var tempOrders = JSON.parse(localStorage.getItem('savedOrders'))
+			// 	tempOrders.push(newOrder)
+			// 	JSON.stringify(tempOrders)
+			// 	localStorage.setItem('savedOrders', tempOrders)
+			// }
+		// check localStorage for previous saved orders 
+		// if none, make new array in local storage 
+		// 	if exists, just push new order into existing array
+		//
+		
 	}
 })();

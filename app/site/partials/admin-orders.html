@@ -15,13 +15,17 @@
 			<th>Price</th>
 			<th>Quantity</th>
 		</tr>
-		<tr ng-repeat="product in ctrl.products">
-			<td>{{product.orderId}}</td>
-			<td>{{product.id}}</td>
-			<td>{{product.name}}</td>
-			<td>{{product.category}}</td>
-			<td>{{product.price | currency}}</td>
-			<td>{{product.quantity}}</td>
+		
+			
+		<tr ng-repeat="item in ctrl.orders[0].cart">
+			<td>1</td>
+			<td>{{item.product.id}}</td>
+			<td>{{item.product.name}}</td>
+			<td>{{item.product.category}}</td>
+			<td>{{item.product.price | currency}}</td>
+			<td>{{item.quantity}}</td>
 		</tr>
+			
+		
 	</table>
-</div>
+
