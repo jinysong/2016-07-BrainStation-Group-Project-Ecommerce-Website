@@ -6,9 +6,7 @@
 		<ul class="right-nav list-inline">
 			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart" ng-click='ctrl.cart()'>Cart</span></li>
 			<li>
-				<form ng-submit="ctrl.allpage()">
-				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'><span><img src="assets/img/icon-search@2x.png"></span>
-				</form>
+				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'>
 			</li>
 		</ul>
 	</div>
@@ -19,19 +17,13 @@
 		<div class="table-view">
 			<div class="table-cell">
 				<div class="content">		
-					<h1>
-						ALL PRODUCTS
-					</h1>
+					<p>
+						All products
+					</p>
 
 
 					<div class="">
-						<form>
-							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
-							<div class="form-container">
-								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
-								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
-							</div>
-						</form>
+
 					</div>
 				</div>
 			</div>
@@ -41,7 +33,7 @@
 
 <section>
 	<div>
-		<h1 class="searchresult"> Search Results: "{{ctrl.search}}"</h1>
+		<h3 class="searchresult"> Search Results: "{{ctrl.search}}"</h3>
 	</div>
 
 </section>
@@ -54,8 +46,7 @@
 			<div
 			class="col-xs-12 col-sm-3"
 			ng-repeat='item in ctrl.products
-			| filter: ctrl.search |filter: {productId:Id}
-			'>
+			| filter: ctrl.search'>
 				<div ng-click="ctrl.goToDetails(item.id)" id="product-card" class="product-card" >
 					<div class="product-buy">
 						<div class="table-view">

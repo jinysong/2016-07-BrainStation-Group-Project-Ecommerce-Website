@@ -8,7 +8,7 @@
 			<li ng-click="ctrl.login()"><i class="fa fa-user"></i><span class="cart">Log-In</span></li>
 			<li>
 				<form ng-submit="ctrl.allpage()">
-				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'><span><img src="assets/img/icon-search@2x.png"></span>
+				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'>
 				</form>
 			</li>
 		</ul>
@@ -21,9 +21,8 @@
 			<div class="table-cell">
 				<div class="content">		
 					<h1 id="title-main-page">
-						Kona Wind 
 					</h1>
-					<h3 class="sub-title">
+
 						Clothing & Gear For Surfing Kahunas!  
 					</h3>
 
@@ -42,38 +41,34 @@
 	</div>
 </section>
 
-<section class="container">
+<section class="container-fluid">
 
 	<div class="row">
-		<div class="col-md-3 col-sm-3 col-sm-offset-1">
+		<div class="col-md-3 col-sm-2">
 			<div class="gear main-image">
 
-				<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Now</button>
-				<p class="words">Gear</p>
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Gear</button>
 			</div>
 		</div> 
 		
-		<div class="col-md-3 col-sm-3">
+		<div class="col-md-3 col-sm-2">
 			<div class="lc main-image">
 				
-				<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Now</button>
-				<p class="words">Ladies Clothing</p>
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Ladies</button>
 			</div>
 		</div>
 		
-		<div class="col-md-3 col-sm-3">
+		<div class="col-md-3 col-sm-2">
 			<div class="gc main-image">
 				
-				<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Now</button>
-				<p class="words">Guys Clothing</p>
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Men</button>
 			</div>
 		</div>	
 
-		<div class="col-md-3 col-sm-3">
+		<div class="col-md-3 col-sm-2">
 			<div class="all main-image">
 				
-				<button type="button" class="btn btn-info ryan" ng-click="ctrl.allpage()">Shop Now</button>
-				<p class="words">ALL products </p>
+				<button type="button" class="btn btn-info ryan" ng-click="ctrl.allpage()">Shop Collection</button>
 			</div>
 		</div>
 	</div>
@@ -88,11 +83,40 @@
 
 </section>
 
+<section class="bott-content" role="bottombanner">
+	<div class="content-wrapper">
+		<div class="table-view">
+			<div class="table-cell">
+				<div class="content">		
+					<h1 id="title-main-page">
+					</h1>
+
+					<button type="button" class="btn btn-info black" ng-click="ctrl.womenpage()">Get Inspired</button>
 
 
-<div align="center" class="embed-responsive embed-responsive-16by9" >
+					<!-- <div class="">
+						<form> -->
+							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
+							<!-- <div class="form-container">
+								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
+								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
+							</div>
+						</form>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	
+
+</section>
+
+
+
+<!-- <div align="center" class="embed-responsive embed-responsive-16by9" >
 <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/pflxcqJCX8E"></iframe>
-</div>
+</div> -->
 <!-- <section class="secondary-nav" role="sub-nav">
 	<div class="content-wrapper"> -->
 		<!-- TO DO #3: SET CATEGORY SEARCH AND SET FOCUS CLASS-->

@@ -1,7 +1,7 @@
 (function(){
 	angular
 		.module('shopApp')
-		.controller('ShopCtrl',ShopCtrl)
+		.controller('ShopCtrl',ShopCtrl) // where the html is connected
 
 	function ShopCtrl($scope,productSrv, $state){
 		var shopVm = this;
@@ -46,6 +46,7 @@
 
 		shopVm.allpage = function (){
 			console.log('i did a thing');
+			productSrv.searchTerm = shopVm.search; // save shopVm.search to a service
 			$state.go('allproducts');
 		}
 	}
