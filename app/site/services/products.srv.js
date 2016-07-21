@@ -17,6 +17,10 @@
 		self.totalNoTax;
 		self.totalWithTax;
 
+		self.searchTerm = '';
+
+		self.searchTerm = '';
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
@@ -124,7 +128,7 @@
 			localStorage.setItem('savedCart',saveCart)
 		}
 
-		function addToCartDetail(item) {
+		function addToCartDetail(item,quantity) {
 			// check if item is already in cart
 			for (i = 0; i < self.cartItems.length; i++) {
 				if (self.cartItems[i].product.id === item.id) {
@@ -134,7 +138,7 @@
 			}
 			var newCart = {
 				product: item,
-				quantity:  1
+				quantity:  quantity
 			}			
 			self.cartItems.push(newCart)
 
