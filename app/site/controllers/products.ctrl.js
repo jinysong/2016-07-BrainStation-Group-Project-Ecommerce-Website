@@ -42,5 +42,10 @@
 			ctrl.returnHome = function (){
 				$state.go('shop');
 			}
+			ctrl.delete_from_cart = function(index) {
+				console.log(index)
+				console.log(productSrv.cartItems[index])
+				productSrv.cartItems.splice(index,1);
+			}
 		})	
 })();
