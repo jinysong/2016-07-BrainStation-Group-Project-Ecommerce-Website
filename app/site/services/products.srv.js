@@ -11,6 +11,8 @@
 
 		self.cartItems = [];
 			
+		self.shippingSelect;
+
 		//public functions
 		self.getProduct = getProduct;
 		self.getProducts = getProducts;
@@ -114,6 +116,7 @@
 			}
 
 			self.cartItems.push(newCart)
+			console.log(self.cartItems)
 		}
 
 		function addToCartDetail(item) {
