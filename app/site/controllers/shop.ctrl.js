@@ -49,6 +49,10 @@
 			productSrv.searchTerm = shopVm.search; // save shopVm.search to a service
 			$state.go('allproducts');
 		}
+
+		shopVm.insta4 = function (){
+			$state.go('https://www.instagram.com/alanarblanchard/');
+		}
 	}
 
 })();
