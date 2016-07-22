@@ -14,7 +14,7 @@
 		adminVm.getProducts = productSrv.getProducts();
 		adminVm.products = productSrv.products;
 		adminVm.orders = adminSrv.orders;
-		console.log(adminVm.orders.order)
+		console.log(adminVm.orders)
 
 		console.log(adminVm.products)
 		//check if logged in
