@@ -76,12 +76,8 @@ margin-bottom: 25px;
 Globals
 */
 .wrapper{
-<<<<<<< HEAD
-	height:80%;
-=======
 	height:100%;
-	background-color: #7cace3;
->>>>>>> origin/master
+
 }
 .content-wrapper{
 	max-width:82.5em;
