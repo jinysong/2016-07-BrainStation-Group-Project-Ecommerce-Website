@@ -10,7 +10,7 @@
 <div ng-show="ctrl.is_products">
 
 	<div class="panel panel-default" ng-repeat='x in ctrl.orders'>
-		<div class="panel-heading" ><a ng-click='ctrl.panelShow = !ctrl.panelShow'>Order ID: {{x.id +1}} Client: {{x.lastN}}, {{x.firstN}}</a></div>
+		<div class="panel-heading" ><a ng-click='ctrl.panelShow = !ctrl.panelShow'>Order ID: {{x.id +1}} Client: {{x.lastN}}, {{x.firstN}}</a></div>	
 		<div ng-show='ctrl.panelShow' class="animated fadeInDown panel-body">
 		Products Ordered: <br>
 		{{x.cart}} <br>
