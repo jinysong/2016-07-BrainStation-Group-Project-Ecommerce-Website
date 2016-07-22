@@ -76,7 +76,8 @@ margin-bottom: 25px;
 Globals
 */
 .wrapper{
-	height:80%;
+	height:100%;
+
 }
 .content-wrapper{
 	max-width:82.5em;
@@ -209,7 +210,7 @@ Top-content
 .top-content h1{
 	font-size: 50rem;
 	/*margin-bottom: 320px;*/
-	margin-top: 20px;
+	margin-top: 100px;
 	color: rgb(255,85,33);
 	font-weight:200 !important;
 	font-family: Papyrus, fantasy;
