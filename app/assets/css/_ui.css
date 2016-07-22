@@ -510,13 +510,14 @@ Product view
     src: local('../../../Adam.otf');
 }
 
-.insta1{
+a.insta1{
 	background-image: url('http://66.media.tumblr.com/6b0b4791221b15b4aec8c2d4cf1bbec5/tumblr_nq7747zDZZ1t2fv4eo1_1280.jpg');
 	width: 100%;
 	height: 400px;
 	background-position:center center;
 	text-align: center;
 	background-repeat: no-repeat;
+	position: relative;
 }
 
 .insta1 p{
@@ -530,5 +531,57 @@ Product view
 	background-position:center center;
 	text-align: center;
 	background-repeat: no-repeat;
-
+	position: relative;
 }
+
+.insta3 {
+	background-image: url('http://66.media.tumblr.com/6b0b4791221b15b4aec8c2d4cf1bbec5/tumblr_nq7747zDZZ1t2fv4eo1_1280.jpg');
+	width: 100%;
+	height: 400px;
+	background-position:center center;
+	text-align: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.insta4 {
+	background-image: url('https://ca.billabong.com/media/transfer/img/unknown_1_4_2.jpeg');
+	width: 100%;
+	height: 400px;
+	background-position:center center;
+	text-align: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.insta5 {
+	background-image: url('http://65.media.tumblr.com/tumblr_ljka6zsD5k1qekcmoo1_1280.jpg');
+	width: 100%;
+	height: 400px;
+	background-position:center center;
+	text-align: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.insta-overlay {
+	background-color: rgba(0,0,0,0.25);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+
+.insta-overlay h2{
+	margin-top: 15%;
+	color: #CDD9DF; 
+	font-family: 'Avant Garde', 'sans-serif'; 
+}
+
+.insta-overlay:hover{
+	opacity: 1;
+}
+
+
