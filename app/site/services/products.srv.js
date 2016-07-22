@@ -98,7 +98,7 @@
 					self.products[i].quantity = product.quantity;
 				}
 			}
-			console.log(self.products)
+
 		}
 
 		function removeProduct(productId){
@@ -156,6 +156,12 @@ console.log(self.shippingType)
 
 			//extracting cart info:
 			var start = JSON.parse(localStorage.getItem('savedCart'));
+				//remove items from inventory
+				for (var i=0; i<start.length; i++) {
+					start[i].product.quantity -= start[i].quantity;
+					self.updateProduct(start[i].product,start[i].product.id)
+				}
+
 			var cart = [];
 			for (var i=0; i<start.length; i++) {
 				cart.push({id: start[0].product.id, name: start[0].product.name});
@@ -164,12 +170,11 @@ console.log(self.shippingType)
 			for (var i=0; i<cart.length; i++) {
 				x += '  >> Id: ' + cart[i].id + '   Name: ' + cart[i].name + '\n'
 			}
-			cart = x;
 
 
 			var newOrder1 = {
 				id: 0,
-				cart: cart,
+				cart: x,
 				ship: self.shippingType,
 				msg: '',
 				status: ''
