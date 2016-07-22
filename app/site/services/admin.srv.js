@@ -6,8 +6,12 @@
 
 	function AdminService($state,api,productSrv){
 		var self = this;
-		self.orders = JSON.parse(localStorage.getItem('ORDERS'))
 
+    if (JSON.parse(localStorage.getItem('ORDERS')) == null){
+        self.orders = []
+      } else {
+        self.orders = JSON.parse(localStorage.getItem('ORDERS'))
+      }
 
 		self.groups = [
     {
