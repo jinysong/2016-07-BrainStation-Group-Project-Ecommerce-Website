@@ -61,6 +61,7 @@
 		}
 
 		function updateProduct(product,productId){
+			console.log(productId);
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
 				console.log(res);
