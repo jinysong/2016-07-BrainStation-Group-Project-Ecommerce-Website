@@ -28,10 +28,14 @@
 			}
 
 			ctrl.clicked = function () {
+
 				productSrv.personalInfo = ctrl.personalInfo;
-				console.log(ctrl.personalInfo.firstN)
-				var savePersonalInfo = JSON.stringify(ctrl.personalInfo)
-				localStorage.setItem('savedPersonalInfo',savePersonalInfo);
+				// console.log(productSrv.personalInfo)
+				// console.log(ctrl.personalInfo)
+
+				// console.log(ctrl.personalInfo.firstN)
+				// var savePersonalInfo = JSON.stringify(ctrl.personalInfo)
+				// localStorage.setItem('savedPersonalInfo',savePersonalInfo);
 				var a = document.getElementById('info');
 				a.className +=' animated fadeOutUp';
 

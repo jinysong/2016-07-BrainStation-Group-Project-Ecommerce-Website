@@ -1,3 +1,5 @@
+
+
 <h3 class="admin-product">Orders</h3>
 
 <div ng-hide="ctrl.is_products">
@@ -6,7 +8,30 @@
 	</p>
 </div>
 <div ng-show="ctrl.is_products">
-	<table class="products-list table">
+
+	<div class="panel panel-default" ng-repeat='x in ctrl.orders'>
+		<div class="panel-heading" ><a ng-click='ctrl.panelShow = !ctrl.panelShow'>Order ID: {{x.id +1}} Client: {{x.lastN}}, {{x.firstN}}</a></div>
+		<div ng-show='ctrl.panelShow' class="animated fadeInDown panel-body">
+		Products Ordered: <br>
+		{{x.cart}} <br>
+		Client Details:
+		Email: {{x.email}} <br>
+		Phone: {{x.phone}} <br>
+		Address: {{x.address}}, {{x.address2}}, {{x.city}}, {{x.country}}<br>
+		Postal Code: {{x.postal}} <br>
+		Payment Information: <br>
+		{{x.card}} <br>
+		{{x.expiry}} <br>
+		{{x.security}} <br>
+
+		Shipping Method: {{x.ship}}
+		</div>
+	</div>
+
+</div>
+
+
+	<!-- <table class="products-list table">
 		<tr>
 			<th>OrderID</th>
 			<th>ProductID</th>
@@ -27,5 +52,5 @@
 		</tr>
 			
 		
-	</table>
+	</table> -->
 
