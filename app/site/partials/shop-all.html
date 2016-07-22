@@ -17,11 +17,6 @@
 		<div class="table-view">
 			<div class="table-cell">
 				<div class="content">		
-					<p>
-						All products
-					</p>
-
-
 					<div class="">
 
 					</div>
@@ -32,8 +27,8 @@
 </section>
 
 <section>
-	<div>
-		<h3 class="searchresult"> Search Results: "{{ctrl.search}}"</h3>
+	<div ng-hide='!ctrl.search'>
+		<h3 class="searchresult" > Search Results: "{{ctrl.search}}"</h3>
 	</div>
 
 </section>
@@ -42,6 +37,7 @@
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
+		<h2 ng-hide='ctrl.search' class="bannerheader"> COMPLETE LINE </h2>
 			<!-- TODO #3: SHOW PRODUCTS -->
 			<div
 			class="col-xs-12 col-sm-3"

@@ -30,6 +30,7 @@ margin-bottom: 25px;
 .gc {
 	background-image:url("http://images.shopmadeinchina.com/C0C22F20D142C61BE040007F0100076D/786/8979786_10/2012-Australian-Men-s-surf-shorts-beach-shorts_8979786_10.bak.jpg");
 	background-size: cover;
+	margin-left: -10px;
 	
 }
 
@@ -312,9 +313,9 @@ Sub Nav
 /*
 Product view
 */
-.product-display {
+/*.product-display {
 	margin: 0px 15px;
-}
+}*/
 
 .product-view{
 	background: whitesmoke;
@@ -371,6 +372,7 @@ Product view
 	font-style:italic;
 	font-weight:200;
 	font-size:1.2rem;
+	margin-top: 20px;
 }
 
 #product-card .product-cost{
@@ -485,7 +487,7 @@ Product view
 	margin-top: 130px;
 	width:100%;
 	height:400px;
-	margin-bottom: 500px;
+	margin-bottom: 100px;
 	background:url('http://67.media.tumblr.com/318dad67612502017bc1c694fc5f0bca/tumblr_my6c56q0hC1qdxg8qo1_1280.jpg');
 	background-position:center center;
 	text-align: center;
@@ -506,4 +508,27 @@ Product view
 @font-face {
     font-family: myFirstFont;
     src: local('../../../Adam.otf');
+}
+
+.insta1{
+	background-image: url('http://66.media.tumblr.com/6b0b4791221b15b4aec8c2d4cf1bbec5/tumblr_nq7747zDZZ1t2fv4eo1_1280.jpg');
+	width: 100%;
+	height: 400px;
+	background-position:center center;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+
+.insta1 p{
+	padding-top: 200px;
+}
+
+.insta2 {
+	background-image: url('http://41.media.tumblr.com/9b6a8ed35e02c77819eab9d827f4477c/tumblr_o161bxKKVS1v4obbzo1_1280.jpg');
+	width: 100%;
+	height: 400px;
+	background-position:center center;
+	text-align: center;
+	background-repeat: no-repeat;
+
 }
