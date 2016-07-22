@@ -12,8 +12,10 @@
 		self.cartItems = [];
 		
 		self.shippingType;
+
 		self.shippingPrice;
 		self.personalInfo;
+
 		self.totalNoTax;
 		self.totalWithTax;
 
@@ -147,6 +149,47 @@
 
 
 		}
+
+console.log(self.shippingType)
+
+		self.toAdmin2 = function () {
+
+			//extracting cart info:
+			var start = JSON.parse(localStorage.getItem('savedCart'));
+			var cart = [];
+			for (var i=0; i<start.length; i++) {
+				cart.push({id: start[0].product.id, name: start[0].product.name});
+			};
+			var x = '';
+			for (var i=0; i<cart.length; i++) {
+				x += '  >> Id: ' + cart[i].id + '   Name: ' + cart[i].name + '\n'
+			}
+			cart = x;
+
+
+			var newOrder1 = {
+				id: 0,
+				cart: cart,
+				ship: self.shippingType,
+				msg: '',
+				status: ''
+			}
+			var newOrder = Object.assign(self.personalInfo, newOrder1);
+			
+			if(!JSON.parse(localStorage.getItem('ORDERS'))) {
+				newOrder.id = 0;
+				var x = [];
+				x.push(newOrder);
+				localStorage.setItem('ORDERS', JSON.stringify(x))
+			} else {
+				var x = JSON.parse(localStorage.getItem('ORDERS'));
+				x[x.length] = newOrder;
+				localStorage.setItem('ORDERS', JSON.stringify(x));
+			}
+
+		}
+
+
 		self.toAdmin = orderToAdmin();
 		function orderToAdmin() {
 			// creating A client Order
