@@ -89,9 +89,17 @@
 
 		}
 			// Linking the newly added product to the product page 
+
+
+			//JINY's
+			// start[i].product.quantity -= start[i].quantity;
+			// self.updateProduct(start[i].product,start[i].product.id)
+
+
 		
 		function updateProduct(){
 			//TODO #2
+			
 			
 			//create product object, pass to product service
 			var updateProduct = {
@@ -104,19 +112,17 @@
 			}
 			
 
-			console.log(productVm.name)
-			console.log(productVm.image)
+			
 			var productIdEdit = location.hash.split('/')[3];
-			console.log(productIdEdit)
-			productSrv.updateProduct(updateProduct, productIdEdit);
-			console.log(updateProduct)
+
 			// productSrv.updateProductList();
+			productSrv.updateProduct(updateProduct,productIdEdit);
+
 			//Update text in button
 			productVm.showEdit = true;
-			console.log(productVm.showEdit)
+
 			setTimeout(function() {
 				productVm.showEdit = false;
-				console.log(productVm.showEdit);
 				productVm.product_update_btn = "You edit was successful";
 				$state.go('admin.dash')
 				.then(function() {
