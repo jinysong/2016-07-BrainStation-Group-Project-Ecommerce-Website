@@ -113,10 +113,12 @@
 			
 
 			
-			var productIdEdit = location.hash.split('/')[3];
+			var productIdEdit = location.hash.split('/')[4];
 
 			// productSrv.updateProductList();
 			productSrv.updateProduct(updateProduct,productIdEdit);
+	
+			
 
 			//Update text in button
 			productVm.showEdit = true;
