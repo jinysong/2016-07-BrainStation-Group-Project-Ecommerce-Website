@@ -10,10 +10,12 @@
 		self.products = [];
 
 		self.cartItems = [];
-			
+		
 		self.shippingType;
+
 		self.shippingPrice;
 		self.personalInfo;
+
 		self.totalNoTax;
 		self.totalWithTax;
 
@@ -96,7 +98,7 @@
 					self.products[i].quantity = product.quantity;
 				}
 			}
-			console.log(self.products)
+
 		}
 
 		function removeProduct(productId){
@@ -147,13 +149,79 @@
 
 
 		}
-		// function orderToAdmin() {
-		// 	var newOrder = {
-		// 		cart: ,
-		// 		address: ,
-		// 		card: ,
-		// 		shipping:
-		// 	}
-		// }
+
+console.log(self.shippingType)
+
+		self.toAdmin2 = function () {
+
+			//extracting cart info:
+			var start = JSON.parse(localStorage.getItem('savedCart'));
+				//remove items from inventory
+				for (var i=0; i<start.length; i++) {
+					start[i].product.quantity -= start[i].quantity;
+					self.updateProduct(start[i].product,start[i].product.id)
+				}
+
+			var cart = [];
+			for (var i=0; i<start.length; i++) {
+				cart.push({id: start[0].product.id, name: start[0].product.name});
+			};
+			var x = '';
+			for (var i=0; i<cart.length; i++) {
+				x += '  >> Id: ' + cart[i].id + '   Name: ' + cart[i].name + '\n'
+			}
+
+
+			var newOrder1 = {
+				id: 0,
+				cart: x,
+				ship: self.shippingType,
+				msg: '',
+				status: ''
+			}
+			var newOrder = Object.assign(self.personalInfo, newOrder1);
+			
+			if(!JSON.parse(localStorage.getItem('ORDERS'))) {
+				newOrder.id = 0;
+				var x = [];
+				x.push(newOrder);
+				localStorage.setItem('ORDERS', JSON.stringify(x))
+			} else {
+				var x = JSON.parse(localStorage.getItem('ORDERS'));
+				x[x.length] = newOrder;
+				localStorage.setItem('ORDERS', JSON.stringify(x));
+			}
+
+		}
+
+
+		self.toAdmin = orderToAdmin();
+		function orderToAdmin() {
+			// creating A client Order
+			var newOrder = {
+				cart: JSON.parse(localStorage.getItem('savedCart')),
+				client: JSON.parse(localStorage.getItem('savedPersonalInfo')),
+				shipping: self.shippingType
+			}
+			// for (var i = 0,i<ctrl.cartItems.length; i++) {
+				
+			// 		updateProduct()
+			// }
+		}			
+
+			// if ( !(localStorage.getItem('savedOrders'))) {
+			// 	newOrder = JSON.stringify(newOrder)
+			// 	localStorage.setItem('savedOrders', [newOrder])
+			// } else {
+			// 	var tempOrders = JSON.parse(localStorage.getItem('savedOrders'))
+			// 	tempOrders.push(newOrder)
+			// 	JSON.stringify(tempOrders)
+			// 	localStorage.setItem('savedOrders', tempOrders)
+			// }
+		// check localStorage for previous saved orders 
+		// if none, make new array in local storage 
+		// 	if exists, just push new order into existing array
+		//
+		
 	}
 })();

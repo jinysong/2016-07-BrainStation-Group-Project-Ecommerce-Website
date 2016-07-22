@@ -23,7 +23,7 @@
 				}
 			})
 			.state('cart', {
-				url: '/cart',
+				url: '/cart/cart-products',
 				templateUrl: 'site/partials/shop-cart.html',
 				controller: 'cartCtrl as ctrl',
 			})
@@ -126,7 +126,7 @@
 			})
 
 			.state('admin',{
-				url:'/admin',
+				url:'/admin/dashboard',
 				templateUrl:'site/partials/admin.html',
 				controller:'AdminCtrl as ctrl',
 				//TODO #2 Resolve Products before admin page load

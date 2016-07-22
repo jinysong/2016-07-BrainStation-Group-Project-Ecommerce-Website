@@ -1,4 +1,4 @@
-<h3>Orders</h3>
+<h3 class="admin-product admin-dash-title">Orders</h3>
 
 <div ng-hide="ctrl.is_products">
 	<p>
@@ -6,7 +6,32 @@
 	</p>
 </div>
 <div ng-show="ctrl.is_products">
-	<table class="products-list table">
+
+	<div class="panel panel-default" ng-repeat='x in ctrl.orders'>
+		<div class="panel-heading" ><a ng-click='ctrl.panelShow = !ctrl.panelShow'>Order ID: {{x.id +1}} 
+		Client: {{x.lastN}}, {{x.firstN}}</a></div>	
+		<div ng-show='ctrl.panelShow' class="animated fadeInDown panel-body">
+		<h4>Products Ordered:</h4>
+		<div class="product_order_details">{{x.cart}}</div>
+		<h4>Client Details:</h4>
+		<div class="client_details">
+		Email: {{x.email}} <br>
+		Phone: {{x.phone}} <br>
+		Address: {{x.address}}, {{x.address2}}, {{x.city}}, {{x.country}}<br>
+		Postal Code: {{x.postal}} <br>
+		Payment Information: <br>
+		{{x.card}} <br>
+		{{x.expiry}} <br>
+		{{x.security}} <br>
+		Shipping Method: {{x.ship}}
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+	<!-- <table class="products-list table">
 		<tr>
 			<th>OrderID</th>
 			<th>ProductID</th>
@@ -15,13 +40,17 @@
 			<th>Price</th>
 			<th>Quantity</th>
 		</tr>
-		<tr ng-repeat="product in ctrl.products">
-			<td>{{product.orderId}}</td>
-			<td>{{product.id}}</td>
-			<td>{{product.name}}</td>
-			<td>{{product.category}}</td>
-			<td>{{product.price | currency}}</td>
-			<td>{{product.quantity}}</td>
+		
+			
+		<tr ng-repeat="item in ctrl.orders[0].cart">
+			<td>1</td>
+			<td>{{item.product.id}}</td>
+			<td>{{item.product.name}}</td>
+			<td>{{item.product.category}}</td>
+			<td>{{item.product.price | currency}}</td>
+			<td>{{item.quantity}}</td>
 		</tr>
-	</table>
-</div>
+			
+		
+	</table> -->
+

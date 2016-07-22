@@ -8,7 +8,7 @@
 	font-size: 4rem;
 	text-align: center;
 	text-decoration: underline;
-	background:#ff6d37;
+	background:#7cace3;
 	margin: 0 auto;
 	padding: 20px;
 	color: #000000;
@@ -19,6 +19,12 @@
 	color:#555;
 	text-decoration: underline;
 }
+.admin-dash-title {
+	color: #555 !important;
+	font-size:3rem;
+	font-family: inherit;
+	margin-bottom: 20px;
+}
 #admin .nav-panel{
 	background:#555;
 	padding:40px;
@@ -27,7 +33,7 @@
 	float:left;
 	font-size:1rem;
 	font-family: Verdana;
-	color:#ff6d37;
+	color:#7cace3;
 	border-right: 3px solid #555;
 
 }
@@ -40,12 +46,12 @@
 
 #admin .nav-panel ul li{
 	margin:10px 0px;
-	color:#ff6d37;
+	color:#7cace3;
 	font-size:2rem;
 	font-weight:200;
 }
 #admin .nav-panel ul li > a{
-	color:#ff6d37;
+	color:#7cace3;
 }
 #admin .nav-panel ul li:hover{
 	color:#2b96ff;
@@ -59,11 +65,12 @@
 	font-size:1rem;
 	color:#555;
 	height: 100%;
+	overflow: scroll;
 
 }
 
 #admin .products-list a{
-	color:#2b96ff;
+	color:#7cace3;
 }
 #admin .product-frm{
 	width:50%;
@@ -85,7 +92,7 @@
 }
 
 .admin-messages {
-	background-color: #ff6d37;
+	background-color: #7cace3;
 	font-size:2rem;
 	position: absolute;
 	right: 2%;
@@ -97,4 +104,21 @@
 
 .admin-messages.ng-hide-add, .admin-messages.ng-hide-remove {
   transition: all linear 0.5s;
+}
+
+.admin-product {
+	margin: 10px 0px;
+}
+
+.orange {
+	background-color:#7cace3;
+	margin: 25px 5px;
+}
+
+.client_details {
+	font-size: 17px;
+}
+
+.product_order_details {
+	font-size: 17px;
 }

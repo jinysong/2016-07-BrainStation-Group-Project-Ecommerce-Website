@@ -21,11 +21,12 @@
 				productSrv.shippingType = ctrl.shippingSelect.type;
 				productSrv.shippingPrice = ctrl.shippingSelect.price;
 
-				console.log(productSrv.cartItems)
+				productSrv.toAdmin2();
 
 
 				$state.go("cart.cart-invoice");
-
+				// var saveShippingType = JSON.stringify(ctrl.shippingSelect.type)
+				localStorage.setItem('savedShippingType',ctrl.shippingSelect.type);
 			}
 			
 			ctrl.returnHome = function() {
