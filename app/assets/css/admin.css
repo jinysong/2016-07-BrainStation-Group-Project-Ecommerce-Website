@@ -65,6 +65,7 @@
 	font-size:1rem;
 	color:#555;
 	height: 100%;
+	overflow: scroll;
 
 }
 
@@ -112,4 +113,12 @@
 .orange {
 	background-color:#7cace3;
 	margin: 25px 5px;
+}
+
+.client_details {
+	font-size: 17px;
+}
+
+.product_order_details {
+	font-size: 17px;
 }
