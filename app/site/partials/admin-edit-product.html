@@ -1,6 +1,4 @@
-<h3>
-	Edit Product
-</h3>
+<h3 class="admin-product">Edit Product</h3>
 <!-- 	TODO #2: Populate fields with product data -->
 <article class="product-frm">
 		<div>
@@ -30,8 +28,8 @@
 			<input type="number" name="quantity" ng-model="ctrl.quantity" placeholder="{{ctrl.quantity}}" required>
 		</div>
 		<div>
-			<button type="submit" ng-class="{ active: ctrl.showEdit }" ng-click="ctrl.updateProduct()">{{ctrl.product_update_btn}}</button>
-			<button type="submit" ng-class="{ active: ctrl.showDelete }" ng-click="ctrl.deleteProduct()">
+			<button type="submit" class="btn btn-warning orange" ng-class="{ active: ctrl.showEdit }" ng-click="ctrl.updateProduct()">{{ctrl.product_update_btn}}</button>
+			<button type="submit" class="btn btn-warning orange" ng-class="{ active: ctrl.showDelete }" ng-click="ctrl.deleteProduct()">
 			{{ctrl.product_delete_btn}}</button>
 		</div>
 		<div class="admin-messages">
