@@ -372,6 +372,7 @@ Product view
 	font-style:italic;
 	font-weight:200;
 	font-size:1.2rem;
+	margin-top: 20px;
 }
 
 #product-card .product-cost{
