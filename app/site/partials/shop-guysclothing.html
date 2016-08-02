@@ -1,10 +1,21 @@
-<nav>
-	<div class="content-wrapper">
+<nav class="fixed">
+	<div>
 		<ul class="left-nav">
 			<li ng-click="ctrl.shop()"><img src="../../assets/img/new-logo.png" class="img-responsive logo-image"></li>
 		</ul>
 		<ul class="right-nav list-inline">
-			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart" ng-click='ctrl.cart()'>Cart</span></li>
+			<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Categories
+			<span class="caret"></span></span>
+				<ul class="dropdown-menu dropdown-content">
+          			<li ng-click="ctrl.gearpage()" class="ordered">Gear</li>
+          			<li ng-click="ctrl.womenpage()" class="ordered">Women's clothes</li>
+        			<li ng-click="ctrl.menpage()" class="ordered">Men's clothes</li> 
+        		</ul>
+			</li>
+			<li ng-click="ctrl.about()"> <span class="cart">About Us</span></li>
+			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><div class="cart-count" >{{ctrl.cartCount()}}</div><span class="cart">Cart</span></li>
+			<li ng-click="ctrl.login()"><i class="fa fa-user"></i><span class="cart">Log-In</span></li>
 			<li>
 				<form ng-submit="ctrl.allpage()">
 				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'>
@@ -13,7 +24,6 @@
 		</ul>
 	</div>
 </nav>
-
 <section class="top-content guys" role="topbanner">
 	<div class="content-wrapper">
 		<div class="table-view">
@@ -43,7 +53,7 @@
 					<div class="product-buy">
 						<div class="table-view">
 							<div class="table-cell">
-								<i ng-click="ctrl.addToCart(item)" class="fa fa-shopping-cart"></i>
+								<i ng-click="ctrl.addToCart(item,1)" class="fa fa-shopping-cart"></i>
 							</div>
 						</div>
 					</div>
@@ -67,11 +77,11 @@
 						</div>
 						<div class="product-cost"  ng-bind='item.price | currency'>
 							<!-- SET PRODUCT PRICE WITH FILTER -->
-							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<section> 
+<section>
+<toast></toast>

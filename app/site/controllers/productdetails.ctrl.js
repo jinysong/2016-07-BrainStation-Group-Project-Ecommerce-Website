@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.controller('ProductdetailsCtrl', ProductdetailsCtrl)
 
-	function ProductdetailsCtrl($stateParams,productSrv,$state){
+	function ProductdetailsCtrl($stateParams,productSrv,$state,shopSrv){
 		var productdetailsVm = this;
 		productdetailsVm.selected = 1;
 		productdetailsVm.product = productSrv.getProduct($stateParams.productId)
@@ -24,14 +24,22 @@
 		});
 		productdetailsVm.Quantity = [];
 		productdetailsVm.changePage = changePage;
-		productdetailsVm.addToCartDetail = productSrv.addToCartDetail;
+		productdetailsVm.addToCart = productSrv.addToCart;
+		productdetailsVm.cartCount = productSrv.cartCount;
+		productdetailsVm.about = shopSrv.about;
+		productdetailsVm.login = shopSrv.login;
+		productdetailsVm.cart = shopSrv.cart;
+		productdetailsVm.gearpage = shopSrv.gearpage;
+		productdetailsVm.menpage = shopSrv.menpage;
+		productdetailsVm.womenpage = shopSrv.womenpage;
+		productdetailsVm.shop = shopSrv.shop;
 
 		function changePage() {
 			if(productdetailsVm.product.category == 'gear'){
 				$state.go('gear')
-			} else if (productdetailsVm.product.category == 'guys-clothing'){
+			} else if (productdetailsVm.product.category == 'guys_clothing'){
 					$state.go('guys-clothing')
-			} else if (productdetailsVm.product.category == 'girls-clothing'){
+			} else if (productdetailsVm.product.category == 'girls_clothing'){
 					$state.go('girls-clothing')
 			}
 		}

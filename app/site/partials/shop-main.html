@@ -1,12 +1,22 @@
-<nav>
-	<div class="content-wrapper">
+<nav class="fixed">
+	<div>
 		<ul class="left-nav">
-			<li><img src="../../assets/img/new-logo.png" class="img-responsive logo-image"></li>
+			<li ng-click="ctrl.shop()"><img src="../../assets/img/new-logo.png" class="img-responsive logo-image"></li>
 		</ul>
 		<ul class="right-nav list-inline">
-			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+			<li class="dropdown">
+			<span class="dropdown-toggle cart dropbtn" data-toggle="dropdown">Categories
+			<span class="caret"></span></span>
+				<ul class="dropdown-menu dropdown-content">
+          			<li ng-click="ctrl.gearpage()" class="ordered">Gear</li>
+          			<li ng-click="ctrl.womenpage()" class="ordered">Women's clothes</li>
+        			<li ng-click="ctrl.menpage()" class="ordered">Men's clothes</li> 
+        		</ul>
+			</li>
+			<li ng-click="ctrl.about()"> <span class="cart">About Us</span></li>
+			<li ng-click='ctrl.cart()'><i class="fa fa-shopping-cart"></i><div class="cart-count" >{{ctrl.cartCount()}}</div><span class="cart">Cart</span></li>
 			<li ng-click="ctrl.login()"><i class="fa fa-user"></i><span class="cart">Log-In</span></li>
-			<li>
+			<li class="searchbtn">
 				<form ng-submit="ctrl.allpage()">
 				<input type="text" class="searchbutton" placeholder="Search" ng-model='ctrl.search'>
 				</form>
@@ -17,85 +27,39 @@
 
 <section class="top-content" role="topbanner">
 	<div class="content-wrapper">
-		<div class="table-view">
-			<div class="table-cell">
-				<div class="content">		
-					<h1 id="title-main-page">
-					</h1>
-
-						<!-- Clothing & Gear For Surfing Kahunas!   -->
-					</h3>
-
-					<!-- <div class="">
-						<form> -->
-							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
-							<!-- <div class="form-container">
-								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
-								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
-							</div>
-						</form>
-					</div> -->
-				</div>
-			</div>
-		</div>
 	</div>
 </section>
 
-<section class="container-fluid">
-
+<section class="container">
+	<div class="fillerarea">
+		<h2 class="filler"> Categories </h2>
+	</div>
 	<div class="row">
-		<div class="col-md-4 col-sm-2 col-md-offset-2">
-			<div class="gear main-image">
-				<div class="hovereffect">
-					 <div class="overlay">
-						<button type="button" class="btn btn-info ryan" ng-click="ctrl.gearpage()">Shop Gear</button>
-					</div>
-				</div>
-			</div>
-		</div> 
-		
-		<div class="col-md-4 col-sm-2">
-			<div class="lc main-image">
-				<div class="hovereffect">
-					 <div class="overlay">
-						<button type="button" class="btn btn-info ryan" ng-click="ctrl.womenpage()">Shop Ladies</button>
-					</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 border">
+			<div class="hovereffect">
+				<img src="http://picalls.com/wp-content/uploads/2015/02/Surfboard-on-the-beach.jpg" class="img-responsive centered">
+				 <div class="overlay">
+					<button type="button" class="btn ryan" ng-click="ctrl.gearpage()">Shop Gear</button>
 				</div>
 			</div>
 		</div>
-
-	</div>
-
-	<div class="row"></div>	
-		<div class="col-md-4 col-sm-2 col-md-offset-2">
-			<div class="gc main-image">
-				<div class="hovereffect">
-					 <div class="overlay">
-						<button type="button" class="btn btn-info ryan" ng-click="ctrl.menpage()">Shop Men</button>
-					</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 border">
+			<div class="hovereffect">
+				<img src="http://i.huffpost.com/gen/1647273/images/o-WOMAN-SURFING-facebook.jpg" class="img-responsive centered">
+				 <div class="overlay">
+					<button type="button" class="btn ryan" ng-click="ctrl.womenpage()">Shop Ladies</button>
 				</div>
 			</div>
-		</div>	
-
-		<div class="col-md-4 col-sm-2">
-			<div class="all main-image">
-				<div class="hovereffect">
-					 <div class="overlay">
-						<button type="button" class="btn btn-info ryan" ng-click="ctrl.allpage()">Shop Collection</button>
-					</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 border">
+			<div class="hovereffect">
+				<img src="http://images.shopmadeinchina.com/C0C22F20D142C61BE040007F0100076D/786/8979786_10/2012-Australian-Men-s-surf-shorts-beach-shorts_8979786_10.bak.jpg" class="img-responsive centered">
+				<div class="overlay">
+					<button type="button" class="btn ryan" ng-click="ctrl.menpage()">Shop Men</button>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- <div class="row2">
-<div class="col-md-3 col-sm-6">
-	<img src="http://img.surfing-waves.com/shop/media/images/ind-womens-surf-clothing.jpg" class="image2">
-		<button type="button" class="btn btn-info">Shop Now</button>
-		<p class="caption">Clothing</p>
-</div> -->
-	
-	
-
 </section>
 
 
@@ -105,25 +69,12 @@
 
 
 <section class="bott-content" role="bottombanner">
-	<div class="content-wrapper">
-		<div class="table-view">
-			<div class="table-cell">
-				<div class="content">		
-					<h1 id="title-main-page">
-					</h1>
-
-					<div class="black">Get Inspired</div>
-
-
-					<!-- <div class="">
-						<form> -->
-							<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
-							<!-- <div class="form-container">
-								<input type="text" class="form-control"  placeholder="Search for a brand or item" ng-model='ctrl.search'>
-								<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
-							</div>
-						</form>
-					</div> -->
+	<div class="hovereffect">
+		<div class="content-wrapper">
+			<div class="content">
+				<div class="overlay">
+					<div class="black">Get Inspired
+					</div>
 				</div>
 			</div>
 		</div>
@@ -155,70 +106,4 @@
 			<a href="https://www.instagram.com/craig__anderson/"><h2>@craig__anderson</h2></a>
 		</div>
 	</div>
-
-
 </section>
-
-
-
-
-<!-- <div align="center" class="embed-responsive embed-responsive-16by9" >
-<iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/pflxcqJCX8E"></iframe>
-</div> -->
-<!-- <section class="secondary-nav" role="sub-nav">
-	<div class="content-wrapper"> -->
-		<!-- TO DO #3: SET CATEGORY SEARCH AND SET FOCUS CLASS-->
-		<!-- <ul class="product-nav">
-			<li ><a>All</a></li>
-			<li ><a>Surf</a></li>
-			<li ><a>Boardshorts</a></li>
-			<li ><a>Accessories</a></li>
-		</ul>
-	</div>
-</section> -->
-
-<!-- <section class="product-view" role="product-view">
-	<div class="content-wrapper">
-		<div class="row"> -->
-			<!-- TODO #3: SHOW PRODUCTS -->
-			<!-- <div class="col-xs-12 col-sm-3" ng-repeat='item in ctrl.products | filter: ctrl.search'>
-				<div id="product-card" class="product-card" >
-					<div class="product-buy">
-						<div class="table-view">
-							<div class="table-cell">
-								<i class="fa fa-shopping-cart" ng-click='ctrl.addToCart(item)'></i>
-							</div>
-						</div>
-					</div> -->
-					<!-- SET PRODUCT IMAGE -->
-					<!-- <div class="product-img" style="background-size:cover;background-position:center center"
-						ng-style='{"background-image": "url({{item.image}})"}'>
-
-					</div>
-
-					<div class="product-info">
-
-						<div class="product-name" ng-bind='item.name'>
-					}
-					}
- -->
-						<div class="product-name" ng-bind='item.name'>
-
-							<!-- SET PRODUCT NAME -->
-						
-							
-							
-						<!-- </div>
-						<div class="product-brand"  ng-bind='item.description'> -->
-							<!-- SET PRODUCT Description -->
-							<!-- <em></em>
-						</div>
-						<div class="product-cost"  ng-bind='item.price | currency'> -->
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-<!-- 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-<section>

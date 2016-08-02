@@ -4,7 +4,7 @@
 		.module('shopApp')
 		.service('productSrv',ProductService);
 
-	function ProductService($state,api){
+	function ProductService($state,api,ngToast){
 		var self = this;
 		//public variables
 		self.products = [];
@@ -32,18 +32,16 @@
 		self.removeProduct = removeProduct;
 		self.deleteProduct = deleteProduct;
 		self.addToCart = addToCart;
-		self.addToCartDetail = addToCartDetail;
 
 		function getProducts(){
 			return api.request('/products',{},'GET')
 			.then(function(res){
+
 				//success callback
-				console.log(res);
 				self.products = res.data.products;
 				return self.products;
 			},function(res){
 				//error callback
-				console.log(res);
 				return;
 			})
 		}
@@ -51,20 +49,16 @@
 		function addProduct(product){
 			return api.request('/products',product,'POST')
 			.then(function(res){
-				console.log(res);
 				if(res.status === 200){
 					//product was added successfully
-					console.log(res);
 					self.products.push(res.data.product);
 				}
 			})
 		}
 
 		function updateProduct(product,productId){
-			console.log(productId);
 			api.request('/products/'+productId,product,'PUT')
 			.then(function(res){
-				console.log(res);
 				if(res.status === 200){
 					//product was updated successfully
 					self.updateProductList(product,productId);
@@ -76,7 +70,6 @@
 		function deleteProduct(productId){
 			return api.request('/products/'+productId,{},'DEL')
 			.then(function(res){
-				console.log(res);
 				if(res.status === 200){
 					//product was deleted successfully
 					self.removeProduct(productId);
@@ -112,46 +105,38 @@
 
 		removeProduct(2)
 
-		function addToCart(item) {
+		function addToCart(item,quantity) {
 			// check if item is already in cart
 			for (i = 0; i < self.cartItems.length; i++) {
 				if (self.cartItems[i].product.id === item.id) {
 					self.cartItems[i].quantity++;
+					ngToast.create({
+						className: 'warning',
+  						content: '<div class="pop-up-window">Yayy, you have successfully added an item to your cart!</div>'
+					});
+					var saveCart = JSON.stringify(self.cartItems)
+					localStorage.setItem('savedCart',saveCart)
 					return;
 				}
 			}
 
-			var newCart = {
-				product: item,
-				quantity:  1
-			}
-
-			self.cartItems.push(newCart)
-			var saveCart = JSON.stringify(self.cartItems)
-			localStorage.setItem('savedCart',saveCart)
-		}
-
-		function addToCartDetail(item,quantity) {
-			// check if item is already in cart
-			for (i = 0; i < self.cartItems.length; i++) {
-				if (self.cartItems[i].product.id === item.id) {
-					self.cartItems[i].quantity++;
-					return;
-				}
-			}
 			var newCart = {
 				product: item,
 				quantity:  quantity
-			}			
+			}
 			self.cartItems.push(newCart)
-
+			ngToast.create({
+  						className: 'warning',
+  						content: '<div class="pop-up-window">Yayy, you have successfully added an item to your cart!</div>'
+			});
 			var saveCart = JSON.stringify(self.cartItems)
 			localStorage.setItem('savedCart',saveCart)
-
-
 		}
 
-console.log(self.shippingType)
+		self.cartCount = function() {
+			var getCartItems = JSON.parse(localStorage.getItem('savedCart'));
+			return getCartItems.length
+		}
 
 		self.toAdmin2 = function () {
 

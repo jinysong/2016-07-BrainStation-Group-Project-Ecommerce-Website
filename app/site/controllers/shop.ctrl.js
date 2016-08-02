@@ -3,13 +3,13 @@
 		.module('shopApp')
 		.controller('ShopCtrl',ShopCtrl) // where the html is connected
 
-	function ShopCtrl($scope,productSrv, $state){
+	function ShopCtrl($scope,productSrv, $state, shopSrv){
 		var shopVm = this;
 
 		//TODO #3 Capture resolved products for view
 		shopVm.products = productSrv.products;
-		console.log(shopVm.products)
-
+		shopVm.cartCount = productSrv.cartCount;
+		shopVm.about = shopSrv.about;
 
 
 		// watch for any changes to model data

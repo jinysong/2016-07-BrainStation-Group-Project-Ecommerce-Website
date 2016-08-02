@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router']);
+		.module('shopApp',['ui.router','ngToast']);
 
 	angular
 		.module('shopApp')
@@ -84,15 +84,6 @@
 					// }
 				}
 			})
-
-			// .state('ProductID', {
-			// 	url: '/productdetails?productId',
-			// 	templateUrl: 'productdetails.html',
-			// 	controller: function($scope, $stateParams) {
-			// 		$scope.productId = $stateParams.productId;
-			// 	}
-			// });
-
 			.state('gear',{
 				url: '/gear',
 				templateUrl: 'site/partials/shop-gear.html',
@@ -123,6 +114,12 @@
 						return productSrv.getProducts();
 					}
 				}
+			})
+
+			.state('about', {
+				url: '/about',
+				templateUrl:'site/partials/shop-about-us.html',
+				controller:'AboutUsCtrl as ctrl'
 			})
 
 			.state('admin',{

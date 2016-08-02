@@ -3,22 +3,21 @@
 		.module('shopApp')
 		.controller('AllCtrl', AllCtrl)
 
-	function AllCtrl($scope,productSrv,$state, $stateParams){
+	function AllCtrl($scope,productSrv,$state, $stateParams,shopSrv){
 		var allVm = this;
 
 		allVm.products = productSrv.products;
 		allVm.addToCart = productSrv.addToCart;
-
-
-		console.log(allVm.products)
+		allVm.cartCount = productSrv.cartCount;
+		allVm.about = shopSrv.about;
+		allVm.login = shopSrv.login;
+		allVm.cart = shopSrv.cart;
+		allVm.gearpage = shopSrv.gearpage;
+		allVm.menpage = shopSrv.menpage;
+		allVm.womenpage = shopSrv.womenpage;
+		allVm.shop = shopSrv.shop;
 		allVm.search = productSrv.searchTerm; // get search term saved in service (from shop.ctrl.js)
-
-		allVm.cart = function () {
-			$state.go('cart');
-		}
-		allVm.shop = function () {
-			$state.go('shop');
-		}		
+	
 		allVm.goToDetails = function (id) {
 			$state.go('productdetails',{productId: id});
 		}	

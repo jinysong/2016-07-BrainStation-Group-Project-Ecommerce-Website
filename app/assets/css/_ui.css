@@ -9,38 +9,10 @@ body{
 	color:#666;
 	font-size:100%;
 }
-
-
-/*.row div {
-background-color: #7cace3;
-margin-bottom: 25px;
-}
-*/
-.gear {
-	background-image:url("http://picalls.com/wp-content/uploads/2015/02/Surfboard-on-the-beach.jpg");
-	background-size: cover;
-}
-
-.lc {
-	background-image:url("http://i.huffpost.com/gen/1647273/images/o-WOMAN-SURFING-facebook.jpg");
-	background-size: cover;
-
-}
-
-.gc {
-	background-image:url("http://images.shopmadeinchina.com/C0C22F20D142C61BE040007F0100076D/786/8979786_10/2012-Australian-Men-s-surf-shorts-beach-shorts_8979786_10.bak.jpg");
-	background-size: cover;
-	margin-left: -10px;
-	
-}
-
-.all {
-	background-image:url("https://pixabay.com/static/uploads/photo/2015/11/07/11/01/surf-board-1030739_960_720.jpg");
-	background-size: cover;
-
-
-
-	
+.fixed {
+	position: fixed;
+	z-index: 1000;
+	background-color: #FFFFFF;
 }
 
 .main-image{
@@ -57,8 +29,8 @@ margin-bottom: 25px;
 .ryan {
 	display:block;
 	margin:auto;
-	/*left:50px;*/
-	margin-top: 60px;
+	opacity: 0.5;
+	margin-top: 30%;
 	width: 150px;
 	color: white;
 	background-color: black;
@@ -70,9 +42,25 @@ margin-bottom: 25px;
 	color:black;
 	margin: auto;
 	font-style: utopia;
-
 }
 
+.ng-toast.ng-toast--top, .ng-toast.ng-toast--top .ng-toast__list{
+	position: fixed;
+	bottom: 5%;
+	right: 3%;
+	top: auto;
+	background-color: none;
+	border-color: transparent;
+}
+
+.pop-up-window {
+	background-color: #f1f1f1;
+	/*position: fixed;*/
+	padding: 10px 20px;
+	/*bottom: 5%;
+	right: 3%;*/
+	border-radius: 10px;
+}
 
 /*
 Globals
@@ -128,17 +116,49 @@ nav{
 
 nav .left-nav{
 	float:left;
-	margin: 0;
+	margin-left: 10%;
 	vertical-align: top;
+	list-style: none;
 
 }
 
 nav .right-nav{
 	float: right;
-	margin:0px
+	margin-right: 10%;
 	vertical-align: top;
 }
+nav .right-nav li:hover {
+	background-color: #f1f1f1;
+	height: 55px;
+}
+nav .right-nav .searchbtn:hover {
+	background-color: rgba(255,255,255,0.5);
+	height: 50px;
+}
+/* Dropdown Content (Hidden by Default) */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
 
+/* Links inside the dropdown */
+nav .dropdown-content li {
+    color: black;
+    padding-left: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+nav .dropdown-content li:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
 nav .fa-shopping-cart {
 	margin-right:10px;
 	font-size:2rem;
@@ -163,12 +183,21 @@ nav .fa {
 nav .logo-image {
 	height: 50px;
 }
+.ordered {
+	margin-top: 0;
+	font-size: 14px;
+}
+.cart-count {
+	display: inline-block;
+	position: inherit;
+	margin-right: 10px;
+}
 /*
 Top-content
 */
 .top-content{
 	width:100%;
-	height:calc(70%);
+	height:calc(80%);
 	background:url('http://wallpapercave.com/wp/Mz7LPNJ.jpg');
 	background-size:cover;
 	background-position:center center;
@@ -207,23 +236,6 @@ Top-content
 
 
 /*Jumbotron text colors */
-
-
-.top-content h1{
-	font-size: 50rem;
-	/*margin-bottom: 320px;*/
-	margin-top: 100px;
-	color: rgb(255,85,33);
-	font-weight:200 !important;
-	font-family: Papyrus, fantasy;
-	font-size: 170px;
-	font-style: normal;
-	font-variant: normal;
-	line-height: 26.4px;
-
-
-}
-
 h3{
 	margin-top:180px;
 	letter-spacing:0.05rem;
@@ -275,7 +287,9 @@ h3{
 	font-size: 0.
 }
 
-
+.shop-main-second {
+	
+}
 
 /*
 Sub Nav
@@ -384,11 +398,10 @@ Product view
 
 
 .searchbutton {
-	border-radius: 12%;
-	border: solid 1px white;
-	border-color: white;
+	border: solid 1px black;
 	margin-left: 10px;
 	height: 30px;
+	padding-left: 5px;
 }
 
 
@@ -476,7 +489,7 @@ Product view
 .filler {
 	font-family: 'Verdana', 'sans-serif';
 	text-align: center;
-	padding-top: 80px;
+	padding: 80px 0;
 }
 
 
@@ -485,7 +498,6 @@ Product view
 /*Bottom content*/
 
 .bott-content{
-	margin-top: 130px;
 	width:100%;
 	height:400px;
 	margin-bottom: 100px;
@@ -500,11 +512,9 @@ Product view
 .black {
 	background-color: transparent;
 	border-color: transparent;
-	color: #DA886A;
-	font-family: 'myFirstFont';
-	margin-bottom: 85px;
-	font-weight: bold;
+	font-family: 'Verdana', 'sans-serif';
 	font-size: 5rem;
+	margin-top: 130px;
 
 }
 
